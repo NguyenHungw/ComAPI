@@ -1,0 +1,20 @@
+{
+  "Version": 1,
+  "Hash": "ajL6lm4suJDlxgF+vX3C6GUFVmXMMaGoPhoTr0aqIOk=",
+  "Source": "ComAPI",
+  "BasePath": "_content/ComAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ComAPI\\wwwroot",
+      "Source": "ComAPI",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [],
+  "Endpoints": []
+}

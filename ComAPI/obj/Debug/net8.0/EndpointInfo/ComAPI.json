@@ -1,0 +1,704 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ComAPI",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/ChucNang/DSChucNang": {
+      "get": {
+        "tags": [
+          "ChucNang"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChucNang/ThemChucNang": {
+      "post": {
+        "tags": [
+          "ChucNang"
+        ],
+        "parameters": [
+          {
+            "name": "namecn",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChucNang/SuaChucNang": {
+      "put": {
+        "tags": [
+          "ChucNang"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChucNangMOD"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChucNangMOD"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChucNangMOD"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChucNang/XoaChucNang": {
+      "delete": {
+        "tags": [
+          "ChucNang"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChucNangCuaNND/DanhSachCNCuaNND": {
+      "get": {
+        "tags": [
+          "ChucNangCuaNND"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChucNangCuaNND/DanhSachCNCuaNND2": {
+      "get": {
+        "tags": [
+          "ChucNangCuaNND"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChucNangCuaNND/ThemChucNangCuaNND": {
+      "post": {
+        "tags": [
+          "ChucNangCuaNND"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ThemChucNangCuaNNDMOD"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ThemChucNangCuaNNDMOD"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ThemChucNangCuaNNDMOD"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChucNangCuaNND/SuaCNCN": {
+      "put": {
+        "tags": [
+          "ChucNangCuaNND"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChucNangCuaNNDMOD"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChucNangCuaNNDMOD"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChucNangCuaNNDMOD"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChucNangCuaNND/XoaCNCN": {
+      "delete": {
+        "tags": [
+          "ChucNangCuaNND"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ChucNangCuaNND/ChiTietCNCNND": {
+      "post": {
+        "tags": [
+          "ChucNangCuaNND"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "ComAPI"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/NguoiDungTrongNhom/DanhSachNND": {
+      "get": {
+        "tags": [
+          "NguoiDungTrongNhom"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/NguoiDungTrongNhom/ThenNDvaoNhom": {
+      "post": {
+        "tags": [
+          "NguoiDungTrongNhom"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDungTrongNhomMOD"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDungTrongNhomMOD"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDungTrongNhomMOD"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/NguoiDungTrongNhom/SuaNDtrongNhom": {
+      "put": {
+        "tags": [
+          "NguoiDungTrongNhom"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDungTrongNhomMOD"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDungTrongNhomMOD"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDungTrongNhomMOD"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/NguoiDungTrongNhom/XoaNDTrongNhom": {
+      "delete": {
+        "tags": [
+          "NguoiDungTrongNhom"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDungTrongNhomMOD"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDungTrongNhomMOD"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NguoiDungTrongNhomMOD"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/NND/DanhSachNND": {
+      "get": {
+        "tags": [
+          "NND"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/NND/ThemNND": {
+      "post": {
+        "tags": [
+          "NND"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ThemMoiNND"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ThemMoiNND"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ThemMoiNND"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/NND/SuaNND": {
+      "put": {
+        "tags": [
+          "NND"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "NNDID": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TenNND": {
+                    "type": "string"
+                  },
+                  "GhiChu": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "NNDID": {
+                  "style": "form"
+                },
+                "TenNND": {
+                  "style": "form"
+                },
+                "GhiChu": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/NND/DeleteNND": {
+      "delete": {
+        "tags": [
+          "NND"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TaiKhoan/login": {
+      "post": {
+        "tags": [
+          "TaiKhoan"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaiKhoanMOD"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaiKhoanMOD"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaiKhoanMOD"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TK/Register": {
+      "post": {
+        "tags": [
+          "TK"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUSER"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUSER"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUSER"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ChucNangCuaNNDMOD": {
+        "type": "object",
+        "properties": {
+          "idChucNangCuaNND": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "chucNang": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nndid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "xem": {
+            "type": "boolean"
+          },
+          "them": {
+            "type": "boolean"
+          },
+          "sua": {
+            "type": "boolean"
+          },
+          "xoa": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChucNangMOD": {
+        "type": "object",
+        "properties": {
+          "chucNangid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenChucNang": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NguoiDungTrongNhomMOD": {
+        "type": "object",
+        "properties": {
+          "nndid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idUser": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterUSER": {
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TaiKhoanMOD": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ThemChucNangCuaNNDMOD": {
+        "type": "object",
+        "properties": {
+          "chucNang": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nndid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "xem": {
+            "type": "boolean"
+          },
+          "them": {
+            "type": "boolean"
+          },
+          "sua": {
+            "type": "boolean"
+          },
+          "xoa": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ThemMoiNND": {
+        "type": "object",
+        "properties": {
+          "tenNND": {
+            "type": "string",
+            "nullable": true
+          },
+          "ghiChu": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

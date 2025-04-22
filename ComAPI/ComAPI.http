@@ -1,0 +1,6 @@
+@ComAPI_HostAddress = https://localhost:5123
+
+GET {{ComAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
