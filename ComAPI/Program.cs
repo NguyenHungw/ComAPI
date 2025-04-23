@@ -1,5 +1,7 @@
 ﻿using COM.BUS;
 using COM.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Facebook;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +16,24 @@ builder.Services.AddSwaggerGen();
 var services = builder.Services;
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 builder.Services.AddScoped<AuthService>();
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = FacebookDefaults.AuthenticationScheme;
+})
+.AddCookie()
+.AddFacebook(options =>
+{
+    options.AppId = builder.Configuration["Authentication:Facebook:AppId"];
+    options.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"];
+    options.CallbackPath = "/signin-facebook";
+    options.Scope.Add("public_profile");
+    options.Fields.Add("email");
+    options.Fields.Add("name");
+    options.SaveTokens = true;
+});
+
 
 builder.Services.AddCors(options =>
 {

@@ -3,16 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\ComAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{176577BB-97DC-47E9-811D-C410FB7ED210}|DAL\\COM.DAL.csproj|c:\\users\\admin\\source\\repos\\comapi\\dal\\externallogindal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{176577BB-97DC-47E9-811D-C410FB7ED210}|DAL\\COM.DAL.csproj|solutionrelative:dal\\externallogindal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8678B0C9-2403-4D78-A32F-875237CFBA35}|MOD\\COM.MOD.csproj|c:\\users\\admin\\source\\repos\\comapi\\mod\\baseresultmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8678B0C9-2403-4D78-A32F-875237CFBA35}|MOD\\COM.MOD.csproj|solutionrelative:mod\\baseresultmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2F72BD9-20F4-46DF-9F77-4877428DAF76}|BUS\\COM.BUS.csproj|c:\\users\\admin\\source\\repos\\comapi\\bus\\externalloginbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2F72BD9-20F4-46DF-9F77-4877428DAF76}|BUS\\COM.BUS.csproj|solutionrelative:bus\\externalloginbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\controllers\\tkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\controllers\\tkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8678B0C9-2403-4D78-A32F-875237CFBA35}|MOD\\COM.MOD.csproj|c:\\users\\admin\\source\\repos\\comapi\\mod\\facebookusermod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8678B0C9-2403-4D78-A32F-875237CFBA35}|MOD\\COM.MOD.csproj|solutionrelative:mod\\facebookusermod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2F72BD9-20F4-46DF-9F77-4877428DAF76}|BUS\\COM.BUS.csproj|c:\\users\\admin\\source\\repos\\comapi\\bus\\com.bus.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E2F72BD9-20F4-46DF-9F77-4877428DAF76}|BUS\\COM.BUS.csproj|solutionrelative:bus\\com.bus.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{176577BB-97DC-47E9-811D-C410FB7ED210}|DAL\\COM.DAL.csproj|c:\\users\\admin\\source\\repos\\comapi\\dal\\taikhoandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{176577BB-97DC-47E9-811D-C410FB7ED210}|DAL\\COM.DAL.csproj|solutionrelative:dal\\taikhoandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\controllers\\uacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\controllers\\uacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\controllers\\tkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\controllers\\tkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E2F72BD9-20F4-46DF-9F77-4877428DAF76}|BUS\\COM.BUS.csproj|c:\\users\\admin\\source\\repos\\comapi\\bus\\uauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,22 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8678B0C9-2403-4D78-A32F-875237CFBA35}|MOD\\COM.MOD.csproj|c:\\users\\admin\\source\\repos\\comapi\\mod\\jwt\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8678B0C9-2403-4D78-A32F-875237CFBA35}|MOD\\COM.MOD.csproj|solutionrelative:mod\\jwt\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8678B0C9-2403-4D78-A32F-875237CFBA35}|MOD\\COM.MOD.csproj|c:\\users\\admin\\source\\repos\\comapi\\mod\\baseresultmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8678B0C9-2403-4D78-A32F-875237CFBA35}|MOD\\COM.MOD.csproj|solutionrelative:mod\\baseresultmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\comapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
@@ -65,10 +85,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\controllers\\nguoidungtrongnhomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\controllers\\nguoidungtrongnhomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2F72BD9-20F4-46DF-9F77-4877428DAF76}|BUS\\COM.BUS.csproj|c:\\users\\admin\\source\\repos\\comapi\\bus\\com.bus.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{E2F72BD9-20F4-46DF-9F77-4877428DAF76}|BUS\\COM.BUS.csproj|solutionrelative:bus\\com.bus.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8678B0C9-2403-4D78-A32F-875237CFBA35}|MOD\\COM.MOD.csproj|c:\\users\\admin\\source\\repos\\comapi\\mod\\com.mod.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -178,87 +194,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FacebookUserMOD.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\FacebookUserMOD.cs",
+              "RelativeDocumentMoniker": "MOD\\FacebookUserMOD.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\FacebookUserMOD.cs",
+              "RelativeToolTip": "MOD\\FacebookUserMOD.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T17:30:05.449Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UAController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\UAController.cs",
-              "RelativeDocumentMoniker": "ComAPI\\Controllers\\UAController.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\UAController.cs",
-              "RelativeToolTip": "ComAPI\\Controllers\\UAController.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAWwEAAAAArAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "ComAPI\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "ComAPI\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T13:31:47.581Z"
+              "WhenOpened": "2025-04-23T17:28:19.002Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RefreshTokenRequest.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\JWT\\RefreshTokenRequest.cs",
-              "RelativeDocumentMoniker": "MOD\\JWT\\RefreshTokenRequest.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\JWT\\RefreshTokenRequest.cs",
-              "RelativeToolTip": "MOD\\JWT\\RefreshTokenRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ExternalLoginDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\ExternalLoginDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\ExternalLoginDAL.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\ExternalLoginDAL.cs*",
+              "RelativeToolTip": "DAL\\ExternalLoginDAL.cs*",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAUwCsAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T13:25:50.949Z"
+              "WhenOpened": "2025-04-23T17:26:24.072Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "RefreshToken.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\JWT\\RefreshToken.cs",
-              "RelativeDocumentMoniker": "MOD\\JWT\\RefreshToken.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\JWT\\RefreshToken.cs",
-              "RelativeToolTip": "MOD\\JWT\\RefreshToken.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABbAAAAAAAAAA==",
+              "Title": "ExternalLoginBUS.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\ExternalLoginBUS.cs",
+              "RelativeDocumentMoniker": "BUS\\ExternalLoginBUS.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\ExternalLoginBUS.cs",
+              "RelativeToolTip": "BUS\\ExternalLoginBUS.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAwB4AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T13:25:48.277Z"
+              "WhenOpened": "2025-04-23T17:26:11.638Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UAuthService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\UAuthService.cs",
-              "RelativeDocumentMoniker": "BUS\\UAuthService.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\UAuthService.cs",
-              "RelativeToolTip": "BUS\\UAuthService.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAD4v00AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T14:13:57.519Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ComAPI.http",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\ComAPI.http",
-              "RelativeDocumentMoniker": "ComAPI\\ComAPI.http",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\ComAPI.http",
-              "RelativeToolTip": "ComAPI\\ComAPI.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-03-27T14:41:27.119Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "ComAPI\\Properties\\launchSettings.json",
               "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Properties\\launchSettings.json",
               "RelativeToolTip": "ComAPI\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-27T14:55:21.754Z"
+              "WhenOpened": "2025-03-27T14:55:21.754Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "TKController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\TKController.cs",
               "RelativeDocumentMoniker": "ComAPI\\Controllers\\TKController.cs",
@@ -266,24 +271,51 @@
               "RelativeToolTip": "ComAPI\\Controllers\\TKController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T13:28:09.334Z"
+              "WhenOpened": "2025-04-21T13:28:09.334Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
               "Title": "TaiKhoanDAL.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\TaiKhoanDAL.cs",
               "RelativeDocumentMoniker": "DAL\\TaiKhoanDAL.cs",
               "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\TaiKhoanDAL.cs",
               "RelativeToolTip": "DAL\\TaiKhoanDAL.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAD4v1oAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T13:32:43.992Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Program.cs",
+              "RelativeDocumentMoniker": "ComAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Program.cs",
+              "RelativeToolTip": "ComAPI\\Program.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAACgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T14:47:17.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "ComAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\appsettings.json",
+              "RelativeToolTip": "ComAPI\\appsettings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-21T16:27:01.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "BaseResultMOD.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\BaseResultMOD.cs",
               "RelativeDocumentMoniker": "MOD\\BaseResultMOD.cs",
@@ -291,23 +323,51 @@
               "RelativeToolTip": "MOD\\BaseResultMOD.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T16:25:34.489Z"
+              "WhenOpened": "2025-04-21T16:25:34.489Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "ComAPI\\appsettings.json",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\appsettings.json",
-              "RelativeToolTip": "ComAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-21T16:27:01.505Z"
+              "DocumentIndex": 15,
+              "Title": "ComAPI.http",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\ComAPI.http",
+              "RelativeDocumentMoniker": "ComAPI\\ComAPI.http",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\ComAPI.http",
+              "RelativeToolTip": "ComAPI\\ComAPI.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-03-27T14:41:27.119Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
+              "Title": "UAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\UAuthService.cs",
+              "RelativeDocumentMoniker": "BUS\\UAuthService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\UAuthService.cs",
+              "RelativeToolTip": "BUS\\UAuthService.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAD4v00AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T14:13:57.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RefreshToken.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\JWT\\RefreshToken.cs",
+              "RelativeDocumentMoniker": "MOD\\JWT\\RefreshToken.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\JWT\\RefreshToken.cs",
+              "RelativeToolTip": "MOD\\JWT\\RefreshToken.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T13:25:48.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "JwtConfig.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\JWT\\JwtConfig.cs",
               "RelativeDocumentMoniker": "MOD\\JWT\\JwtConfig.cs",
@@ -315,23 +375,51 @@
               "RelativeToolTip": "MOD\\JWT\\JwtConfig.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T13:25:35.597Z"
+              "WhenOpened": "2025-04-21T13:25:35.597Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Program.cs",
-              "RelativeDocumentMoniker": "ComAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Program.cs",
-              "RelativeToolTip": "ComAPI\\Program.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T14:47:17.402Z"
+              "Title": "COM.BUS.csproj",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\COM.BUS.csproj",
+              "RelativeDocumentMoniker": "BUS\\COM.BUS.csproj",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\COM.BUS.csproj",
+              "RelativeToolTip": "BUS\\COM.BUS.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-09T15:11:33.51Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 13,
+              "Title": "RefreshTokenRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\JWT\\RefreshTokenRequest.cs",
+              "RelativeDocumentMoniker": "MOD\\JWT\\RefreshTokenRequest.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\JWT\\RefreshTokenRequest.cs",
+              "RelativeToolTip": "MOD\\JWT\\RefreshTokenRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T13:25:50.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UAController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\UAController.cs",
+              "RelativeDocumentMoniker": "ComAPI\\Controllers\\UAController.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\UAController.cs",
+              "RelativeToolTip": "ComAPI\\Controllers\\UAController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAWwEAAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T13:31:47.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "NguoiDungTrongNhomController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\NguoiDungTrongNhomController.cs",
               "RelativeDocumentMoniker": "ComAPI\\Controllers\\NguoiDungTrongNhomController.cs",
@@ -339,11 +427,12 @@
               "RelativeToolTip": "ComAPI\\Controllers\\NguoiDungTrongNhomController.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAgwAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T16:13:57.686Z"
+              "WhenOpened": "2025-04-19T16:13:57.686Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "Utils.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ULT\\Utils.cs",
               "RelativeDocumentMoniker": "ULT\\Utils.cs",
@@ -351,23 +440,25 @@
               "RelativeToolTip": "ULT\\Utils.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T15:42:52.452Z"
+              "WhenOpened": "2025-04-15T15:42:52.452Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "UserDAL.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\UserDAL.cs",
               "RelativeDocumentMoniker": "DAL\\UserDAL.cs",
               "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\UserDAL.cs",
               "RelativeToolTip": "DAL\\UserDAL.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAIBJwDIAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAIBZwDIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T15:15:18.319Z"
+              "WhenOpened": "2025-04-09T15:15:18.319Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "TaiKhoanMOD.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\TaiKhoanMOD.cs",
               "RelativeDocumentMoniker": "MOD\\TaiKhoanMOD.cs",
@@ -375,23 +466,12 @@
               "RelativeToolTip": "MOD\\TaiKhoanMOD.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T13:33:08.501Z"
+              "WhenOpened": "2025-04-21T13:33:08.501Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "COM.BUS.csproj",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\COM.BUS.csproj",
-              "RelativeDocumentMoniker": "BUS\\COM.BUS.csproj",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\COM.BUS.csproj",
-              "RelativeToolTip": "BUS\\COM.BUS.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-09T15:11:33.51Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "COM.DAL.csproj",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\COM.DAL.csproj",
               "RelativeDocumentMoniker": "DAL\\COM.DAL.csproj",
@@ -399,11 +479,12 @@
               "RelativeToolTip": "DAL\\COM.DAL.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-20T16:02:04.998Z"
+              "WhenOpened": "2025-04-20T16:02:04.998Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "UserMOD.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\UserMOD.cs",
               "RelativeDocumentMoniker": "MOD\\UserMOD.cs",
@@ -411,11 +492,12 @@
               "RelativeToolTip": "MOD\\UserMOD.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T15:12:43.218Z"
+              "WhenOpened": "2025-04-09T15:12:43.218Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "ChucNangCuaNNDController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\ChucNangCuaNNDController.cs",
               "RelativeDocumentMoniker": "ComAPI\\Controllers\\ChucNangCuaNNDController.cs",
@@ -423,23 +505,25 @@
               "RelativeToolTip": "ComAPI\\Controllers\\ChucNangCuaNNDController.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAQwOwAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T15:44:55.935Z"
+              "WhenOpened": "2025-04-19T15:44:55.935Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "COM.MOD.csproj",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\COM.MOD.csproj",
               "RelativeDocumentMoniker": "MOD\\COM.MOD.csproj",
               "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\COM.MOD.csproj",
               "RelativeToolTip": "MOD\\COM.MOD.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-20T16:25:08.655Z"
+              "WhenOpened": "2025-04-20T16:25:08.655Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "NhomNguoiDungDAL.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\NhomNguoiDungDAL.cs",
               "RelativeDocumentMoniker": "DAL\\NhomNguoiDungDAL.cs",
@@ -447,11 +531,12 @@
               "RelativeToolTip": "DAL\\NhomNguoiDungDAL.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAgwGgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T15:24:45.76Z"
+              "WhenOpened": "2025-04-19T15:24:45.76Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "KeyGenerator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\JWT\\KeyGenerator.cs",
               "RelativeDocumentMoniker": "MOD\\JWT\\KeyGenerator.cs",
@@ -459,11 +544,12 @@
               "RelativeToolTip": "MOD\\JWT\\KeyGenerator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T13:25:45.349Z"
+              "WhenOpened": "2025-04-21T13:25:45.349Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "UserBUS.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\UserBUS.cs",
               "RelativeDocumentMoniker": "BUS\\UserBUS.cs",
@@ -471,11 +557,12 @@
               "RelativeToolTip": "BUS\\UserBUS.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T15:15:54.65Z"
+              "WhenOpened": "2025-04-09T15:15:54.65Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "NguoiDungTrongNhomDAL.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\NguoiDungTrongNhomDAL.cs",
               "RelativeDocumentMoniker": "DAL\\NguoiDungTrongNhomDAL.cs",
@@ -483,11 +570,12 @@
               "RelativeToolTip": "DAL\\NguoiDungTrongNhomDAL.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAgwFUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T16:17:55.262Z"
+              "WhenOpened": "2025-04-19T16:17:55.262Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "ChucNangDAL.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\ChucNangDAL.cs",
               "RelativeDocumentMoniker": "DAL\\ChucNangDAL.cs",
@@ -495,11 +583,12 @@
               "RelativeToolTip": "DAL\\ChucNangDAL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T14:56:00.932Z"
+              "WhenOpened": "2025-04-19T14:56:00.932Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "NguoiDungTrongNhomBUS.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\NguoiDungTrongNhomBUS.cs",
               "RelativeDocumentMoniker": "BUS\\NguoiDungTrongNhomBUS.cs",
@@ -507,11 +596,12 @@
               "RelativeToolTip": "BUS\\NguoiDungTrongNhomBUS.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAQwCMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T16:17:23.285Z"
+              "WhenOpened": "2025-04-19T16:17:23.285Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "SQLHelper.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ULT\\SQLHelper.cs",
               "RelativeDocumentMoniker": "ULT\\SQLHelper.cs",
@@ -519,11 +609,12 @@
               "RelativeToolTip": "ULT\\SQLHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T15:28:49.101Z"
+              "WhenOpened": "2025-04-09T15:28:49.101Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "ChucNangCuaNNDDAL.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\ChucNangCuaNNDDAL.cs",
               "RelativeDocumentMoniker": "DAL\\ChucNangCuaNNDDAL.cs",
@@ -531,11 +622,12 @@
               "RelativeToolTip": "DAL\\ChucNangCuaNNDDAL.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAqwCAAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T15:43:50.252Z"
+              "WhenOpened": "2025-04-19T15:43:50.252Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "NhomNguoiDungBUS.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\NhomNguoiDungBUS.cs",
               "RelativeDocumentMoniker": "BUS\\NhomNguoiDungBUS.cs",
@@ -543,11 +635,12 @@
               "RelativeToolTip": "BUS\\NhomNguoiDungBUS.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T15:24:03.407Z"
+              "WhenOpened": "2025-04-19T15:24:03.407Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "NNDController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\NNDController.cs",
               "RelativeDocumentMoniker": "ComAPI\\Controllers\\NNDController.cs",
@@ -555,11 +648,12 @@
               "RelativeToolTip": "ComAPI\\Controllers\\NNDController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T15:28:00.324Z"
+              "WhenOpened": "2025-04-19T15:28:00.324Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 34,
               "Title": "NguoiDungTrongNhomMOD.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\NguoiDungTrongNhomMOD.cs",
               "RelativeDocumentMoniker": "MOD\\NguoiDungTrongNhomMOD.cs",
@@ -567,11 +661,12 @@
               "RelativeToolTip": "MOD\\NguoiDungTrongNhomMOD.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T16:18:54.333Z"
+              "WhenOpened": "2025-04-19T16:18:54.333Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 37,
               "Title": "ChucNangCuaNNDMOD.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\ChucNangCuaNNDMOD.cs",
               "RelativeDocumentMoniker": "MOD\\ChucNangCuaNNDMOD.cs",
@@ -579,11 +674,12 @@
               "RelativeToolTip": "MOD\\ChucNangCuaNNDMOD.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T15:44:24.377Z"
+              "WhenOpened": "2025-04-19T15:44:24.377Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 35,
               "Title": "ChucNangMOD.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\ChucNangMOD.cs",
               "RelativeDocumentMoniker": "MOD\\ChucNangMOD.cs",
@@ -591,11 +687,12 @@
               "RelativeToolTip": "MOD\\ChucNangMOD.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T14:55:07.909Z"
+              "WhenOpened": "2025-04-19T14:55:07.909Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 38,
               "Title": "ChucNangCuaNNDBUS.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\ChucNangCuaNNDBUS.cs",
               "RelativeDocumentMoniker": "BUS\\ChucNangCuaNNDBUS.cs",
@@ -603,11 +700,12 @@
               "RelativeToolTip": "BUS\\ChucNangCuaNNDBUS.cs",
               "ViewState": "AgIAAG4AAAAAAAAAAAAIwAsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T15:44:33.954Z"
+              "WhenOpened": "2025-04-19T15:44:33.954Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 40,
               "Title": "NhomNguoiDungMOD.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\NhomNguoiDungMOD.cs",
               "RelativeDocumentMoniker": "MOD\\NhomNguoiDungMOD.cs",
@@ -615,11 +713,12 @@
               "RelativeToolTip": "MOD\\NhomNguoiDungMOD.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T15:23:07.905Z"
+              "WhenOpened": "2025-04-19T15:23:07.905Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 39,
               "Title": "ChucNangController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\ChucNangController.cs",
               "RelativeDocumentMoniker": "ComAPI\\Controllers\\ChucNangController.cs",
@@ -627,11 +726,12 @@
               "RelativeToolTip": "ComAPI\\Controllers\\ChucNangController.cs",
               "ViewState": "AgIAAJgAAAAAAAAAAAAIwK0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T15:09:28.669Z"
+              "WhenOpened": "2025-04-19T15:09:28.669Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 41,
               "Title": "ChucNangBUS.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\ChucNangBUS.cs",
               "RelativeDocumentMoniker": "BUS\\ChucNangBUS.cs",
@@ -639,11 +739,12 @@
               "RelativeToolTip": "BUS\\ChucNangBUS.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T14:55:43.581Z"
+              "WhenOpened": "2025-04-19T14:55:43.581Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 42,
               "Title": "Constant.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ULT\\Constant.cs",
               "RelativeDocumentMoniker": "ULT\\Constant.cs",
@@ -651,11 +752,12 @@
               "RelativeToolTip": "ULT\\Constant.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T15:10:35.914Z"
+              "WhenOpened": "2025-04-09T15:10:35.914Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 43,
               "Title": "Enum.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ULT\\Enum.cs",
               "RelativeDocumentMoniker": "ULT\\Enum.cs",
@@ -663,11 +765,12 @@
               "RelativeToolTip": "ULT\\Enum.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T16:50:05.651Z"
+              "WhenOpened": "2025-04-15T16:50:05.651Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 44,
               "Title": "WeatherForecast.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\WeatherForecast.cs",
               "RelativeDocumentMoniker": "ComAPI\\WeatherForecast.cs",
@@ -675,11 +778,12 @@
               "RelativeToolTip": "ComAPI\\WeatherForecast.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T15:53:15.965Z"
+              "WhenOpened": "2025-04-09T15:53:15.965Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 45,
               "Title": "ComAPI.csproj",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\ComAPI.csproj",
               "RelativeDocumentMoniker": "ComAPI\\ComAPI.csproj",
@@ -687,7 +791,12 @@
               "RelativeToolTip": "ComAPI\\ComAPI.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-09T15:39:50.144Z"
+              "WhenOpened": "2025-04-09T15:39:50.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }

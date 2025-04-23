@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_1",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_3",
     "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
@@ -16,6 +16,26 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.AuthController",
+    "Method": "FacebookCallback",
+    "RelativePath": "api/Auth/facebook-callback",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.AuthController",
+    "Method": "LoginFacebook",
+    "RelativePath": "api/Auth/login-facebook",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "COM.Controllers.PhanQuyenVaTaiKhoan.ChucNangController",

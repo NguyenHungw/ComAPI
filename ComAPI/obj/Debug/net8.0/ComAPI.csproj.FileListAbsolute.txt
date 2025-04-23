@@ -161,3 +161,9 @@ C:\Users\Admin\source\repos\ComAPI\ComAPI\obj\Debug\net8.0\refint\ComAPI.dll
 C:\Users\Admin\source\repos\ComAPI\ComAPI\obj\Debug\net8.0\ComAPI.pdb
 C:\Users\Admin\source\repos\ComAPI\ComAPI\obj\Debug\net8.0\ComAPI.genruntimeconfig.cache
 C:\Users\Admin\source\repos\ComAPI\ComAPI\obj\Debug\net8.0\ref\ComAPI.dll
+C:\Users\Admin\source\repos\ComAPI\ComAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Facebook.dll
+C:\Users\Admin\source\repos\ComAPI\ComAPI\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
+C:\Users\Admin\source\repos\ComAPI\ComAPI\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Admin\source\repos\ComAPI\ComAPI\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+C:\Users\Admin\source\repos\ComAPI\ComAPI\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Admin\source\repos\ComAPI\ComAPI\obj\Debug\net8.0\ComAPI.sourcelink.json

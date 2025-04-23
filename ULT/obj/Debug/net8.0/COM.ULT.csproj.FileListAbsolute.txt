@@ -15,3 +15,4 @@ C:\Users\Admin\source\repos\ComAPI\ULT\obj\Debug\net8.0\refint\COM.ULT.dll
 C:\Users\Admin\source\repos\ComAPI\ULT\obj\Debug\net8.0\COM.ULT.pdb
 C:\Users\Admin\source\repos\ComAPI\ULT\obj\Debug\net8.0\COM.ULT.genruntimeconfig.cache
 C:\Users\Admin\source\repos\ComAPI\ULT\obj\Debug\net8.0\ref\COM.ULT.dll
+C:\Users\Admin\source\repos\ComAPI\ULT\obj\Debug\net8.0\COM.ULT.sourcelink.json

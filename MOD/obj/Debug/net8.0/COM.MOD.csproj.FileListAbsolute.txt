@@ -12,3 +12,4 @@ C:\Users\Admin\source\repos\ComAPI\MOD\obj\Debug\net8.0\refint\COM.MOD.dll
 C:\Users\Admin\source\repos\ComAPI\MOD\obj\Debug\net8.0\COM.MOD.pdb
 C:\Users\Admin\source\repos\ComAPI\MOD\obj\Debug\net8.0\COM.MOD.genruntimeconfig.cache
 C:\Users\Admin\source\repos\ComAPI\MOD\obj\Debug\net8.0\ref\COM.MOD.dll
+C:\Users\Admin\source\repos\ComAPI\MOD\obj\Debug\net8.0\COM.MOD.sourcelink.json
