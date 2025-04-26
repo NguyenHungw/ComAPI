@@ -119,6 +119,61 @@ namespace COM.Services
             return (jwtTokenString, refreshToken);
         }
 
+        public (string jwtToken, string refreshToken) GenerateJwtAndRefreshTokenFB(string email, string userRole, List<Claim> claims)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_secretKey);
+            var ThoiGianHetHan = DateTime.Now.AddMinutes(10);
+
+            var additionalClaims = new List<Claim>
+            {
+
+                /*  new Claim("PhoneNumber", item.PhoneNumber),
+                  new Claim("NhomNguoiDung", userRole),
+                  new Claim("ThoiHanDangNhap", ThoiGianHetHan.ToString(), ClaimValueTypes.Integer),*/
+
+            };
+            bool phoneEmailClaimExists = additionalClaims.Any(claim => claim.Type == "Email");
+            bool NhomNguoiDungClaimExists = additionalClaims.Any(claim => claim.Type == "NhomNguoiDung");
+            bool ThoiHanDangNhapClaimExists = additionalClaims.Any(claim => claim.Type == "ThoiHanDangNhap");
+            if (!phoneEmailClaimExists)
+            {
+                // Nếu claim "PhoneNumber" chưa tồn tại, thêm nó vào danh sách
+                additionalClaims.Add(new Claim("Email", email));
+            }
+            if (!NhomNguoiDungClaimExists)
+            {
+                additionalClaims.Add(new Claim("NhomNguoiDung", userRole));
+            }
+            if (!NhomNguoiDungClaimExists)
+            {
+                additionalClaims.Add(new Claim("ThoiHanDangNhap", ThoiGianHetHan.ToString(), ClaimValueTypes.Integer));
+            }
+
+            var refreshToken = Guid.NewGuid().ToString();
+            additionalClaims.Add(new Claim("RefreshToken", refreshToken));
+            // Chèn claim vào phía trước danh sách claim hiện tại
+            claims.InsertRange(0, additionalClaims);
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = ThoiGianHetHan,
+                SigningCredentials = new SigningCredentials(
+                    new SymmetricSecurityKey(key),
+                    SecurityAlgorithms.HmacSha256Signature
+                ),
+                Issuer = _issuer,
+                Audience = _audience
+            };
+
+            // Tạo JWT Token
+            var jwtToken = tokenHandler.CreateToken(tokenDescriptor);
+            var jwtTokenString = tokenHandler.WriteToken(jwtToken);
+
+            return (jwtTokenString, refreshToken);
+        }
+
         public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
         {
             var tokenValidationParameters = new TokenValidationParameters

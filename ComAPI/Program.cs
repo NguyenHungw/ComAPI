@@ -25,13 +25,30 @@ builder.Services.AddAuthentication(options =>
 .AddCookie()
 .AddFacebook(options =>
 {
+    // Gán AppId của ứng dụng Facebook (lấy từ file cấu hình appsettings.json)
     options.AppId = builder.Configuration["Authentication:Facebook:AppId"];
+
+    // Gán AppSecret (khóa bí mật) của ứng dụng Facebook từ file cấu hình
     options.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"];
+
+    // Đường dẫn nội bộ trong backend để Facebook redirect user về sau khi xác thực
     options.CallbackPath = "/signin-facebook";
-    options.Scope.Add("public_profile");
+
+    // Thêm quyền (scope) yêu cầu người dùng đồng ý khi login
+    // "public_profile" cho phép lấy thông tin cơ bản của người dùng (name, avatar, id, ...)
+
+    options.Scope.Add("public_profile"); //Scope là những gì xin phép lấy từ user khi dăng nhập Facebook
+
+    // Đăng ký yêu cầu lấy trường "email" từ Facebook user
     options.Fields.Add("email");
+
+    // Đăng ký yêu cầu lấy trường "name" từ Facebook user
     options.Fields.Add("name");
+
+    // Sau khi đăng nhập thành công, lưu lại access_token vào cookie/session
+    // Giúp lần sau gọi API Facebook không cần đăng nhập lại
     options.SaveTokens = true;
+
 });
 
 
@@ -65,7 +82,7 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseHttpsRedirection();
-app.UseCors(MyAllowSpecificOrigins); // Đừng quên gọi Cors Middleware!
+app.UseCors(MyAllowSpecificOrigins); // Đừng gọi Cors Middleware!
 app.UseAuthorization();
 
 app.MapControllers();

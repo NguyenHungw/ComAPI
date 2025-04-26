@@ -37,12 +37,16 @@ namespace COM.DAL
             using SqlConnection conn = new SqlConnection(_connectionString);
             conn.Open();
             using var trans = conn.BeginTransaction();
-
+            var vietnamTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");
+            DateTime vietnamTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, vietnamTimeZone);
             // 1. Thêm user
-            string sqlUser = "INSERT INTO Users (Email) OUTPUT INSERTED.UserID VALUES (@Email)";
+            // output là sau khi chèn thành công thì trả ngược lại giá trị vừa được tạo ở userid
+            string sqlUser = "INSERT INTO Users (Email,CreateAt,isActive) OUTPUT INSERTED.UserID VALUES (@Email,@CreateAt,@isActive)";
             using SqlCommand cmdUser = new SqlCommand(sqlUser, conn, trans);
             //cmdUser.Parameters.AddWithValue("@Name", user.Name);
             cmdUser.Parameters.AddWithValue("@Email", user.Email ?? (object)DBNull.Value);
+            cmdUser.Parameters.AddWithValue("@CreateAt", vietnamTime );
+            cmdUser.Parameters.AddWithValue("@isActive", 1 );
 
             int userId = (int)cmdUser.ExecuteScalar();
 

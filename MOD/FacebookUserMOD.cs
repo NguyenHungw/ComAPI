@@ -12,9 +12,12 @@ namespace COM.MOD
         // Thông tin User
         public string Name { get; set; }
         public string Email { get; set; }
+       
 
         // Thông tin External Login
         public string Provider { get; set; } = "Facebook";
         public string ProviderKey { get; set; }
+        public string CreateAt { get; set; }
+        public int isActive { get; set; }
     }
 }
