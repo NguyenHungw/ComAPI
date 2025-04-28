@@ -1,10 +1,17 @@
 ﻿using COM.BUS;
+using COM.DAL;
 using COM.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Facebook;
+using Microsoft.AspNetCore.Authentication.Google;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
+//cấu hình sercet trong db
+var secretDal = new ProviderSettingDAL(builder.Configuration.GetConnectionString("DefaultConnection"));
+var facebookSecret = secretDal.GetByProvider("Facebook");
+var googleSecret = secretDal.GetByProvider("Google");
 
 // Set appConnectionStrings before building the app
 COM.ULT.SQLHelper.appConnectionStrings = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -17,20 +24,27 @@ var services = builder.Services;
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 builder.Services.AddScoped<AuthService>();
 
+
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = FacebookDefaults.AuthenticationScheme;
+    //options.DefaultChallengeScheme = FacebookDefaults.AuthenticationScheme;
+    //options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+
 })
 .AddCookie()
 .AddFacebook(options =>
 {
     // Gán AppId của ứng dụng Facebook (lấy từ file cấu hình appsettings.json)
-    options.AppId = builder.Configuration["Authentication:Facebook:AppId"];
+    //options.AppId = builder.Configuration["Authentication:Facebook:AppId"];
+    options.AppId = facebookSecret.ClientId;
+
 
     // Gán AppSecret (khóa bí mật) của ứng dụng Facebook từ file cấu hình
-    options.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"];
+    //options.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"];
 
+    options.AppSecret = facebookSecret.ClientSecret;
     // Đường dẫn nội bộ trong backend để Facebook redirect user về sau khi xác thực
     options.CallbackPath = "/signin-facebook";
 
@@ -49,8 +63,18 @@ builder.Services.AddAuthentication(options =>
     // Giúp lần sau gọi API Facebook không cần đăng nhập lại
     options.SaveTokens = true;
 
-});
-
+})
+.AddGoogle(options =>
+ {
+     //options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+     //options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+     options.ClientId = googleSecret.ClientId;
+     options.ClientSecret = googleSecret.ClientSecret;
+     options.CallbackPath = "/signin-google"; // Đúng với Redirect URI
+     options.SaveTokens = true; // Lưu token sau login
+     options.Scope.Add("profile");
+     options.Scope.Add("email");
+ });
 
 builder.Services.AddCors(options =>
 {

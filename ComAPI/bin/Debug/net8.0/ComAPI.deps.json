@@ -12,6 +12,7 @@
           "COM.MOD": "1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "2.3.0",
           "Microsoft.AspNetCore.Authentication.Facebook": "8.0.10",
+          "Microsoft.AspNetCore.Authentication.Google": "8.0.15",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.4",
           "Microsoft.IdentityModel.Tokens": "8.8.0",
@@ -74,6 +75,14 @@
           "lib/net8.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {
             "assemblyVersion": "8.0.10.0",
             "fileVersion": "8.0.1024.46804"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/8.0.15": {
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "8.0.15.0",
+            "fileVersion": "8.0.1525.16505"
           }
         }
       },
@@ -1119,6 +1128,7 @@
           "COM.MOD": "1.0.0",
           "COM.ULT": "1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "2.3.0",
+          "Microsoft.AspNetCore.Authentication.Google": "8.0.15",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.IdentityModel.Tokens": "8.8.0",
           "System.Data.SqlClient": "4.9.0",
@@ -1148,6 +1158,7 @@
         "dependencies": {
           "COM.MOD": "1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "2.3.0",
+          "Microsoft.AspNetCore.Authentication.Google": "8.0.15",
           "Microsoft.AspNetCore.Http.Abstractions": "2.3.0",
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.3.0",
           "Microsoft.AspNetCore.Mvc.Formatters.Json": "2.3.0",
@@ -1218,6 +1229,13 @@
       "sha512": "sha512-5DfD0jmqYUEFSmIuZOLFm1QG5Oy55tp3vPaVOKaBs9aX270BONJjO6rXxNjZkDaHJ1GiGQMhCGoF2tK4zJedtA==",
       "path": "microsoft.aspnetcore.authentication.facebook/8.0.10",
       "hashPath": "microsoft.aspnetcore.authentication.facebook.8.0.10.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Google/8.0.15": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AjlL4AAfH7UZ1L4wYxUABd50aD2E1svyqa02fpsjMcjX3utqvHXwBceIyrI4X9ulfzRytE/BcbV2QTzn73/93w==",
+      "path": "microsoft.aspnetcore.authentication.google/8.0.15",
+      "hashPath": "microsoft.aspnetcore.authentication.google.8.0.15.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/2.3.0": {
       "type": "package",

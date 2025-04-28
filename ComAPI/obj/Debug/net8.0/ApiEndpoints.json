@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_3",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_4",
     "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
@@ -198,6 +198,26 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ComAPI.Controllers.GoogleController",
+    "Method": "GoogleCallback",
+    "RelativePath": "api/Google/google-callback",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.GoogleController",
+    "Method": "LoginGoogle",
+    "RelativePath": "api/Google/login-google",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CT.Controllers.PhanQuyenVaTaiKhoan.NguoiDungTrongNhomController",
     "Method": "DanhSachNDTN",
     "RelativePath": "api/NguoiDungTrongNhom/DanhSachNND",
@@ -330,6 +350,70 @@
       {
         "Name": "item",
         "Type": "COM.MOD.ThemMoiNND",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.ProviderSettingController",
+    "Method": "AddSecret",
+    "RelativePath": "api/ProviderSetting/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "item",
+        "Type": "COM.MOD.ProviderSettingMOD",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.ProviderSettingController",
+    "Method": "DeleteSecret",
+    "RelativePath": "api/ProviderSetting/delete/{provider}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "provider",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.ProviderSettingController",
+    "Method": "GetAll",
+    "RelativePath": "api/ProviderSetting/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.ProviderSettingController",
+    "Method": "UpdateSecret",
+    "RelativePath": "api/ProviderSetting/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "item",
+        "Type": "COM.MOD.ProviderSettingMOD",
         "IsRequired": true
       }
     ],

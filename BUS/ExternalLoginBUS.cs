@@ -30,5 +30,17 @@ namespace COM.BUS
 
             return _dal.CreateUserAndExternalLogin(user, provider, providerKey);
         }
+        public int HandleGoogleLogin(GoogleUserMOD user, string providerKey)
+        {
+            string provider = "Google";
+
+            var existingUserId = _dal.GetUserIdByExternalLogin(provider, providerKey);
+            if (existingUserId.HasValue)
+            {
+                return existingUserId.Value;
+            }
+
+            return _dal.CreateUserAndExternalLoginGoogle(user, provider, providerKey);
+        }
     }
 }
