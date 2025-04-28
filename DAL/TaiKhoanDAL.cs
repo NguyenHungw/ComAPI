@@ -88,10 +88,10 @@ public class TaiKhoanDAL
             string sqlQuery = @"SELECT u.UserID, u.Email, u.PasswordHash,u.isActive, 
                                        NND.TenNND, CN.TenChucNang, CNCNND.Xem, CNCNND.Them, CNCNND.Sua, CNCNND.Xoa
                                 FROM [Users] u
-                                INNER JOIN NguoiDungTrongNhom NDTN ON u.UserID = NDTN.UserID
-                                INNER JOIN NhomNguoiDung NND ON NDTN.NNDID = NND.NNDID
-                                INNER JOIN ChucNangCuaNhomND CNCNND ON NND.NNDID = CNCNND.NNDID
-                                INNER JOIN ChucNang CN ON CNCNND.ChucNangid = CN.ChucNangid
+                                LEFT JOIN NguoiDungTrongNhom NDTN ON u.UserID = NDTN.UserID
+                                LEFT JOIN NhomNguoiDung NND ON NDTN.NNDID = NND.NNDID
+                                LEFT JOIN ChucNangCuaNhomND CNCNND ON NND.NNDID = CNCNND.NNDID
+                                LEFT JOIN ChucNang CN ON CNCNND.ChucNangid = CN.ChucNangid
                                 WHERE u.Email = @Email";
 
             using (SqlCommand cmd = new SqlCommand(sqlQuery, SQLCon))
@@ -116,13 +116,24 @@ public class TaiKhoanDAL
                             if (isActive == 1)
                             {
                                 isAuthenticated = true;
-                                role = reader.GetString(reader.GetOrdinal("TenNND"));
+                                int ordinalTenNND = reader.GetOrdinal("TenNND");
+                                role = reader.IsDBNull(ordinalTenNND) ? "" : reader.GetString(ordinalTenNND);
+                                //role = reader.GetString(reader.GetOrdinal("TenNND"));
                                 string quyen = "";
 
-                                if (reader.GetBoolean(reader.GetOrdinal("Xem"))) quyen += "Xem,";
-                                if (reader.GetBoolean(reader.GetOrdinal("Them"))) quyen += "Them,";
-                                if (reader.GetBoolean(reader.GetOrdinal("Sua"))) quyen += "Sua,";
-                                if (reader.GetBoolean(reader.GetOrdinal("Xoa"))) quyen += "Xoa,";
+                                //if (reader.GetBoolean(reader.GetOrdinal("Xem"))) quyen += "Xem,";
+                                //if (reader.GetBoolean(reader.GetOrdinal("Them"))) quyen += "Them,";
+                                //if (reader.GetBoolean(reader.GetOrdinal("Sua"))) quyen += "Sua,";
+                                //if (reader.GetBoolean(reader.GetOrdinal("Xoa"))) quyen += "Xoa,";
+                                int xemOrdinal = reader.GetOrdinal("Xem");
+                                int themOrdinal = reader.GetOrdinal("Them");
+                                int suaOrdinal = reader.GetOrdinal("Sua");
+                                int xoaOrdinal = reader.GetOrdinal("Xoa");
+
+                                if (!reader.IsDBNull(xemOrdinal) && reader.GetBoolean(xemOrdinal)) quyen += "Xem,";
+                                if (!reader.IsDBNull(themOrdinal) && reader.GetBoolean(themOrdinal)) quyen += "Them,";
+                                if (!reader.IsDBNull(suaOrdinal) && reader.GetBoolean(suaOrdinal)) quyen += "Sua,";
+                                if (!reader.IsDBNull(xoaOrdinal) && reader.GetBoolean(xoaOrdinal)) quyen += "Xoa,";
 
                                 quyen = quyen.TrimEnd(',');
                                 if (!string.IsNullOrEmpty(tenChucNang))
