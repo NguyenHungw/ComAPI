@@ -1324,6 +1324,7 @@ namespace COM.ULT
 
         public static class Utilities
         {
+            //random
             public static string GenerateRandomCode(int length)
             {
                 const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -1331,7 +1332,27 @@ namespace COM.ULT
                 return new string(Enumerable.Repeat(chars, length)
                   .Select(s => s[random.Next(s.Length)]).ToArray());
             }
+            // convert vietnamese to normal
+
+            public static string RemoveDiacritics(string text)
+            {
+                var normalized = text.Normalize(NormalizationForm.FormD);
+                var sb = new StringBuilder();
+
+                foreach (var c in normalized)
+                {
+                    var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+                    if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+                    {
+                        sb.Append(c);
+                    }
+                }
+
+                return sb.ToString().Normalize(NormalizationForm.FormC).ToUpper();
+
+            }
         }
+
 
         #region DataTable
         public static List<T> ConvertDataTable<T>(DataTable dt)

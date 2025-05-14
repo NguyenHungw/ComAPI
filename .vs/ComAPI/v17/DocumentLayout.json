@@ -3,36 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\ComAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\controllers\\googlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\controllers\\googlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{176577BB-97DC-47E9-811D-C410FB7ED210}|DAL\\COM.DAL.csproj|c:\\users\\admin\\source\\repos\\comapi\\dal\\sanphamdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{176577BB-97DC-47E9-811D-C410FB7ED210}|DAL\\COM.DAL.csproj|solutionrelative:dal\\sanphamdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{176577BB-97DC-47E9-811D-C410FB7ED210}|DAL\\COM.DAL.csproj|c:\\users\\admin\\source\\repos\\comapi\\dal\\taikhoandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{176577BB-97DC-47E9-811D-C410FB7ED210}|DAL\\COM.DAL.csproj|solutionrelative:dal\\taikhoandal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\controllers\\chucnangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\controllers\\chucnangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E2F72BD9-20F4-46DF-9F77-4877428DAF76}|BUS\\COM.BUS.csproj|c:\\users\\admin\\source\\repos\\comapi\\bus\\sanphambus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2F72BD9-20F4-46DF-9F77-4877428DAF76}|BUS\\COM.BUS.csproj|solutionrelative:bus\\sanphambus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{176577BB-97DC-47E9-811D-C410FB7ED210}|DAL\\COM.DAL.csproj|c:\\users\\admin\\source\\repos\\comapi\\dal\\loaisanphamdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{176577BB-97DC-47E9-811D-C410FB7ED210}|DAL\\COM.DAL.csproj|solutionrelative:dal\\loaisanphamdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{176577BB-97DC-47E9-811D-C410FB7ED210}|DAL\\COM.DAL.csproj|c:\\users\\admin\\source\\repos\\comapi\\dal\\chucnangdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{176577BB-97DC-47E9-811D-C410FB7ED210}|DAL\\COM.DAL.csproj|solutionrelative:dal\\chucnangdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{176577BB-97DC-47E9-811D-C410FB7ED210}|DAL\\COM.DAL.csproj|c:\\users\\admin\\source\\repos\\comapi\\dal\\donvidal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{176577BB-97DC-47E9-811D-C410FB7ED210}|DAL\\COM.DAL.csproj|solutionrelative:dal\\donvidal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|c:\\users\\admin\\source\\repos\\comapi\\comapi\\comapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{86397B22-A013-4B83-A63C-BFD1B5B4171D}|ComAPI\\ComAPI.csproj|solutionrelative:comapi\\comapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+      "AbsoluteMoniker": "D:0:0:{E2F72BD9-20F4-46DF-9F77-4877428DAF76}|BUS\\COM.BUS.csproj|c:\\users\\admin\\source\\repos\\comapi\\bus\\chucnangbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2F72BD9-20F4-46DF-9F77-4877428DAF76}|BUS\\COM.BUS.csproj|solutionrelative:bus\\chucnangbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{176577BB-97DC-47E9-811D-C410FB7ED210}|DAL\\COM.DAL.csproj|c:\\users\\admin\\source\\repos\\comapi\\dal\\providersettingdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{176577BB-97DC-47E9-811D-C410FB7ED210}|DAL\\COM.DAL.csproj|solutionrelative:dal\\providersettingdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{212EFFC1-F45C-43A1-ABBD-FB48A20A57E2}|ULT\\COM.ULT.csproj|c:\\users\\admin\\source\\repos\\comapi\\ult\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{212EFFC1-F45C-43A1-ABBD-FB48A20A57E2}|ULT\\COM.ULT.csproj|solutionrelative:ult\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8678B0C9-2403-4D78-A32F-875237CFBA35}|MOD\\COM.MOD.csproj|c:\\users\\admin\\source\\repos\\comapi\\mod\\sanphammod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8678B0C9-2403-4D78-A32F-875237CFBA35}|MOD\\COM.MOD.csproj|solutionrelative:mod\\sanphammod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2F72BD9-20F4-46DF-9F77-4877428DAF76}|BUS\\COM.BUS.csproj|c:\\users\\admin\\source\\repos\\comapi\\bus\\nhomnguoidungbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2F72BD9-20F4-46DF-9F77-4877428DAF76}|BUS\\COM.BUS.csproj|solutionrelative:bus\\nhomnguoidungbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,109 +50,137 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TaiKhoanDAL.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\TaiKhoanDAL.cs",
-              "RelativeDocumentMoniker": "DAL\\TaiKhoanDAL.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\TaiKhoanDAL.cs",
-              "RelativeToolTip": "DAL\\TaiKhoanDAL.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAADwv5YAAAAWAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "LoaiSanPhamDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\LoaiSanPhamDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\LoaiSanPhamDAL.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\LoaiSanPhamDAL.cs",
+              "RelativeToolTip": "DAL\\LoaiSanPhamDAL.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAA9wHsAAACIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T23:34:53.098Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ChucNangController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\ChucNangController.cs",
-              "RelativeDocumentMoniker": "ComAPI\\Controllers\\ChucNangController.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\ChucNangController.cs",
-              "RelativeToolTip": "ComAPI\\Controllers\\ChucNangController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T23:27:26.1Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GoogleController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\GoogleController.cs",
-              "RelativeDocumentMoniker": "ComAPI\\Controllers\\GoogleController.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\GoogleController.cs",
-              "RelativeToolTip": "ComAPI\\Controllers\\GoogleController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAswC0AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T23:26:45.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ComAPI.http",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\ComAPI.http",
-              "RelativeDocumentMoniker": "ComAPI\\ComAPI.http",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\ComAPI.http",
-              "RelativeToolTip": "ComAPI\\ComAPI.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-04-28T16:42:28.031Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "ComAPI\\appsettings.json",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\appsettings.json",
-              "RelativeToolTip": "ComAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-28T16:22:14.11Z",
+              "WhenOpened": "2025-05-14T15:52:54.124Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Program.cs",
-              "RelativeDocumentMoniker": "ComAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Program.cs",
-              "RelativeToolTip": "ComAPI\\Program.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "Title": "ChucNangDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\ChucNangDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\ChucNangDAL.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\ChucNangDAL.cs",
+              "RelativeToolTip": "DAL\\ChucNangDAL.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T16:08:09.495Z",
+              "WhenOpened": "2025-05-14T15:52:37.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DonViDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\DonViDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\DonViDAL.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\DonViDAL.cs",
+              "RelativeToolTip": "DAL\\DonViDAL.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T15:52:25.464Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "ProviderSettingDAL.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\ProviderSettingDAL.cs",
-              "RelativeDocumentMoniker": "DAL\\ProviderSettingDAL.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\ProviderSettingDAL.cs",
-              "RelativeToolTip": "DAL\\ProviderSettingDAL.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAMwAUAAAAdAAAAAAAAAA==",
+              "Title": "Utils.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ULT\\Utils.cs",
+              "RelativeDocumentMoniker": "ULT\\Utils.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ULT\\Utils.cs",
+              "RelativeToolTip": "ULT\\Utils.cs",
+              "ViewState": "AgIAAA4FAAAAAAAAAAAnwBoFAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T16:07:45.175Z"
+              "WhenOpened": "2025-05-12T11:02:09.418Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "ComAPI\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "ComAPI\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "ChucNangBUS.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\ChucNangBUS.cs",
+              "RelativeDocumentMoniker": "BUS\\ChucNangBUS.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\ChucNangBUS.cs",
+              "RelativeToolTip": "BUS\\ChucNangBUS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T16:07:34.976Z",
+              "WhenOpened": "2025-05-12T10:41:57.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SanPhamController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\SanPhamController.cs",
+              "RelativeDocumentMoniker": "ComAPI\\Controllers\\SanPhamController.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\Controllers\\SanPhamController.cs",
+              "RelativeToolTip": "ComAPI\\Controllers\\SanPhamController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACUAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T10:41:20.383Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SanPhamDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\SanPhamDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\SanPhamDAL.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\DAL\\SanPhamDAL.cs",
+              "RelativeToolTip": "DAL\\SanPhamDAL.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAowIYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T16:03:24.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NhomNguoiDungBUS.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\NhomNguoiDungBUS.cs",
+              "RelativeDocumentMoniker": "BUS\\NhomNguoiDungBUS.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\NhomNguoiDungBUS.cs",
+              "RelativeToolTip": "BUS\\NhomNguoiDungBUS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T16:03:01.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SanPhamBUS.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\SanPhamBUS.cs",
+              "RelativeDocumentMoniker": "BUS\\SanPhamBUS.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\BUS\\SanPhamBUS.cs",
+              "RelativeToolTip": "BUS\\SanPhamBUS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBEAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T16:02:25.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SanPhamMOD.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\SanPhamMOD.cs",
+              "RelativeDocumentMoniker": "MOD\\SanPhamMOD.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ComAPI\\MOD\\SanPhamMOD.cs",
+              "RelativeToolTip": "MOD\\SanPhamMOD.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T15:58:57.595Z"
             }
           ]
         }

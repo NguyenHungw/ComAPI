@@ -75,6 +75,10 @@
               "target": "Package",
               "version": "[8.8.0, )"
             },
+            "Opus": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.9.0, )"
@@ -183,6 +187,10 @@
               "target": "Package",
               "version": "[8.8.0, )"
             },
+            "Opus": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.9.0, )"
@@ -271,6 +279,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "Opus": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",
@@ -376,6 +388,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "Opus": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",

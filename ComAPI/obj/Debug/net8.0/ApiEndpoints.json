@@ -198,6 +198,70 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ComAPI.Controllers.DonViController",
+    "Method": "dsDonVi",
+    "RelativePath": "api/DonVi/DSDonVi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.DonViController",
+    "Method": "SuaDV",
+    "RelativePath": "api/DonVi/SuaDonVi",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "item",
+        "Type": "COM.MOD.DonViMOD",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.DonViController",
+    "Method": "ThemCN",
+    "RelativePath": "api/DonVi/ThemDonVi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "item",
+        "Type": "COM.MOD.DonViMOD",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.DonViController",
+    "Method": "XoaCN",
+    "RelativePath": "api/DonVi/XoaDonVi",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ComAPI.Controllers.GoogleController",
     "Method": "GoogleCallback",
     "RelativePath": "api/Google/google-callback",
@@ -215,6 +279,70 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.LoaiSanPhamiController",
+    "Method": "dsLSP",
+    "RelativePath": "api/LoaiSanPhami/DSLoaiSP",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.LoaiSanPhamiController",
+    "Method": "SuaDV",
+    "RelativePath": "api/LoaiSanPhami/SuaLSP",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "item",
+        "Type": "COM.MOD.LoaiSanPhamMOD",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.LoaiSanPhamiController",
+    "Method": "ThemLSP",
+    "RelativePath": "api/LoaiSanPhami/ThemLSP",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "item",
+        "Type": "COM.MOD.LoaiSanPhamMOD",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.LoaiSanPhamiController",
+    "Method": "XoaCN",
+    "RelativePath": "api/LoaiSanPhami/XoaLSP",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -415,6 +543,70 @@
         "Name": "item",
         "Type": "COM.MOD.ProviderSettingMOD",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "COM.Controllers.PhanQuyenVaTaiKhoan.SanPhamController",
+    "Method": "dsSanPham",
+    "RelativePath": "api/SanPham/DSSanPham",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "COM.Controllers.PhanQuyenVaTaiKhoan.SanPhamController",
+    "Method": "SuaCN",
+    "RelativePath": "api/SanPham/SuaSanPham",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "item",
+        "Type": "COM.MOD.SanPhamMOD",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "COM.Controllers.PhanQuyenVaTaiKhoan.SanPhamController",
+    "Method": "ThemCN",
+    "RelativePath": "api/SanPham/ThemSanPham",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "item",
+        "Type": "COM.MOD.SanPhamMOD",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "COM.Controllers.PhanQuyenVaTaiKhoan.SanPhamController",
+    "Method": "XoaCN",
+    "RelativePath": "api/SanPham/XoaSanPham",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

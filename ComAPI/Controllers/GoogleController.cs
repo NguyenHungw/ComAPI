@@ -107,13 +107,7 @@ namespace ComAPI.Controllers
                 RedirectUri = "/api/Google/google-callback" // Khi login thành công sẽ về đây
             };
             return Challenge(props, GoogleDefaults.AuthenticationScheme);
-        }
-
-
-
-
-
-       
+        }  
     }
 
 }

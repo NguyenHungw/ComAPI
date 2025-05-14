@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("COM.MOD")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9b6481952bab65bff2c134ec3d3403c7779a0bd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2aaac1477a8cc74b07973beccef56710690befe3")]
 [assembly: System.Reflection.AssemblyProductAttribute("COM.MOD")]
 [assembly: System.Reflection.AssemblyTitleAttribute("COM.MOD")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

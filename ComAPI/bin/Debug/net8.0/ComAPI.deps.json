@@ -16,6 +16,7 @@
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.4",
           "Microsoft.IdentityModel.Tokens": "8.8.0",
+          "Opus": "1.0.0",
           "Swashbuckle.AspNetCore": "6.6.2",
           "System.Data.SqlClient": "4.9.0",
           "System.IdentityModel.Tokens.Jwt": "8.8.0"
@@ -840,6 +841,16 @@
           }
         }
       },
+      "Opus/1.0.0": {
+        "runtime": {
+          "lib/netcoreapp3.1/libsodium.dll": {
+            "fileVersion": "1.0.18.0"
+          },
+          "lib/netcoreapp3.1/opus.dll": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "runtime.native.System.Data.SqlClient.sni/4.4.0": {
         "dependencies": {
           "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni": "4.4.0",
@@ -1112,6 +1123,7 @@
           "Microsoft.AspNetCore.Authentication.Cookies": "2.3.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.IdentityModel.Tokens": "8.8.0",
+          "Opus": "1.0.0",
           "System.Data.SqlClient": "4.9.0",
           "System.IdentityModel.Tokens.Jwt": "8.8.0"
         },
@@ -1131,6 +1143,7 @@
           "Microsoft.AspNetCore.Authentication.Google": "8.0.15",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.IdentityModel.Tokens": "8.8.0",
+          "Opus": "1.0.0",
           "System.Data.SqlClient": "4.9.0",
           "System.IdentityModel.Tokens.Jwt": "8.8.0"
         },
@@ -1145,6 +1158,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Cookies": "2.3.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
+          "Opus": "1.0.0",
           "System.Data.SqlClient": "4.9.0"
         },
         "runtime": {
@@ -1163,6 +1177,7 @@
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.3.0",
           "Microsoft.AspNetCore.Mvc.Formatters.Json": "2.3.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
+          "Opus": "1.0.0",
           "System.Data.SqlClient": "4.9.0",
           "System.IdentityModel.Tokens.Jwt": "8.8.0"
         },
@@ -1670,6 +1685,13 @@
       "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
       "path": "newtonsoft.json/11.0.2",
       "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
+    },
+    "Opus/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0VBlW7vOk+0r1w+iZcgEaLEkL9dCIxkbSdgfPFLmNZtlEUNIZ+YrytEUN6FkgRQwivCEi1vlwTUyTVB45d5HfA==",
+      "path": "opus/1.0.0",
+      "hashPath": "opus.1.0.0.nupkg.sha512"
     },
     "runtime.native.System.Data.SqlClient.sni/4.4.0": {
       "type": "package",

@@ -1351,6 +1351,17 @@
           }
         }
       },
+      "Opus/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/libsodium.dll": {},
+          "lib/netcoreapp3.1/opus.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/libsodium.dll": {},
+          "lib/netcoreapp3.1/opus.dll": {}
+        }
+      },
       "runtime.native.System.Data.SqlClient.sni/4.4.0": {
         "type": "package",
         "dependencies": {
@@ -1813,6 +1824,7 @@
           "Microsoft.AspNetCore.Authentication.Google": "8.0.15",
           "Microsoft.EntityFrameworkCore": "9.0.4",
           "Microsoft.IdentityModel.Tokens": "8.8.0",
+          "Opus": "1.0.0",
           "System.Data.SqlClient": "4.9.0",
           "System.IdentityModel.Tokens.Jwt": "8.8.0"
         },
@@ -1829,6 +1841,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Cookies": "2.3.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
+          "Opus": "1.0.0",
           "System.Data.SqlClient": "4.9.0"
         },
         "compile": {
@@ -1849,6 +1862,7 @@
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.3.0",
           "Microsoft.AspNetCore.Mvc.Formatters.Json": "2.3.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
+          "Opus": "1.0.0",
           "System.Data.SqlClient": "4.9.0",
           "System.IdentityModel.Tokens.Jwt": "8.8.0"
         },
@@ -4092,6 +4106,19 @@
         "newtonsoft.json.nuspec"
       ]
     },
+    "Opus/1.0.0": {
+      "sha512": "0VBlW7vOk+0r1w+iZcgEaLEkL9dCIxkbSdgfPFLmNZtlEUNIZ+YrytEUN6FkgRQwivCEi1vlwTUyTVB45d5HfA==",
+      "type": "package",
+      "path": "opus/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/libsodium.dll",
+        "lib/netcoreapp3.1/opus.dll",
+        "opus.1.0.0.nupkg.sha512",
+        "opus.nuspec"
+      ]
+    },
     "runtime.native.System.Data.SqlClient.sni/4.4.0": {
       "sha512": "A8v6PGmk+UGbfWo5Ixup0lPM4swuSwOiayJExZwKIOjTlFFQIsu3QnDXECosBEyrWSPryxBVrdqtJyhK3BaupQ==",
       "type": "package",
@@ -4887,6 +4914,7 @@
       "Microsoft.EntityFrameworkCore >= 9.0.4",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.4",
       "Microsoft.IdentityModel.Tokens >= 8.8.0",
+      "Opus >= 1.0.0",
       "System.Data.SqlClient >= 4.9.0",
       "System.IdentityModel.Tokens.Jwt >= 8.8.0"
     ]
@@ -4965,6 +4993,10 @@
           "Microsoft.IdentityModel.Tokens": {
             "target": "Package",
             "version": "[8.8.0, )"
+          },
+          "Opus": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           },
           "System.Data.SqlClient": {
             "target": "Package",

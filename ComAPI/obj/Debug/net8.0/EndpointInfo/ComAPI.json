@@ -294,6 +294,112 @@
         }
       }
     },
+    "/api/DonVi/DSDonVi": {
+      "get": {
+        "tags": [
+          "DonVi"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/DonVi/ThemDonVi": {
+      "post": {
+        "tags": [
+          "DonVi"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DonViMOD"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DonViMOD"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DonViMOD"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/DonVi/SuaDonVi": {
+      "put": {
+        "tags": [
+          "DonVi"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DonViMOD"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DonViMOD"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DonViMOD"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/DonVi/XoaDonVi": {
+      "delete": {
+        "tags": [
+          "DonVi"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Google/google-callback": {
       "get": {
         "tags": [
@@ -310,6 +416,112 @@
       "get": {
         "tags": [
           "Google"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LoaiSanPhami/DSLoaiSP": {
+      "get": {
+        "tags": [
+          "LoaiSanPhami"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LoaiSanPhami/ThemLSP": {
+      "post": {
+        "tags": [
+          "LoaiSanPhami"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoaiSanPhamMOD"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoaiSanPhamMOD"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoaiSanPhamMOD"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LoaiSanPhami/SuaLSP": {
+      "put": {
+        "tags": [
+          "LoaiSanPhami"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoaiSanPhamMOD"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoaiSanPhamMOD"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoaiSanPhamMOD"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LoaiSanPhami/XoaLSP": {
+      "delete": {
+        "tags": [
+          "LoaiSanPhami"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -657,6 +869,112 @@
         }
       }
     },
+    "/api/SanPham/DSSanPham": {
+      "get": {
+        "tags": [
+          "SanPham"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SanPham/ThemSanPham": {
+      "post": {
+        "tags": [
+          "SanPham"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SanPhamMOD"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SanPhamMOD"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SanPhamMOD"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SanPham/SuaSanPham": {
+      "put": {
+        "tags": [
+          "SanPham"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SanPhamMOD"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SanPhamMOD"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SanPhamMOD"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SanPham/XoaSanPham": {
+      "delete": {
+        "tags": [
+          "SanPham"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/TaiKhoan/login": {
       "post": {
         "tags": [
@@ -766,6 +1084,49 @@
         },
         "additionalProperties": false
       },
+      "DonViMOD": {
+        "type": "object",
+        "properties": {
+          "donViTinhID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tenDonVi": {
+            "type": "string",
+            "nullable": true
+          },
+          "mota": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoaiSanPhamMOD": {
+        "type": "object",
+        "properties": {
+          "loaiSanPhamID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tenLoaiSanPham": {
+            "type": "string",
+            "nullable": true
+          },
+          "moTaLoaiSP": {
+            "type": "string",
+            "nullable": true
+          },
+          "trangThai": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "NguoiDungTrongNhomMOD": {
         "type": "object",
         "properties": {
@@ -819,6 +1180,30 @@
           },
           "password": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SanPhamMOD": {
+        "type": "object",
+        "properties": {
+          "mSanPham": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenSanPham": {
+            "type": "string",
+            "nullable": true
+          },
+          "loaiSanPhamID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "donViTinhID": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           }
         },
