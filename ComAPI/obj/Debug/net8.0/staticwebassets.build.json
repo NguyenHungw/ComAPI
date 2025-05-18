@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ajL6lm4suJDlxgF+vX3C6GUFVmXMMaGoPhoTr0aqIOk=",
+  "Hash": "yvEvgYBeC3vJvIf6/YBmXGQWDoIxquGD/jTFqBhLYTI=",
   "Source": "ComAPI",
   "BasePath": "_content/ComAPI",
   "Mode": "Default",
@@ -15,6 +15,1244 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\1Z8GW1mH_string",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/1Z8GW1mH_string#[.{fingerprint}]?",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "srysnl4pob",
+      "Integrity": "CApW1zFpdCUsNohhZpX/+ZbKOC/KGrSK8AiS5pqDCXI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\1Z8GW1mH_string"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\8F8343Sr_zvx",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/8F8343Sr_zvx#[.{fingerprint}]?",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gys2tvt7pa",
+      "Integrity": "GKisHYO/mkZP2x5OzCC5qfOpHelSYgN3dyDMr//wLTI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\8F8343Sr_zvx"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\9MhKRlpl_stringz",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/9MhKRlpl_stringz#[.{fingerprint}]?",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vrcttig9sn",
+      "Integrity": "6+rEkfh9+rRKs8fMoWiGWDzDMXDpglLEeV132dktFKw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\9MhKRlpl_stringz"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\hu8bkRZP_bf",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/hu8bkRZP_bf#[.{fingerprint}]?",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "n7yp1g58gx",
+      "Integrity": "c6o3jjOlwS9CpBhi5PG39KZIfNc9ASym5nXglze7pcE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\hu8bkRZP_bf"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\klTIWsx2_vcx",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/klTIWsx2_vcx#[.{fingerprint}]?",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qqh4oy4ho4",
+      "Integrity": "Lm21j+IJM/rZjkKiZ+clr4stQ+O+uO0dXQrkNbcYQ7s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\klTIWsx2_vcx"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\lBc5KTta_vdx",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/lBc5KTta_vdx#[.{fingerprint}]?",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vq0vncd1xm",
+      "Integrity": "ebORntNHgkvazehokZE9WdY843C13ZOXm4MlGDcTbWM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\lBc5KTta_vdx"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\Lsnmn4h8_bf",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/Lsnmn4h8_bf#[.{fingerprint}]?",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "n7yp1g58gx",
+      "Integrity": "c6o3jjOlwS9CpBhi5PG39KZIfNc9ASym5nXglze7pcE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\Lsnmn4h8_bf"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\ncw7MP86_vdx",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/ncw7MP86_vdx#[.{fingerprint}]?",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vq0vncd1xm",
+      "Integrity": "ebORntNHgkvazehokZE9WdY843C13ZOXm4MlGDcTbWM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\ncw7MP86_vdx"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\ooSdCpZG_txxxx",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/ooSdCpZG_txxxx#[.{fingerprint}]?",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tyhh706aiz",
+      "Integrity": "NbwWpy4XDztfz6kNcKei53wNI2CP9PIHs1mWbM8/dH4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\ooSdCpZG_txxxx"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\PqbDf0Xq_bf",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/PqbDf0Xq_bf#[.{fingerprint}]?",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "n7yp1g58gx",
+      "Integrity": "c6o3jjOlwS9CpBhi5PG39KZIfNc9ASym5nXglze7pcE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\PqbDf0Xq_bf"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\pwa8EITr_stringz",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/pwa8EITr_stringz#[.{fingerprint}]?",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vrcttig9sn",
+      "Integrity": "6+rEkfh9+rRKs8fMoWiGWDzDMXDpglLEeV132dktFKw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\pwa8EITr_stringz"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\VnDwxu9Y_zvx",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/VnDwxu9Y_zvx#[.{fingerprint}]?",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gys2tvt7pa",
+      "Integrity": "GKisHYO/mkZP2x5OzCC5qfOpHelSYgN3dyDMr//wLTI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\VnDwxu9Y_zvx"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "upload/1Z8GW1mH_string",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\1Z8GW1mH_string",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "59354"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CApW1zFpdCUsNohhZpX/+ZbKOC/KGrSK8AiS5pqDCXI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 14:33:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-CApW1zFpdCUsNohhZpX/+ZbKOC/KGrSK8AiS5pqDCXI="
+        }
+      ]
+    },
+    {
+      "Route": "upload/1Z8GW1mH_string.srysnl4pob",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\1Z8GW1mH_string",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "59354"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CApW1zFpdCUsNohhZpX/+ZbKOC/KGrSK8AiS5pqDCXI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 14:33:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "srysnl4pob"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/1Z8GW1mH_string"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-CApW1zFpdCUsNohhZpX/+ZbKOC/KGrSK8AiS5pqDCXI="
+        }
+      ]
+    },
+    {
+      "Route": "upload/8F8343Sr_zvx",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\8F8343Sr_zvx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "108298"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GKisHYO/mkZP2x5OzCC5qfOpHelSYgN3dyDMr//wLTI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 10:52:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GKisHYO/mkZP2x5OzCC5qfOpHelSYgN3dyDMr//wLTI="
+        }
+      ]
+    },
+    {
+      "Route": "upload/8F8343Sr_zvx.gys2tvt7pa",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\8F8343Sr_zvx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "108298"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GKisHYO/mkZP2x5OzCC5qfOpHelSYgN3dyDMr//wLTI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 10:52:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gys2tvt7pa"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/8F8343Sr_zvx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-GKisHYO/mkZP2x5OzCC5qfOpHelSYgN3dyDMr//wLTI="
+        }
+      ]
+    },
+    {
+      "Route": "upload/9MhKRlpl_stringz",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\9MhKRlpl_stringz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "107364"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6+rEkfh9+rRKs8fMoWiGWDzDMXDpglLEeV132dktFKw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 10:58:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6+rEkfh9+rRKs8fMoWiGWDzDMXDpglLEeV132dktFKw="
+        }
+      ]
+    },
+    {
+      "Route": "upload/9MhKRlpl_stringz.vrcttig9sn",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\9MhKRlpl_stringz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "107364"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6+rEkfh9+rRKs8fMoWiGWDzDMXDpglLEeV132dktFKw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 10:58:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vrcttig9sn"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/9MhKRlpl_stringz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6+rEkfh9+rRKs8fMoWiGWDzDMXDpglLEeV132dktFKw="
+        }
+      ]
+    },
+    {
+      "Route": "upload/hu8bkRZP_bf",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\hu8bkRZP_bf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "112486"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c6o3jjOlwS9CpBhi5PG39KZIfNc9ASym5nXglze7pcE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 11:09:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-c6o3jjOlwS9CpBhi5PG39KZIfNc9ASym5nXglze7pcE="
+        }
+      ]
+    },
+    {
+      "Route": "upload/hu8bkRZP_bf.n7yp1g58gx",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\hu8bkRZP_bf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "112486"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c6o3jjOlwS9CpBhi5PG39KZIfNc9ASym5nXglze7pcE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 11:09:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "n7yp1g58gx"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/hu8bkRZP_bf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-c6o3jjOlwS9CpBhi5PG39KZIfNc9ASym5nXglze7pcE="
+        }
+      ]
+    },
+    {
+      "Route": "upload/klTIWsx2_vcx",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\klTIWsx2_vcx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "110982"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Lm21j+IJM/rZjkKiZ+clr4stQ+O+uO0dXQrkNbcYQ7s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 00:13:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Lm21j+IJM/rZjkKiZ+clr4stQ+O+uO0dXQrkNbcYQ7s="
+        }
+      ]
+    },
+    {
+      "Route": "upload/klTIWsx2_vcx.qqh4oy4ho4",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\klTIWsx2_vcx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "110982"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Lm21j+IJM/rZjkKiZ+clr4stQ+O+uO0dXQrkNbcYQ7s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 00:13:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qqh4oy4ho4"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/klTIWsx2_vcx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Lm21j+IJM/rZjkKiZ+clr4stQ+O+uO0dXQrkNbcYQ7s="
+        }
+      ]
+    },
+    {
+      "Route": "upload/lBc5KTta_vdx",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\lBc5KTta_vdx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "105596"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ebORntNHgkvazehokZE9WdY843C13ZOXm4MlGDcTbWM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 00:17:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ebORntNHgkvazehokZE9WdY843C13ZOXm4MlGDcTbWM="
+        }
+      ]
+    },
+    {
+      "Route": "upload/lBc5KTta_vdx.vq0vncd1xm",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\lBc5KTta_vdx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "105596"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ebORntNHgkvazehokZE9WdY843C13ZOXm4MlGDcTbWM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 00:17:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vq0vncd1xm"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/lBc5KTta_vdx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ebORntNHgkvazehokZE9WdY843C13ZOXm4MlGDcTbWM="
+        }
+      ]
+    },
+    {
+      "Route": "upload/Lsnmn4h8_bf",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\Lsnmn4h8_bf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "112486"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c6o3jjOlwS9CpBhi5PG39KZIfNc9ASym5nXglze7pcE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 11:09:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-c6o3jjOlwS9CpBhi5PG39KZIfNc9ASym5nXglze7pcE="
+        }
+      ]
+    },
+    {
+      "Route": "upload/Lsnmn4h8_bf.n7yp1g58gx",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\Lsnmn4h8_bf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "112486"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c6o3jjOlwS9CpBhi5PG39KZIfNc9ASym5nXglze7pcE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 11:09:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "n7yp1g58gx"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/Lsnmn4h8_bf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-c6o3jjOlwS9CpBhi5PG39KZIfNc9ASym5nXglze7pcE="
+        }
+      ]
+    },
+    {
+      "Route": "upload/ncw7MP86_vdx",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\ncw7MP86_vdx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "105596"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ebORntNHgkvazehokZE9WdY843C13ZOXm4MlGDcTbWM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 00:19:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ebORntNHgkvazehokZE9WdY843C13ZOXm4MlGDcTbWM="
+        }
+      ]
+    },
+    {
+      "Route": "upload/ncw7MP86_vdx.vq0vncd1xm",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\ncw7MP86_vdx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "105596"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ebORntNHgkvazehokZE9WdY843C13ZOXm4MlGDcTbWM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 00:19:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vq0vncd1xm"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/ncw7MP86_vdx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ebORntNHgkvazehokZE9WdY843C13ZOXm4MlGDcTbWM="
+        }
+      ]
+    },
+    {
+      "Route": "upload/ooSdCpZG_txxxx",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\ooSdCpZG_txxxx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "224189"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NbwWpy4XDztfz6kNcKei53wNI2CP9PIHs1mWbM8/dH4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 14:02:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NbwWpy4XDztfz6kNcKei53wNI2CP9PIHs1mWbM8/dH4="
+        }
+      ]
+    },
+    {
+      "Route": "upload/ooSdCpZG_txxxx.tyhh706aiz",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\ooSdCpZG_txxxx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "224189"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NbwWpy4XDztfz6kNcKei53wNI2CP9PIHs1mWbM8/dH4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 14:02:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tyhh706aiz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/ooSdCpZG_txxxx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NbwWpy4XDztfz6kNcKei53wNI2CP9PIHs1mWbM8/dH4="
+        }
+      ]
+    },
+    {
+      "Route": "upload/PqbDf0Xq_bf",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\PqbDf0Xq_bf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "112486"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c6o3jjOlwS9CpBhi5PG39KZIfNc9ASym5nXglze7pcE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 11:09:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-c6o3jjOlwS9CpBhi5PG39KZIfNc9ASym5nXglze7pcE="
+        }
+      ]
+    },
+    {
+      "Route": "upload/PqbDf0Xq_bf.n7yp1g58gx",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\PqbDf0Xq_bf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "112486"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c6o3jjOlwS9CpBhi5PG39KZIfNc9ASym5nXglze7pcE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 11:09:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "n7yp1g58gx"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/PqbDf0Xq_bf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-c6o3jjOlwS9CpBhi5PG39KZIfNc9ASym5nXglze7pcE="
+        }
+      ]
+    },
+    {
+      "Route": "upload/pwa8EITr_stringz",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\pwa8EITr_stringz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "107364"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6+rEkfh9+rRKs8fMoWiGWDzDMXDpglLEeV132dktFKw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 11:00:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6+rEkfh9+rRKs8fMoWiGWDzDMXDpglLEeV132dktFKw="
+        }
+      ]
+    },
+    {
+      "Route": "upload/pwa8EITr_stringz.vrcttig9sn",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\pwa8EITr_stringz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "107364"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6+rEkfh9+rRKs8fMoWiGWDzDMXDpglLEeV132dktFKw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 11:00:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vrcttig9sn"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/pwa8EITr_stringz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6+rEkfh9+rRKs8fMoWiGWDzDMXDpglLEeV132dktFKw="
+        }
+      ]
+    },
+    {
+      "Route": "upload/VnDwxu9Y_zvx",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\VnDwxu9Y_zvx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "108298"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GKisHYO/mkZP2x5OzCC5qfOpHelSYgN3dyDMr//wLTI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 10:52:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GKisHYO/mkZP2x5OzCC5qfOpHelSYgN3dyDMr//wLTI="
+        }
+      ]
+    },
+    {
+      "Route": "upload/VnDwxu9Y_zvx.gys2tvt7pa",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\VnDwxu9Y_zvx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "108298"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GKisHYO/mkZP2x5OzCC5qfOpHelSYgN3dyDMr//wLTI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 10:52:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gys2tvt7pa"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/VnDwxu9Y_zvx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-GKisHYO/mkZP2x5OzCC5qfOpHelSYgN3dyDMr//wLTI="
+        }
+      ]
+    }
+  ]
 }

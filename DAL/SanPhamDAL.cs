@@ -1,5 +1,7 @@
 ﻿using COM.MOD;
 using COM.ULT;
+using Microsoft.AspNetCore.Http;
+
 //using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -8,6 +10,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace COM.DAL
 {
@@ -75,19 +78,19 @@ namespace COM.DAL
                     // Thêm chức năng vào cơ sở dữ liệu
                     using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
                     {
-                        string shortGuid2 = ULT.Utils.Utilities.GenerateRandomCode(5);
+                        string shortGuid2 = ULT.Utils.Utilities.GenerateRandomCode(8);
                         string name = ULT.Utils.Utilities.RemoveDiacritics(item.TenSanPham.Replace(" ","-")); //để dấu gạch cho chuẩn seo
                         //string shortGuid = Guid.NewGuid().ToString("N").Substring(0, 8); // 8 ký tự ngẫu nhiên
 
                         //string msp = $"{shortGuid2}_{item.TenSanPham}";
-                        string msp = $"{shortGuid2}-{name}";
+                        //string msp = $"{shortGuid2}-{name}";
 
 
                         SQLCon.Open();
                         SqlCommand cmd = new SqlCommand();
                         cmd.CommandType = CommandType.Text;
                         cmd.CommandText = "Insert into SanPham (MSanPham,TenSanPham,LoaiSanPhamID,DonViTinhID) VALUES(@MSanPham,@TenSanPham,@LoaiSanPhamID,@DonViTinhID)";
-                        cmd.Parameters.AddWithValue("@MSanPham", msp ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@MSanPham", shortGuid2 ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@TenSanPham", item.TenSanPham ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@LoaiSanPhamID", item.LoaiSanPhamID ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@DonViTinhID", item.DonViTinhID ?? (object)DBNull.Value);
@@ -106,6 +109,224 @@ namespace COM.DAL
             }
             return result;
         }
+
+        public void ThemSanPhamAnhVaGia(List<IFormFile> files, SanPhamAnhVaGiaMOD item)
+        {
+           using(SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+            {
+                string Picture;
+
+                var Result = new BaseResultMOD();
+                SQLCon.Open();
+               var trans = SQLCon.BeginTransaction();
+                string shortGuid2 = ULT.Utils.Utilities.GenerateRandomCode(8);
+
+                try
+                {
+                    var cmd = new SqlCommand(@"
+                INSERT INTO SanPham (MSanPham, TenSanPham, LoaiSanPhamID, DonViTinhID)
+                VALUES (@MSanPham, @TenSanPham, @LoaiSanPhamID, @DonViTinhID);
+                SELECT SCOPE_IDENTITY();", SQLCon, trans); //trả về ID vừa chèn
+
+
+                    cmd.Parameters.AddWithValue("@MSanPham", shortGuid2);
+                    cmd.Parameters.AddWithValue("@TenSanPham", item.TenSanPham);
+                    cmd.Parameters.AddWithValue("@LoaiSanPhamID", item.LoaiSanPhamID);
+                    cmd.Parameters.AddWithValue("@DonViTinhID", item.DonViTinhID);
+                    int newID = Convert.ToInt32(cmd.ExecuteScalar()); // lấy ra id vừa chèn và chuyển kq sang int
+
+                    // 2. Thêm giá
+                    var cmdGia = new SqlCommand(@"
+                INSERT INTO GiaBanSanPham (SanPhamID, NgayBatDau, GiaBan, SalePercent, GiaSauGiam)
+                VALUES (@SanPhamID, @NgayBatDau, @GiaBan, @SalePercent,@GiaSauGiam);", SQLCon, trans);
+                    cmdGia.Parameters.AddWithValue("@SanPhamID", newID);
+                    cmdGia.Parameters.AddWithValue("@NgayBatDau", DateTime.UtcNow);
+
+                    decimal giaSauGiam = (decimal)(item.GiaBan * (1 - (item.SalePercent / 100)));
+
+                    cmdGia.Parameters.AddWithValue("@GiaBan", item.GiaBan);
+                    cmdGia.Parameters.AddWithValue("@SalePercent", item.SalePercent);
+                    cmdGia.Parameters.AddWithValue("@GiaSauGiam", giaSauGiam);
+                    cmdGia.ExecuteNonQuery();
+
+                    //3. Thêm hình ảnh
+                    int index = 0;
+                   
+                    foreach (var file in files)
+                    {
+                        if (file.Length > 0)
+                        {
+                            string name = ULT.Utils.Utilities.RemoveDiacritics(item.TenSanPham.Replace(" ", "")); //để dấu gạch cho chuẩn seo
+                            string newName = $"{shortGuid2}_{item.TenSanPham}";
+                            string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "upload");
+                            string filePath = Path.Combine(uploadsFolder, newName);
+                            using (Stream stream = System.IO.File.Create(filePath))
+                            {
+                                file.CopyTo(stream);
+
+                            }
+                            Picture = "/upload/" + newName;
+                        }
+                        else
+                        {
+                            Picture = "";
+                        }
+
+                        var cmdImg = new SqlCommand(@"
+                    INSERT INTO SanPhamImage (SanPhamID, FilePath, IndexOrder)
+                    VALUES (@SanPhamID, @FilePath, @IndexOrder);", SQLCon, trans);
+                        cmdImg.Parameters.AddWithValue("@SanPhamID", newID);
+                        cmdImg.Parameters.AddWithValue("@FilePath", Picture);
+                        cmdImg.Parameters.AddWithValue("@IndexOrder", index++);
+                        cmdImg.ExecuteNonQuery();
+                    }
+                    trans.Commit();
+                  
+                }
+               
+
+                catch (Exception ex)
+                {
+                    trans.Rollback();
+                    throw;
+                }
+                
+            }
+        }
+
+        public void SuaSanPhamAnhVaGia(List<IFormFile> files, SanPhamAnhVaGiaMOD item)
+        {
+            using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+            {
+                string Picture;
+
+                var Result = new BaseResultMOD();
+                SQLCon.Open();
+                var trans = SQLCon.BeginTransaction();
+                string shortGuid2 = ULT.Utils.Utilities.GenerateRandomCode(8);
+
+                try
+                {
+                    var cmd = new SqlCommand(@"Update [SanPham] set TenSanPham =@TenSanPham, LoaiSanPhamID = @LoaiSanPhamID, DonViTinhID = @DonViTinhID OUTPUT INSERTED.ID where MSanPham=@MSanPham;
+                                             ", SQLCon,trans); //lấy ra ID vừa update
+                    //cmd.Parameters.AddWithValue("@MSanPham", shortGuid2);
+                    cmd.Parameters.AddWithValue("@MSanPham", item.MSanPham);
+                    cmd.Parameters.AddWithValue("@TenSanPham", item.TenSanPham);
+                    cmd.Parameters.AddWithValue("@LoaiSanPhamID", item.LoaiSanPhamID);
+                    cmd.Parameters.AddWithValue("@DonViTinhID", item.DonViTinhID);
+                    int newID = Convert.ToInt32(cmd.ExecuteScalar()); // lấy ra id vừa chèn và chuyển kq sang int
+
+
+                    var cmdGia = new SqlCommand(@"Update [GiaBanSanPham] set SanPhamID =@SanPhamID, NgayBatDau = @NgayBatDau, GiaBan = @GiaBan,SalePercent = @SalePercent,GiaSauGiam 
+                                                = @GiaSauGiam where SanPhamID=@SanPhamID",SQLCon,trans);
+                    // 2. Thêm giá
+
+                    cmdGia.Parameters.AddWithValue("@SanPhamID", newID);
+                    cmdGia.Parameters.AddWithValue("@NgayBatDau", DateTime.UtcNow);
+
+                    decimal giaSauGiam = (decimal)(item.GiaBan * (1 - (item.SalePercent / 100)));
+
+                    cmdGia.Parameters.AddWithValue("@GiaBan", item.GiaBan);
+                    cmdGia.Parameters.AddWithValue("@SalePercent", item.SalePercent);
+                    cmdGia.Parameters.AddWithValue("@GiaSauGiam", giaSauGiam);
+                    cmdGia.ExecuteNonQuery();
+
+                    //3. Thêm hình ảnh
+                    int index = 0;
+
+                    foreach (var file in files)
+                    {
+                        if (file.Length > 0)
+                        {
+                            string name = ULT.Utils.Utilities.RemoveDiacritics(item.TenSanPham.Replace(" ", "")); //để dấu gạch cho chuẩn seo
+                            string newName = $"{shortGuid2}_{item.TenSanPham}";
+                            string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "upload");
+                            string filePath = Path.Combine(uploadsFolder, newName);
+                            using (Stream stream = System.IO.File.Create(filePath))
+                            {
+                                file.CopyTo(stream);
+
+                            }
+                            Picture = "/upload/" + newName;
+                        }
+                        else
+                        {
+                            Picture = "";
+                        }
+                        var cmdImg = new SqlCommand(@"UPDATE [SanPhamImage] set SanPhamID =@SanPhamID, FilePath=@FilePath,IndexOrder=@IndexOrder",SQLCon,trans);
+                        cmdImg.Parameters.AddWithValue("@SanPhamID", newID);
+                        cmdImg.Parameters.AddWithValue("@FilePath", Picture);
+                        cmdImg.Parameters.AddWithValue("@IndexOrder", index++);
+                        cmdImg.ExecuteNonQuery();
+                    }
+                    trans.Commit();
+
+                }
+
+
+                catch (Exception ex)
+                {
+                    trans.Rollback();
+                    throw;
+                }
+
+            }
+        }
+
+        public BaseResultMOD XoaSanPhamAnhVaGia(int id)
+        {
+            using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+            {
+                var result = new BaseResultMOD();
+
+
+                SQLCon.Open();
+                var trans = SQLCon.BeginTransaction();
+
+                try
+                {
+
+                    var cmdGia = new SqlCommand(@"DELETE FROM [GiaBanSanPham] where SanPhamID=@SanPhamID", SQLCon, trans);
+                    cmdGia.Parameters.AddWithValue("@SanPhamID", id);
+                    cmdGia.ExecuteNonQuery();
+
+                    //3. xóa hình ảnh
+                    var cmdImg = new SqlCommand(@"DELETE FROM [SanPhamImage] where SanPhamID=@SanPhamID", SQLCon, trans);
+                    cmdImg.Parameters.AddWithValue("@SanPhamID", id);
+
+
+                    cmdImg.ExecuteNonQuery();
+
+                    var cmd = new SqlCommand(@"Delete FROM [SanPham] where ID=@ID;", SQLCon, trans); //lấy ra ID vừa update
+                    cmd.Parameters.AddWithValue("@ID", id);
+
+                    //int newID = Convert.ToInt32(cmd.ExecuteScalar()); // lấy ra id vừa chèn và chuyển kq sang int
+                    cmd.ExecuteNonQuery();
+
+
+
+
+
+
+
+                    trans.Commit();
+                    result.Status = 1;
+                    result.Message = "Xóa sản phẩm thành công";
+                    result.Data = id;
+
+                }
+
+
+                catch (Exception ex)
+                {
+                    trans.Rollback();
+                    throw;
+                }
+                return result;
+
+            }
+        }
+
 
         // Hàm để kiểm tra trùng chức năng
         private bool KiemTraTrungChucNang(string tendonvi)

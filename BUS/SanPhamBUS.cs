@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using COM.DAL;
 using COM.MOD;
+using Microsoft.AspNetCore.Http;
 
 namespace COM.BUS
 {
@@ -70,6 +71,137 @@ namespace COM.BUS
                 result.Message = ULT.Constant.API_Error_System;
 
             }
+            return result;
+        }
+        public BaseResultMOD ThemSPAnhVaGia(List<IFormFile> files, SanPhamAnhVaGiaMOD item )
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                //if (item.MSanPham == null || item.MSanPham == "")
+                //{
+                //    result.Status = 0;
+                //    result.Message = " Tên sản phẩm không được để trống";
+                //}
+                if (item.TenSanPham == null || item.TenSanPham == "")
+                {
+                    result.Status = 0;
+                    result.Message = " Tên sản phẩm không được để trống";
+                }
+                else if (item.LoaiSanPhamID == null || item.LoaiSanPhamID < 0)
+                {
+                    result.Status = 0;
+                    result.Message = " Tên loại sản phẩm không được để trống";
+
+                }
+                else if (item.DonViTinhID == null || item.DonViTinhID < 0)
+                {
+                    result.Status = 0;
+                    result.Message = " Tên đơn vị không được để trống";
+                }
+                else
+                {
+                    if(files == null || files.Count == 0)
+                    {
+                        return new BaseResultMOD
+                        {
+                            Status = -1,
+                            Message = "Chưa có file đính kèm"
+                        };
+                    }
+                    if (files.Count > 0)
+                    {
+                        new SanPhamDAL().ThemSanPhamAnhVaGia(files, item);
+                        result.Status = 1;
+                        result.Message = "Thêm thành công";
+                        result.Data = 1;
+                    }
+                }
+                  
+            }
+            catch (Exception ex)
+            {
+                result.Data = -1;
+                result.Message = ULT.Constant.API_Error_System;
+
+            }
+            return result;
+        }
+        public BaseResultMOD SuaSanPhamAnhVaGia(List<IFormFile> files, SanPhamAnhVaGiaMOD item)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                //if (item.MSanPham == null || item.MSanPham == "")
+                //{
+                //    result.Status = 0;
+                //    result.Message = " Tên sản phẩm không được để trống";
+                //}
+                if (item.TenSanPham == null || item.TenSanPham == "")
+                {
+                    result.Status = 0;
+                    result.Message = " Tên sản phẩm không được để trống";
+                }
+                else if (item.LoaiSanPhamID == null || item.LoaiSanPhamID < 0)
+                {
+                    result.Status = 0;
+                    result.Message = " Tên loại sản phẩm không được để trống";
+
+                }
+                else if (item.DonViTinhID == null || item.DonViTinhID < 0)
+                {
+                    result.Status = 0;
+                    result.Message = " Tên đơn vị không được để trống";
+                }
+                else
+                {
+                    if (files == null || files.Count == 0)
+                    {
+                        return new BaseResultMOD
+                        {
+                            Status = -1,
+                            Message = "Chưa có file đính kèm"
+                        };
+                    }
+                    if (files.Count > 0)
+                    {
+                        new SanPhamDAL().SuaSanPhamAnhVaGia(files, item);
+                        result.Status = 1;
+                        result.Message = "Thêm thành công";
+                        result.Data = 1;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                result.Data = -1;
+                result.Message = ULT.Constant.API_Error_System;
+
+            }
+            return result;
+        }
+        public BaseResultMOD XoaSP_Anh_Gia(int id)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                if (id == null || id<=0)
+                {
+                    result.Status = 0;
+                    result.Message = "ID không hợp lệ";
+                }
+                else
+                {
+                    result= new SanPhamDAL().XoaSanPhamAnhVaGia(id);
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = ULT.Constant.API_Error_System;
+            }
+
             return result;
         }
         public BaseResultMOD SuaSP(SanPhamMOD item)

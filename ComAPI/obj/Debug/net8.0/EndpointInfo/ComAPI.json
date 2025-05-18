@@ -922,6 +922,184 @@
         }
       }
     },
+    "/api/SanPham/ThemSanPhamAnhVaGia": {
+      "post": {
+        "tags": [
+          "SanPham"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "files": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  },
+                  "MSanPham": {
+                    "type": "string"
+                  },
+                  "TenSanPham": {
+                    "type": "string"
+                  },
+                  "LoaiSanPhamID": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "DonViTinhID": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NgayBatDau": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "GiaBan": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "SalePercent": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "GiaSauGiam": {
+                    "type": "number",
+                    "format": "double"
+                  }
+                }
+              },
+              "encoding": {
+                "files": {
+                  "style": "form"
+                },
+                "MSanPham": {
+                  "style": "form"
+                },
+                "TenSanPham": {
+                  "style": "form"
+                },
+                "LoaiSanPhamID": {
+                  "style": "form"
+                },
+                "DonViTinhID": {
+                  "style": "form"
+                },
+                "NgayBatDau": {
+                  "style": "form"
+                },
+                "GiaBan": {
+                  "style": "form"
+                },
+                "SalePercent": {
+                  "style": "form"
+                },
+                "GiaSauGiam": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SanPham/SuaSanPhamAnhVaGia": {
+      "put": {
+        "tags": [
+          "SanPham"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "files": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  },
+                  "MSanPham": {
+                    "type": "string"
+                  },
+                  "TenSanPham": {
+                    "type": "string"
+                  },
+                  "LoaiSanPhamID": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "DonViTinhID": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NgayBatDau": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "GiaBan": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "SalePercent": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "GiaSauGiam": {
+                    "type": "number",
+                    "format": "double"
+                  }
+                }
+              },
+              "encoding": {
+                "files": {
+                  "style": "form"
+                },
+                "MSanPham": {
+                  "style": "form"
+                },
+                "TenSanPham": {
+                  "style": "form"
+                },
+                "LoaiSanPhamID": {
+                  "style": "form"
+                },
+                "DonViTinhID": {
+                  "style": "form"
+                },
+                "NgayBatDau": {
+                  "style": "form"
+                },
+                "GiaBan": {
+                  "style": "form"
+                },
+                "SalePercent": {
+                  "style": "form"
+                },
+                "GiaSauGiam": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/SanPham/SuaSanPham": {
       "put": {
         "tags": [
@@ -946,6 +1124,29 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SanPham/XoaSanPhamAnhGia{id}": {
+      "delete": {
+        "tags": [
+          "SanPham"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"

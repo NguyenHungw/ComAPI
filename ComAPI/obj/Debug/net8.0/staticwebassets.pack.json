@@ -1,0 +1,73 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\1Z8GW1mH_string",
+      "PackagePath": "staticwebassets\\upload"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\8F8343Sr_zvx",
+      "PackagePath": "staticwebassets\\upload"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\9MhKRlpl_stringz",
+      "PackagePath": "staticwebassets\\upload"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\Lsnmn4h8_bf",
+      "PackagePath": "staticwebassets\\upload"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\PqbDf0Xq_bf",
+      "PackagePath": "staticwebassets\\upload"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\VnDwxu9Y_zvx",
+      "PackagePath": "staticwebassets\\upload"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\hu8bkRZP_bf",
+      "PackagePath": "staticwebassets\\upload"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\klTIWsx2_vcx",
+      "PackagePath": "staticwebassets\\upload"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\lBc5KTta_vdx",
+      "PackagePath": "staticwebassets\\upload"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\ncw7MP86_vdx",
+      "PackagePath": "staticwebassets\\upload"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\ooSdCpZG_txxxx",
+      "PackagePath": "staticwebassets\\upload"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\pwa8EITr_stringz",
+      "PackagePath": "staticwebassets\\upload"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ComAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ComAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ComAPI.props",
+      "PackagePath": "build\\ComAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ComAPI.props",
+      "PackagePath": "buildMultiTargeting\\ComAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ComAPI.props",
+      "PackagePath": "buildTransitive\\ComAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
