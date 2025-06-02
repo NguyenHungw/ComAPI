@@ -6,9 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using COM.MOD;
+using COM.MOD.SanPham;
+using COM.DAL.SanPham;
 
-namespace COM.BUS
+namespace COM.BUS.SanPham
 {
     public class LoaiSanPhamBUS
     {
@@ -49,7 +50,8 @@ namespace COM.BUS
                 {
                     result = new LoaiSanPhamDAL().ThemLoaiSanPham(item);
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 result.Data = -1;
                 result.Message = Constant.API_Error_System;
@@ -62,11 +64,12 @@ namespace COM.BUS
             var result = new BaseResultMOD();
             try
             {
-                if(item ==null || item.LoaiSanPhamID==null || item.LoaiSanPhamID <= 0)
+                if (item == null || item.LoaiSanPhamID == null || item.LoaiSanPhamID <= 0)
                 {
                     result.Status = 0;
                     result.Message = "ID loại sản phẩm không hợp lệ";
-                }else if(item==null || item.TenLoaiSanPham == null || item.TenLoaiSanPham == "")
+                }
+                else if (item == null || item.TenLoaiSanPham == null || item.TenLoaiSanPham == "")
                 {
                     result.Status = 0;
                     result.Message = "Tên loại sản phẩm không được để trống";
@@ -78,7 +81,7 @@ namespace COM.BUS
                     result.Message = "Tên loại sản phẩm không được để trống";
 
                 }
-                else if (item == null || item.TrangThai == null || item.TrangThai <0)
+                else if (item == null || item.TrangThai == null || item.TrangThai < 0)
                 {
                     result.Status = 0;
                     result.Message = "Tên loại sản phẩm không được để trống";
@@ -102,16 +105,17 @@ namespace COM.BUS
             var result = new BaseResultMOD();
             try
             {
-                if(id ==null|| id <= 0)
+                if (id == null || id <= 0)
                 {
-                    result.Status= 0;
+                    result.Status = 0;
                     result.Message = "ID không hợp lệ";
                 }
                 else
                 {
                     result = new LoaiSanPhamDAL().XoaLoaiSanPham(id);
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 result.Status = -1;
                 result.Message = Constant.API_Error_System;
@@ -119,6 +123,6 @@ namespace COM.BUS
 
             return result;
         }
-        
+
     }
 }

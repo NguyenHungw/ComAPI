@@ -1,4 +1,6 @@
 ﻿using COM.MOD;
+using COM.MOD.SanPham;
+using COM.MOD.SanPham;
 using COM.ULT;
 //using Microsoft.Data.SqlClient;
 using System;
@@ -9,11 +11,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace COM.DAL
+namespace COM.DAL.SanPham
 {
     public class DonViDAL
     {
-       // private string SQLHelper.appConnectionStrings = "Data Source=DESKTOP-PMRM3DP\\SQLEXPRESS;Initial Catalog=CT;Persist Security Info=True;User ID=Hungw;Password=123456;Trusted_Connection=True;Max Pool Size=100";
+        // private string SQLHelper.appConnectionStrings = "Data Source=DESKTOP-PMRM3DP\\SQLEXPRESS;Initial Catalog=CT;Persist Security Info=True;User ID=Hungw;Password=123456;Trusted_Connection=True;Max Pool Size=100";
         public BaseResultMOD getdsDonVi(int page)
         {
             const int ProductPerPage = 10;
@@ -36,7 +38,7 @@ namespace COM.DAL
                         DonViMOD item = new DonViMOD();
                         item.DonViTinhID = reader.GetInt32(0);
                         item.TenDonVi = reader.GetString(1);
-                       
+
 
 
                         dscn.Add(item);
@@ -118,7 +120,7 @@ namespace COM.DAL
             var result = new BaseResultMOD();
             try
             {
-                using(SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
                 {
                     SQLCon.Open();
                     SqlCommand cmd = new SqlCommand();
@@ -131,10 +133,11 @@ namespace COM.DAL
 
                     result.Status = 1;
                     result.Message = "Sửa đơn vị thành công";
-                    result.Data=1;
+                    result.Data = 1;
                 }
-                
-            }catch(Exception ex)
+
+            }
+            catch (Exception ex)
             {
                 result.Status = -1;
                 result.Message = Constant.API_Error_System;
@@ -147,7 +150,8 @@ namespace COM.DAL
             var result = new BaseResultMOD();
             try
             {
-                using(SqlConnection SQLCon =new SqlConnection(SQLHelper.appConnectionStrings)){
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
                     SQLCon.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.Text;
@@ -155,7 +159,7 @@ namespace COM.DAL
                     cmd.Parameters.AddWithValue("@DonViTinhID", id);
                     cmd.Connection = SQLCon;
                     int rowaffected = cmd.ExecuteNonQuery();
-                    if(rowaffected > 0)
+                    if (rowaffected > 0)
                     {
                         result.Status = 1;
                         result.Message = "Xóa đơn vị thành công";
@@ -168,13 +172,14 @@ namespace COM.DAL
                     }
                 }
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 result.Status = -1;
                 result.Message = Constant.API_Error_System;
             }
             return result;
         }
-        
+
     }
 }

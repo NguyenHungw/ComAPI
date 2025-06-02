@@ -1,9 +1,10 @@
 ﻿using COM.BUS;
-using COM.MOD;
+using COM.BUS.SanPham;
+using COM.MOD.SanPham;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ComAPI.Controllers
+namespace ComAPI.Controllers.SanPham
 {
     [Route("api/[controller]")]
     [ApiController]

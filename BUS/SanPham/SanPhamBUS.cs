@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using COM.DAL;
+using COM.DAL.SanPham;
 using COM.MOD;
+using COM.MOD.SanPham;
 using Microsoft.AspNetCore.Http;
 
-namespace COM.BUS
+namespace COM.BUS.SanPham
 {
     public class SanPhamBUS
     {
@@ -32,48 +34,9 @@ namespace COM.BUS
             }
             return result;
         }
-    
-    
+
+
         public BaseResultMOD ThemSP(SanPhamMOD item)
-        {
-            var result = new BaseResultMOD();
-            try
-            {
-                //if (item.MSanPham == null || item.MSanPham == "")
-                //{
-                //    result.Status = 0;
-                //    result.Message = " Tên sản phẩm không được để trống";
-                //}
-                if (item.TenSanPham == null || item.TenSanPham == "")
-                {
-                    result.Status = 0;
-                    result.Message = " Tên sản phẩm không được để trống";
-                }
-                else if (item.LoaiSanPhamID == null || item.LoaiSanPhamID <0)
-                {
-                    result.Status = 0;
-                    result.Message = " Tên loại sản phẩm không được để trống";
-
-                }
-                else if(item.DonViTinhID == null || item.DonViTinhID < 0)
-                {
-                    result.Status = 0;
-                    result.Message = " Tên đơn vị không được để trống";
-                }
-                else
-                {
-                    result = new SanPhamDAL().ThemSanPham(item);
-                }
-            }
-            catch (Exception ex)
-            {
-                result.Data = -1;
-                result.Message = ULT.Constant.API_Error_System;
-
-            }
-            return result;
-        }
-        public BaseResultMOD ThemSPAnhVaGia(List<IFormFile> files, SanPhamAnhVaGiaMOD item )
         {
             var result = new BaseResultMOD();
             try
@@ -101,7 +64,46 @@ namespace COM.BUS
                 }
                 else
                 {
-                    if(files == null || files.Count == 0)
+                    result = new SanPhamDAL().ThemSanPham(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Data = -1;
+                result.Message = ULT.Constant.API_Error_System;
+
+            }
+            return result;
+        }
+        public BaseResultMOD ThemSPAnhVaGia(List<IFormFile> files, SanPhamAnhVaGiaMOD item)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                //if (item.MSanPham == null || item.MSanPham == "")
+                //{
+                //    result.Status = 0;
+                //    result.Message = " Tên sản phẩm không được để trống";
+                //}
+                if (item.TenSanPham == null || item.TenSanPham == "")
+                {
+                    result.Status = 0;
+                    result.Message = " Tên sản phẩm không được để trống";
+                }
+                else if (item.LoaiSanPhamID == null || item.LoaiSanPhamID < 0)
+                {
+                    result.Status = 0;
+                    result.Message = " Tên loại sản phẩm không được để trống";
+
+                }
+                else if (item.DonViTinhID == null || item.DonViTinhID < 0)
+                {
+                    result.Status = 0;
+                    result.Message = " Tên đơn vị không được để trống";
+                }
+                else
+                {
+                    if (files == null || files.Count == 0)
                     {
                         return new BaseResultMOD
                         {
@@ -117,7 +119,7 @@ namespace COM.BUS
                         result.Data = 1;
                     }
                 }
-                  
+
             }
             catch (Exception ex)
             {
@@ -186,14 +188,14 @@ namespace COM.BUS
             var result = new BaseResultMOD();
             try
             {
-                if (id == null || id<=0)
+                if (id == null || id <= 0)
                 {
                     result.Status = 0;
                     result.Message = "ID không hợp lệ";
                 }
                 else
                 {
-                    result= new SanPhamDAL().XoaSanPhamAnhVaGia(id);
+                    result = new SanPhamDAL().XoaSanPhamAnhVaGia(id);
                 }
             }
             catch (Exception ex)
@@ -212,7 +214,7 @@ namespace COM.BUS
                 if (item == null || item.MSanPham == null)
                 {
                     result.Status = 0;
-                    result.Message = item.MSanPham+" không hợp lệ";
+                    result.Message = item.MSanPham + " không hợp lệ";
                 }
                 else if (item == null || item.TenSanPham == null || item.TenSanPham == "")
                 {

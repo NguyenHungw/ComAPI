@@ -49,7 +49,8 @@ namespace COM.BUS
                 {
                     result = new ChucNangDAL().ThemChucNang(namecn);
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 result.Data = -1;
                 result.Message = Constant.API_Error_System;
@@ -62,11 +63,12 @@ namespace COM.BUS
             var result = new BaseResultMOD();
             try
             {
-                if(item ==null || item.ChucNangid==null || item.ChucNangid <= 0)
+                if (item == null || item.ChucNangid == null || item.ChucNangid <= 0)
                 {
                     result.Status = 0;
                     result.Message = "ID chức năng không hợp lệ";
-                }else if(item==null || item.TenChucNang == null || item.TenChucNang == "")
+                }
+                else if (item == null || item.TenChucNang == null || item.TenChucNang == "")
                 {
                     result.Status = 0;
                     result.Message = "Tên Chức năng không được để trống";
@@ -90,16 +92,17 @@ namespace COM.BUS
             var result = new BaseResultMOD();
             try
             {
-                if(id ==null|| id <= 0)
+                if (id == null || id <= 0)
                 {
-                    result.Status= 0;
+                    result.Status = 0;
                     result.Message = "ID không hợp lệ";
                 }
                 else
                 {
                     result = new ChucNangDAL().XoaChucNang(id);
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 result.Status = -1;
                 result.Message = Constant.API_Error_System;
@@ -107,6 +110,6 @@ namespace COM.BUS
 
             return result;
         }
-        
+
     }
 }

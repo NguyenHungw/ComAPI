@@ -6,9 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using COM.MOD;
+using COM.MOD.SanPham;
+using COM.DAL.SanPham;
 
-namespace COM.BUS
+namespace COM.BUS.SanPham
 {
     public class DonViBUS
     {
@@ -49,7 +50,8 @@ namespace COM.BUS
                 {
                     result = new DonViDAL().ThemDonVi(item);
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 result.Data = -1;
                 result.Message = Constant.API_Error_System;
@@ -62,11 +64,12 @@ namespace COM.BUS
             var result = new BaseResultMOD();
             try
             {
-                if(item ==null || item.DonViTinhID==null || item.DonViTinhID <= 0)
+                if (item == null || item.DonViTinhID == null || item.DonViTinhID <= 0)
                 {
                     result.Status = 0;
                     result.Message = "ID tên đơn vị không hợp lệ";
-                }else if(item==null || item.TenDonVi == null || item.TenDonVi == "")
+                }
+                else if (item == null || item.TenDonVi == null || item.TenDonVi == "")
                 {
                     result.Status = 0;
                     result.Message = "Tên Chức năng không được để trống";
@@ -90,16 +93,17 @@ namespace COM.BUS
             var result = new BaseResultMOD();
             try
             {
-                if(id ==null|| id <= 0)
+                if (id == null || id <= 0)
                 {
-                    result.Status= 0;
+                    result.Status = 0;
                     result.Message = "ID không hợp lệ";
                 }
                 else
                 {
                     result = new DonViDAL().XoaDonVi(id);
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 result.Status = -1;
                 result.Message = Constant.API_Error_System;
@@ -107,6 +111,6 @@ namespace COM.BUS
 
             return result;
         }
-        
+
     }
 }

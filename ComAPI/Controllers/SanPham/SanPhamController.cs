@@ -1,12 +1,14 @@
 ﻿using COM.BUS;
+using COM.BUS.SanPham;
 using COM.MOD;
+using COM.MOD.SanPham;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace COM.Controllers.PhanQuyenVaTaiKhoan
+namespace ComAPI.Controllers.SanPham
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -15,7 +17,7 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
 
         [HttpGet]
         [Route("DSSanPham")]
-       // [Authorize]
+        // [Authorize]
 
         public IActionResult dsSanPham(int page)
         {
@@ -32,13 +34,13 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
 
             //if (check)
             //{
-                if (page < 1) return BadRequest();
-                else
-                {
-                    var Result = new SanPhamBUS().dsSanPham(page);
-                    if (Result != null) return Ok(Result);
-                    else return NotFound();
-                }
+            if (page < 1) return BadRequest();
+            else
+            {
+                var Result = new SanPhamBUS().dsSanPham(page);
+                if (Result != null) return Ok(Result);
+                else return NotFound();
+            }
 
             //}
             //else
@@ -58,7 +60,7 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
         [Route("ThemSanPham")]
         //[Authorize]
 
-        public IActionResult ThemCN([FromBody] SanPhamMOD item )
+        public IActionResult ThemCN([FromBody] SanPhamMOD item)
         {
 
             //var userclaim = User.Claims;
@@ -73,13 +75,13 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
             //}
             //if (check)
             //{
-                if (item == null) return BadRequest();
-                else
-                {
-                    var Result = new SanPhamBUS().ThemSP(item);
-                    if (Result != null) return Ok(Result);
-                    else return NotFound();
-                }
+            if (item == null) return BadRequest();
+            else
+            {
+                var Result = new SanPhamBUS().ThemSP(item);
+                if (Result != null) return Ok(Result);
+                else return NotFound();
+            }
             //}
             //else
             //{
@@ -149,14 +151,14 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
             //}
             //if (check)
             //{
-                if (item == null) return BadRequest();
-                else
-                {
-                    var Result = new SanPhamBUS().SuaSP(item);
-                    if (Result != null) return Ok(Result);
-                    else return NotFound();
+            if (item == null) return BadRequest();
+            else
+            {
+                var Result = new SanPhamBUS().SuaSP(item);
+                if (Result != null) return Ok(Result);
+                else return NotFound();
 
-                }
+            }
             //}
             //else
             //{
@@ -201,7 +203,7 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
                 else return NotFound();
             }
         }
-            [HttpDelete]
+        [HttpDelete]
         [Route("XoaSanPham")]
         //[Authorize]
 
@@ -221,23 +223,23 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
             //if (check)
             //{
 
-                if (id == null) return BadRequest();
-                else
-                {
-                    var Result = new SanPhamBUS().XoaSP(id);
-                    if (Result != null) return Ok(Result);
-                    else return NotFound();
-                }
-        //    }
+            if (id == null) return BadRequest();
+            else
+            {
+                var Result = new SanPhamBUS().XoaSP(id);
+                if (Result != null) return Ok(Result);
+                else return NotFound();
+            }
+            //    }
 
-        //    else
-        //    {
-        //        return NotFound(new BaseResultMOD
-        //        {
-        //            Status = -99,
-        //            Message = ULT.Constant.NOT_ACCESS
-        //        }); ;
-        //    }
+            //    else
+            //    {
+            //        return NotFound(new BaseResultMOD
+            //        {
+            //            Status = -99,
+            //            Message = ULT.Constant.NOT_ACCESS
+            //        }); ;
+            //    }
 
         }
     }
