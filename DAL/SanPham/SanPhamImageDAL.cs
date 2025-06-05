@@ -164,19 +164,62 @@ namespace COM.DAL.SanPham
             }
         }
 
-        public BaseResultMOD SuaDonVi(DonViMOD item)
+        public BaseResultMOD SuaSanPhamIMG(int id, IFormFile file)
         {
             var result = new BaseResultMOD();
+            string Picture;
+            string tenSanPham = "";
+
+            string shortGuid2 = Utils.Utilities.GenerateRandomCode(8);
+
             try
             {
                 using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
                 {
                     SQLCon.Open();
                     SqlCommand cmd = new SqlCommand();
+                   
+
+
+                    SqlCommand cmdGet = new SqlCommand();
+                    cmdGet.Connection = SQLCon;
+                    cmdGet.CommandType = CommandType.Text;
+
+                    cmdGet.CommandText = @"SELECT sp.TenSanPham
+                    FROM SanPham sp 
+                    LEFT JOIN SanPhamImage SPI ON sp.ID = SPI.SanPhamID
+                    Where sp.ID= @SanPhamID";
+                    cmdGet.Parameters.AddWithValue("@SanPhamID", id);
+                    var data = cmdGet.ExecuteScalar();
+                    if (data != null)
+                    {
+                        tenSanPham = data.ToString();
+                    }
+                    else
+                    {
+                        tenSanPham = "HinhAnh";
+                    }
+                    if (file.Length > 0)
+                    {
+                        string extension = Path.GetExtension(file.FileName);
+                        string name = Utils.Utilities.RemoveDiacritics(tenSanPham.Replace(" ", "")); //để dấu gạch cho chuẩn seo
+                        string newName = $"{shortGuid2}_{tenSanPham}{extension}";
+                        string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "upload");
+                        string filePath = Path.Combine(uploadsFolder, newName);
+                        using (Stream stream = File.Create(filePath))
+                        {
+                            file.CopyTo(stream);
+                        }
+                        Picture = "/upload/" + newName;
+                    }
+                    else
+                    {
+                        Picture = "";
+                    }
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "Update [DonViTinh] set TenDonVi =@TenDonVi where DonViTinhID =@DonViTinhID ";
-                    cmd.Parameters.AddWithValue("@TenChucNang", item.TenDonVi);
-                    cmd.Parameters.AddWithValue("@Mota", item.Mota);
+                    cmd.CommandText = "Update [SanPhamImage] set FilePath =@FilePath where SanPhamID =@SanPhamID ";
+                    cmd.Parameters.AddWithValue("@SanPhamID", id);
+                    cmd.Parameters.AddWithValue("@FilePath", Picture);
                     cmd.Connection = SQLCon;
                     cmd.ExecuteNonQuery();
 
@@ -194,7 +237,7 @@ namespace COM.DAL.SanPham
             }
             return result;
         }
-        public BaseResultMOD XoaDonVi(int id)
+        public BaseResultMOD XoaSanPhamIMG(int id)
         {
             var result = new BaseResultMOD();
             try
@@ -204,19 +247,19 @@ namespace COM.DAL.SanPham
                     SQLCon.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "Delete from DonViTinh where DonViTinhID = @DonViTinhID";
-                    cmd.Parameters.AddWithValue("@DonViTinhID", id);
+                    cmd.CommandText = "Delete from SanPhamImage where ID = @ID";
+                    cmd.Parameters.AddWithValue("@ID", id);
                     cmd.Connection = SQLCon;
                     int rowaffected = cmd.ExecuteNonQuery();
                     if (rowaffected > 0)
                     {
                         result.Status = 1;
-                        result.Message = "Xóa đơn vị thành công";
+                        result.Message = "Xóa ảnh sản phẩm thành công";
                     }
                     else
                     {
                         result.Status = 0;
-                        result.Message = "{id} không hợp lệ";
+                        result.Message = id + "không hợp lệ";
 
                     }
                 }
@@ -226,6 +269,110 @@ namespace COM.DAL.SanPham
             {
                 result.Status = -1;
                 result.Message = Constant.API_Error_System;
+            }
+            return result;
+        }
+        public BaseResultMOD DoiViTriIMG(int id,int currentIndex,int nextIndex )
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    SQLCon.Open();
+                    var trans= SQLCon.BeginTransaction();
+                    try
+                    {
+                        // đổi tạm indexorder của ảnh hiện tại (current) thành -1
+                        var cmdTemp = new SqlCommand();
+                        cmdTemp.CommandType = CommandType.Text;
+                        cmdTemp.CommandText = "Update [SanPhamImage] set IndexOrder= -1 where SanPhamID = @SanPhamID AND IndexOrder=@CurrentIndex";
+                        cmdTemp.Parameters.AddWithValue("@SanPhamID", id);
+                        cmdTemp.Parameters.AddWithValue("@CurrentIndex", currentIndex);
+                        cmdTemp.Connection = SQLCon;
+                        cmdTemp.Transaction = trans;
+
+                        cmdTemp.ExecuteNonQuery();
+                        // gán indexorder của ảnh dích (next) thành current
+                        SqlCommand cmdCurrentIndex = new SqlCommand();
+                        cmdCurrentIndex.CommandType = CommandType.Text;
+                        cmdCurrentIndex.CommandText = "Update [SanPhamImage] set IndexOrder=@CurrentIndex where SanPhamID =@SanPhamID AND IndexOrder = @NextIndex ";
+                        cmdCurrentIndex.Parameters.AddWithValue("@SanPhamID", id);
+                        cmdCurrentIndex.Parameters.AddWithValue("@CurrentIndex", currentIndex);
+
+                        cmdCurrentIndex.Parameters.AddWithValue("@NextIndex", nextIndex);
+                        cmdCurrentIndex.Connection = SQLCon;
+                        cmdCurrentIndex.Transaction = trans;
+
+                        cmdCurrentIndex.ExecuteNonQuery();
+                        // gán ảnh có indexorder = -1 thành next index
+                        SqlCommand cmdNextIndex = new SqlCommand();
+                        cmdNextIndex.CommandType = CommandType.Text;
+                        cmdNextIndex.CommandText = "Update [SanPhamImage] set IndexOrder=@IndexOrder where SanPhamID =@SanPhamID and IndexOrder = -1 ";
+                        cmdNextIndex.Parameters.AddWithValue("@SanPhamID", id);
+                        cmdNextIndex.Parameters.AddWithValue("@IndexOrder", nextIndex);
+                        cmdNextIndex.Connection = SQLCon;
+                        cmdNextIndex.Transaction = trans;
+
+                        cmdNextIndex.ExecuteNonQuery();
+                        trans.Commit();
+                        result.Status = 1;
+                        result.Message = "Đổi vị trí thành công";
+
+                        result.Data = 1;
+                       
+                    }
+                    catch
+                    {
+                        trans.Rollback();
+                        result.Status = -1;
+                        result.Message = "Đổi vị trí thất bại";
+                    }
+                 
+                }
+
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = Constant.API_Error_System;
+
+            }
+            return result;
+        }
+        //update nhieu hinh anh
+        public BaseResultMOD UpdateImageOrder(List<ImageOrderUpdateModel> list)
+        {
+            BaseResultMOD result = new BaseResultMOD();
+            using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+            {
+                SQLCon.Open();
+                SqlTransaction trans = SQLCon.BeginTransaction();
+
+                try
+                {
+                    foreach (var item in list)
+                    {
+                        SqlCommand cmd = new SqlCommand(@"
+                    UPDATE SanPhamImage 
+                    SET IndexOrder = @IndexOrder 
+                    WHERE ID = @ID", SQLCon, trans);
+
+                        cmd.Parameters.AddWithValue("@IndexOrder", item.NewIndex);
+                        cmd.Parameters.AddWithValue("@ID", item.ImageID);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    trans.Commit();
+                    result.Status = 1;
+                    result.Message = "Cập nhật thứ tự thành công";
+                }
+                catch (Exception ex)
+                {
+                    trans.Rollback();
+                    result.Status = -1;
+                    result.Message = "Lỗi: " + ex.Message;
+                }
             }
             return result;
         }

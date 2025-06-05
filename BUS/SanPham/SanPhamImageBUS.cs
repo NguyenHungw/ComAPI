@@ -135,61 +135,64 @@ namespace COM.BUS.SanPham
             }
             return result;
         }
-        public BaseResultMOD SuaSanPhamAnhVaGia(List<IFormFile> files, SanPhamAnhVaGiaMOD item)
+        public BaseResultMOD DoiViTriBUS(int id, int currentIndex, int nextIndex)
         {
             var result = new BaseResultMOD();
             try
             {
-                //if (item.MSanPham == null || item.MSanPham == "")
-                //{
-                //    result.Status = 0;
-                //    result.Message = " Tên sản phẩm không được để trống";
-                //}
-                if (item.TenSanPham == null || item.TenSanPham == "")
+                if (id == null || id <= 0)
                 {
                     result.Status = 0;
-                    result.Message = " Tên sản phẩm không được để trống";
+                    result.Message = "id không được để trống";
                 }
-                else if (item.LoaiSanPhamID == null || item.LoaiSanPhamID < 0)
+                else if (currentIndex == null )
                 {
                     result.Status = 0;
-                    result.Message = " Tên loại sản phẩm không được để trống";
-
+                    result.Message = "currentIndex không được để trống";
                 }
-                else if (item.DonViTinhID == null || item.DonViTinhID < 0)
+                else if (nextIndex == null )
                 {
                     result.Status = 0;
-                    result.Message = " Tên đơn vị không được để trống";
+                    result.Message = "nextIndex không được để trống";
                 }
                 else
                 {
-                    if (files == null || files.Count == 0)
-                    {
-                        return new BaseResultMOD
-                        {
-                            Status = -1,
-                            Message = "Chưa có file đính kèm"
-                        };
-                    }
-                    if (files.Count > 0)
-                    {
-                        new SanPhamDAL().SuaSanPhamAnhVaGia(files, item);
-                        result.Status = 1;
-                        result.Message = "Thêm thành công";
-                        result.Data = 1;
-                    }
+                    new SanPhamImageDAL().DoiViTriIMG(id,currentIndex,nextIndex);
+                    result.Status = 1;
+                    result.Message = "Đổi thành công";
+                    result.Data = 1;
                 }
-
             }
             catch (Exception ex)
             {
                 result.Data = -1;
                 result.Message = ULT.Constant.API_Error_System;
-
             }
             return result;
         }
-        public BaseResultMOD XoaSP_Anh_Gia(int id)
+        public BaseResultMOD DoiNhieuViTri(List<ImageOrderUpdateModel> list)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+             
+                    if (list.Count > 0)
+                    {
+                        new SanPhamImageDAL().UpdateImageOrder(list);
+                        result.Status = 1;
+                        result.Message = "Thêm thành công";
+                        result.Data = 1;
+                    }
+                
+            }
+            catch (Exception ex)
+            {
+                result.Data = -1;
+                result.Message = ULT.Constant.API_Error_System;
+            }
+            return result;
+        }
+        public BaseResultMOD XoaHinhAnh(int id)
         {
             var result = new BaseResultMOD();
             try
@@ -201,7 +204,7 @@ namespace COM.BUS.SanPham
                 }
                 else
                 {
-                    result = new SanPhamDAL().XoaSanPhamAnhVaGia(id);
+                    result = new SanPhamImageDAL().XoaSanPhamIMG(id);
                 }
             }
             catch (Exception ex)

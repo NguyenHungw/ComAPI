@@ -32,7 +32,6 @@ namespace ComAPI.Controllers.SanPham
             //        break;
             //    }
             //}
-
             //if (check)
             //{
             if (page < 1) return BadRequest();
@@ -42,7 +41,6 @@ namespace ComAPI.Controllers.SanPham
                 if (Result != null) return Ok(Result);
                 else return NotFound();
             }
-
             //}
             //else
             //{
@@ -52,9 +50,6 @@ namespace ComAPI.Controllers.SanPham
             //        Message = ULT.Constant.NOT_ACCESS
             //    });
             //}
-
-
-
         }
 
         [HttpPost]
@@ -63,7 +58,6 @@ namespace ComAPI.Controllers.SanPham
 
         public IActionResult ThemIMG(List<IFormFile> files, int id)
         {
-
             //var userclaim = User.Claims;
             //var check = false;
             //foreach (var claim in userclaim)
@@ -93,12 +87,11 @@ namespace ComAPI.Controllers.SanPham
             //    });
             //}
         }
-
         [HttpPut]
-        [Route("SuaChucNang")]
+        [Route("DoiViTri")]
         //[Authorize]
 
-        public IActionResult SuaCN([FromBody] ChucNangMOD item)
+        public IActionResult SuaIMG(int id, int currentIndex, int nextIndex)
         {
             //var userclaim = User.Claims;
             //var check = false;
@@ -112,10 +105,10 @@ namespace ComAPI.Controllers.SanPham
             //}
             //if (check)
             //{
-            if (item == null) return BadRequest();
+            if (id == null|| currentIndex == null || nextIndex == null) return BadRequest();
             else
             {
-                var Result = new ChucNangBUS().SuaCN(item);
+                var Result = new SanPhamImageBUS().DoiViTriBUS(id,currentIndex,nextIndex);
                 if (Result != null) return Ok(Result);
                 else return NotFound();
 
@@ -129,15 +122,44 @@ namespace ComAPI.Controllers.SanPham
             //        Message = ULT.Constant.NOT_ACCESS
             //    });
             //}
+        }
+        [HttpPut]
+        [Route("DoiNhieuViTri")]
+        //[Authorize]
+        public IActionResult SuaNhieuIMG([FromBody] List<ImageOrderUpdateModel> list)
+        {
+            //var userclaim = User.Claims;
+            //var check = false;
+            //foreach (var claim in userclaim)
+            //{
+            //    if (claim.Type == "CN" && claim.Value.Contains("QLCN") && claim.Value.Contains("Sua"))
+            //    {
+            //        check = true;
+            //        break;
+            //    }
+            //}
+            //if (check)
+            //{
+            if (list == null) return BadRequest();
+            else
+            {
+                var Result = new SanPhamImageBUS().DoiNhieuViTri(list);
+                if (Result != null) return Ok(Result);
+                else return NotFound();
 
-
-
-
-
-
+            }
+            //}
+            //else
+            //{
+            //    return NotFound(new BaseResultMOD
+            //    {
+            //        Status = -99,
+            //        Message = ULT.Constant.NOT_ACCESS
+            //    });
+            //}
         }
         [HttpDelete]
-        [Route("XoaChucNang")]
+        [Route("XoaHinhAnh")]
         //[Authorize]
 
         public IActionResult XoaCN(int id)
@@ -152,19 +174,16 @@ namespace ComAPI.Controllers.SanPham
             //        break;
             //    }
             //}
-
             //if (check)
             //{
-
             if (id == null) return BadRequest();
             else
             {
-                var Result = new ChucNangBUS().XoaCN(id);
+                var Result = new SanPhamImageBUS().XoaHinhAnh(id);
                 if (Result != null) return Ok(Result);
                 else return NotFound();
             }
             //    }
-
             //    else
             //    {
             //        return NotFound(new BaseResultMOD
@@ -173,7 +192,6 @@ namespace ComAPI.Controllers.SanPham
             //            Message = ULT.Constant.NOT_ACCESS
             //        }); ;
             //    }
-
         }
     }
 }

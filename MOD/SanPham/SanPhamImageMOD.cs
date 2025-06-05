@@ -13,4 +13,9 @@ namespace COM.MOD.SanPham
         public string? FilePath { get; set; }
         public int? IndexOrder { get; set; }
     }
+    public class ImageOrderUpdateModel
+    {
+        public int ImageID { get; set; }
+        public int NewIndex { get; set; }
+    }
 }

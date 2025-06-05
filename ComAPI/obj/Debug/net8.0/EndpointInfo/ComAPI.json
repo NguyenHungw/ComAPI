@@ -936,7 +936,45 @@
         }
       }
     },
-    "/api/SamPhamImage/SuaChucNang": {
+    "/api/SamPhamImage/DoiViTri": {
+      "put": {
+        "tags": [
+          "SamPhamImage"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "currentIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "nextIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SamPhamImage/DoiNhieuViTri": {
       "put": {
         "tags": [
           "SamPhamImage"
@@ -945,17 +983,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ChucNangMOD"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImageOrderUpdateModel"
+                }
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ChucNangMOD"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImageOrderUpdateModel"
+                }
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ChucNangMOD"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ImageOrderUpdateModel"
+                }
               }
             }
           }
@@ -967,7 +1014,7 @@
         }
       }
     },
-    "/api/SamPhamImage/XoaChucNang": {
+    "/api/SamPhamImage/XoaHinhAnh": {
       "delete": {
         "tags": [
           "SamPhamImage"
@@ -1420,6 +1467,20 @@
           "mota": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ImageOrderUpdateModel": {
+        "type": "object",
+        "properties": {
+          "imageID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "newIndex": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
