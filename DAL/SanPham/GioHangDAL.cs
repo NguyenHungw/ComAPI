@@ -1,5 +1,4 @@
 ﻿using COM.MOD;
-using COM.MOD;
 using COM.MOD.SanPham;
 using COM.MOD.SanPham;
 using COM.ULT;
@@ -14,33 +13,33 @@ using System.Threading.Tasks;
 
 namespace COM.DAL.SanPham
 {
-    public class DonViDAL
+    public class GioHangDAL
     {
         // private string SQLHelper.appConnectionStrings = "Data Source=DESKTOP-PMRM3DP\\SQLEXPRESS;Initial Catalog=CT;Persist Security Info=True;User ID=Hungw;Password=123456;Trusted_Connection=True;Max Pool Size=100";
-        public BaseResultMOD getdsDonVi(int page)
+        public BaseResultMOD getdsGioHang(int page)
         {
             const int ProductPerPage = 10;
             int startPage = ProductPerPage * (page - 1);
             var result = new BaseResultMOD();
             try
             {
-                List<DonViMOD> dscn = new List<DonViMOD>();
+                List<GioHangMOD> dscn = new List<GioHangMOD>();
                 using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
                 {
                     SQLCon.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = " Select * from DonViTinh ";
+                    cmd.CommandText = " Select * from GioHang ";
                     cmd.Connection = SQLCon;
                     cmd.ExecuteNonQuery();
                     SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        DonViMOD item = new DonViMOD();
-                        item.DonViTinhID = reader.GetInt32(0);
-                        item.TenDonVi = reader.GetString(1);
-
-
+                        GioHangMOD item = new GioHangMOD();
+                        item.ID = reader.GetInt32(0);
+                        item.SanPhamID = reader.GetInt32(1);
+                        item.UserID = reader.GetInt32(2);
+                        item.GioSoLuong = reader.GetInt32(3);
 
                         dscn.Add(item);
                     }
@@ -59,17 +58,37 @@ namespace COM.DAL.SanPham
             return result;
 
         }
-        public BaseResultMOD ThemDonVi(DonViMOD item)
+        public BaseResultMOD ThemGioHang(GioHangMOD item)
         {
             var result = new BaseResultMOD();
             try
             {
                 // Kiểm tra trước khi thêm chức năng
-                bool isDuplicate = KiemTraTrungChucNang(item.TenDonVi);
+                bool isDuplicate = KiemTraTrungSanPham((int)item.SanPhamID);
                 if (isDuplicate)
                 {
-                    result.Status = -1;
-                    result.Message = "Tên chức năng đã tồn tại.";
+                    //sp ton tai
+                    using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                    {
+                        int soLuongCanCong = item.GioSoLuong.HasValue && item.GioSoLuong.Value > 0 ? item.GioSoLuong.Value : 1;
+                                                               // điều kiện                       //     đúng              // sai                     
+
+                        SQLCon.Open();
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "Update GioHang set GioSoLuong = GioSoLuong + @SoLuong where SanPhamID=@SanPhamID AND UserID = @UserID ";
+                        cmd.Parameters.AddWithValue("@SoLuong", soLuongCanCong);
+                        cmd.Parameters.AddWithValue("@SanPhamID", item.SanPhamID ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@UserID", item.UserID ?? (object)DBNull.Value);
+
+
+
+                        cmd.Connection = SQLCon;
+                        cmd.ExecuteNonQuery();
+                        result.Status = 1;
+                        result.Message = "Thêm thành công";
+                        result.Data = 1;
+                    }
                 }
                 else
                 {
@@ -79,15 +98,17 @@ namespace COM.DAL.SanPham
                         SQLCon.Open();
                         SqlCommand cmd = new SqlCommand();
                         cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = "Insert into DonViTinh (TenDonVi,Mota) VALUES(@TenDonVi,@Mota)";
-                        cmd.Parameters.AddWithValue("@TenDonVi", item.TenDonVi ?? (object)DBNull.Value);
-                        cmd.Parameters.AddWithValue("@Mota", item.Mota ?? (object)DBNull.Value);
+                        cmd.CommandText = "Insert into GioHang (SanPhamID,UserID,GioSoLuong) VALUES(@SanPhamID,@UserID,@GioSoLuong)";
+                        cmd.Parameters.AddWithValue("@SanPhamID", item.SanPhamID ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@UserID", item.UserID ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@GioSoLuong", item.GioSoLuong ?? (object)DBNull.Value);
+
 
 
                         cmd.Connection = SQLCon;
                         cmd.ExecuteNonQuery();
                         result.Status = 1;
-                        result.Message = "Thêm đơn vị thành công";
+                        result.Message = "Thêm thành công";
                         result.Data = 1;
                     }
                 }
@@ -101,22 +122,22 @@ namespace COM.DAL.SanPham
         }
 
         // Hàm để kiểm tra trùng chức năng
-        private bool KiemTraTrungChucNang(string tendonvi)
+        private bool KiemTraTrungSanPham(int id)
         {
             using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
             {
                 SQLCon.Open();
-                string checkQuery = "SELECT COUNT(*) FROM DonViTinh WHERE TenDonVi = @TenDonVi";
+                string checkQuery = "SELECT COUNT(*) FROM GioHang WHERE SanPhamID = @SanPhamID";
                 using (SqlCommand checkCmd = new SqlCommand(checkQuery, SQLCon))
                 {
-                    checkCmd.Parameters.AddWithValue("@TenDonVi", tendonvi);
+                    checkCmd.Parameters.AddWithValue("@SanPhamID", id);
                     int existingCount = (int)checkCmd.ExecuteScalar();
                     return existingCount > 0;
                 }
             }
         }
 
-        public BaseResultMOD SuaDonVi(DonViMOD item)
+        public BaseResultMOD SuaGioHang(GioHangMOD item)
         {
             var result = new BaseResultMOD();
             try
@@ -126,14 +147,17 @@ namespace COM.DAL.SanPham
                     SQLCon.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "Update [DonViTinh] set TenDonVi =@TenDonVi where DonViTinhID =@DonViTinhID ";
-                    cmd.Parameters.AddWithValue("@TenChucNang", item.TenDonVi);
-                    cmd.Parameters.AddWithValue("@Mota", item.Mota);
+                    cmd.CommandText = "Update [GioHang] set SanPhamID =@SanPhamID,UserID =@UserID,GioSoLuong =@GioSoLuong where ID =@ID ";
+                    cmd.Parameters.AddWithValue("@ID", item.ID);
+                    cmd.Parameters.AddWithValue("@SanPhamID", item.SanPhamID);
+                    cmd.Parameters.AddWithValue("@UserID", item.UserID);
+                    cmd.Parameters.AddWithValue("@GioSoLuong", item.GioSoLuong);
+
                     cmd.Connection = SQLCon;
                     cmd.ExecuteNonQuery();
 
                     result.Status = 1;
-                    result.Message = "Sửa đơn vị thành công";
+                    result.Message = "Sửa giỏ hàng thành công";
                     result.Data = 1;
                 }
 
@@ -146,7 +170,7 @@ namespace COM.DAL.SanPham
             }
             return result;
         }
-        public BaseResultMOD XoaDonVi(int id)
+        public BaseResultMOD XoaGioHang(int id)
         {
             var result = new BaseResultMOD();
             try
@@ -156,14 +180,14 @@ namespace COM.DAL.SanPham
                     SQLCon.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "Delete from DonViTinh where DonViTinhID = @DonViTinhID";
-                    cmd.Parameters.AddWithValue("@DonViTinhID", id);
+                    cmd.CommandText = "Delete from GioHang where ID = @ID";
+                    cmd.Parameters.AddWithValue("@ID", id);
                     cmd.Connection = SQLCon;
                     int rowaffected = cmd.ExecuteNonQuery();
                     if (rowaffected > 0)
                     {
                         result.Status = 1;
-                        result.Message = "Xóa đơn vị thành công";
+                        result.Message = "Xóa thành công";
                     }
                     else
                     {

@@ -4,6 +4,7 @@ using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace COM.MOD.SanPham
 {
@@ -13,6 +14,9 @@ namespace COM.MOD.SanPham
         public string? TenSanPham { get; set; }
         public int? LoaiSanPhamID { get; set; }
         public int? DonViTinhID { get; set; }
+        public string? MoTa { get; set; }
+        public int? SoLuong { get; set; }
+
 
     }
     public class SanPhamAnhVaGiaMOD
@@ -22,6 +26,8 @@ namespace COM.MOD.SanPham
         public string? TenSanPham { get; set; }
         public int? LoaiSanPhamID { get; set; }
         public int? DonViTinhID { get; set; }
+        public string? MoTa { get; set; }
+        public int? SoLuong { get; set; }
         public DateTime? NgayBatDau { get; set; }
         public decimal? GiaBan { get; set; }
         public decimal? SalePercent { get; set; }
@@ -39,6 +45,27 @@ namespace COM.MOD.SanPham
         public DateTime NgayBatDau { get; set; }
         public SqlMoney GiaBan { get; set; }
         public decimal SalePercent { get; set; }
+
+    }
+    public class SanPhamCombo
+    {
+        public string? TenCombo { get; set; }
+        public string? GiaCombo { get; set; }
+        public string? SoLuongCombo { get; set; }
+        public DateTime? NgayBatDau { get; set; }
+        public DateTime? NgayKetThuc { get; set; }
+        public int TrangThai { get; set; } // 0: Chưa kích hoạt, 1: Đang hoạt động, 2: Kết thúc
+    }
+
+    public class ChiTietComboSanPham
+    {
+        public string TenCombo { get; set; }
+        public string? MSanPham { get; set; }
+        public string? TenSanPham { get; set; }
+        public int? SoLuongSP { get; set; }
+        public string? MoTa { get; set; }
+        public decimal? GiaCombo { get; set; }
+        public int TrangThai { get; set; } // 0: Chưa kích hoạt, 1: Đang hoạt động, 2: Kết thúc
 
     }
 }

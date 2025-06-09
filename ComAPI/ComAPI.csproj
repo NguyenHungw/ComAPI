@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\Vnpay\" />
     <Folder Include="wwwroot\upload\" />
   </ItemGroup>
 

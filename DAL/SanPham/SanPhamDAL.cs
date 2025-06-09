@@ -44,6 +44,8 @@ namespace COM.DAL.SanPham
                         item.TenSanPham = reader.GetString(2);
                         item.LoaiSanPhamID = reader.GetInt32(3);
                         item.DonViTinhID = reader.GetInt32(4);
+                        item.MoTa = reader.GetString(5);
+                        item.SoLuong = reader.GetInt32(6);
 
                         dssp.Add(item);
                     }
@@ -85,8 +87,6 @@ namespace COM.DAL.SanPham
 
                         //string msp = $"{shortGuid2}_{item.TenSanPham}";
                         //string msp = $"{shortGuid2}-{name}";
-
-
                         SQLCon.Open();
                         SqlCommand cmd = new SqlCommand();
                         cmd.CommandType = CommandType.Text;
@@ -95,6 +95,8 @@ namespace COM.DAL.SanPham
                         cmd.Parameters.AddWithValue("@TenSanPham", item.TenSanPham ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@LoaiSanPhamID", item.LoaiSanPhamID ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@DonViTinhID", item.DonViTinhID ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@MoTa", item.MoTa ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@SoLuong", item.SoLuong ?? (object)DBNull.Value); 
                         cmd.Connection = SQLCon;
                         cmd.ExecuteNonQuery();
                         result.Status = 1;
@@ -125,8 +127,8 @@ namespace COM.DAL.SanPham
                 try
                 {
                     var cmd = new SqlCommand(@"
-                INSERT INTO SanPham (MSanPham, TenSanPham, LoaiSanPhamID, DonViTinhID)
-                VALUES (@MSanPham, @TenSanPham, @LoaiSanPhamID, @DonViTinhID);
+                INSERT INTO SanPham (MSanPham, TenSanPham, LoaiSanPhamID, DonViTinhID, MoTa,SoLuong)
+                VALUES (@MSanPham, @TenSanPham, @LoaiSanPhamID, @DonViTinhID,@MoTa,@SoLuong);
                 SELECT SCOPE_IDENTITY();", SQLCon, trans); //trả về ID vừa chèn
 
 
@@ -134,6 +136,10 @@ namespace COM.DAL.SanPham
                     cmd.Parameters.AddWithValue("@TenSanPham", item.TenSanPham);
                     cmd.Parameters.AddWithValue("@LoaiSanPhamID", item.LoaiSanPhamID);
                     cmd.Parameters.AddWithValue("@DonViTinhID", item.DonViTinhID);
+                    
+                    cmd.Parameters.AddWithValue("@DonViTinhID", item.DonViTinhID);
+                    cmd.Parameters.AddWithValue("@MoTa", item.MoTa);
+                    cmd.Parameters.AddWithValue("@SoLuong", item.SoLuong ?? (object)DBNull.Value); // nếu SoLuong là null thì truyền DBNull
                     int newID = Convert.ToInt32(cmd.ExecuteScalar()); // lấy ra id vừa chèn và chuyển kq sang int
 
                     // 2. Thêm giá
@@ -211,6 +217,8 @@ namespace COM.DAL.SanPham
                     cmd.Parameters.AddWithValue("@TenSanPham", item.TenSanPham);
                     cmd.Parameters.AddWithValue("@LoaiSanPhamID", item.LoaiSanPhamID);
                     cmd.Parameters.AddWithValue("@DonViTinhID", item.DonViTinhID);
+                    cmd.Parameters.AddWithValue("@MoTa", item.MoTa);
+                    cmd.Parameters.AddWithValue("@SoLuong", item.SoLuong ?? (object)DBNull.Value); // nếu SoLuong là null thì truyền DBNull
                     int newID = Convert.ToInt32(cmd.ExecuteScalar()); // lấy ra id vừa chèn và chuyển kq sang int
 
 

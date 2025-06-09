@@ -400,6 +400,112 @@
         }
       }
     },
+    "/api/GioHang/DSGioHang": {
+      "get": {
+        "tags": [
+          "GioHang"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/GioHang/ThemGioHang": {
+      "post": {
+        "tags": [
+          "GioHang"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GioHangMOD"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GioHangMOD"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GioHangMOD"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/GioHang/SuaGioHang": {
+      "put": {
+        "tags": [
+          "GioHang"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GioHangMOD"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GioHangMOD"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GioHangMOD"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/GioHang/XoaGioHang": {
+      "delete": {
+        "tags": [
+          "GioHang"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Google/google-callback": {
       "get": {
         "tags": [
@@ -1121,6 +1227,13 @@
                     "type": "integer",
                     "format": "int32"
                   },
+                  "MoTa": {
+                    "type": "string"
+                  },
+                  "SoLuong": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
                   "NgayBatDau": {
                     "type": "string",
                     "format": "date-time"
@@ -1153,6 +1266,12 @@
                   "style": "form"
                 },
                 "DonViTinhID": {
+                  "style": "form"
+                },
+                "MoTa": {
+                  "style": "form"
+                },
+                "SoLuong": {
                   "style": "form"
                 },
                 "NgayBatDau": {
@@ -1210,6 +1329,13 @@
                     "type": "integer",
                     "format": "int32"
                   },
+                  "MoTa": {
+                    "type": "string"
+                  },
+                  "SoLuong": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
                   "NgayBatDau": {
                     "type": "string",
                     "format": "date-time"
@@ -1242,6 +1368,12 @@
                   "style": "form"
                 },
                 "DonViTinhID": {
+                  "style": "form"
+                },
+                "MoTa": {
+                  "style": "form"
+                },
+                "SoLuong": {
                   "style": "form"
                 },
                 "NgayBatDau": {
@@ -1471,6 +1603,32 @@
         },
         "additionalProperties": false
       },
+      "GioHangMOD": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "sanPhamID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "userID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "gioSoLuong": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ImageOrderUpdateModel": {
         "type": "object",
         "properties": {
@@ -1584,6 +1742,15 @@
             "nullable": true
           },
           "donViTinhID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "moTa": {
+            "type": "string",
+            "nullable": true
+          },
+          "soLuong": {
             "type": "integer",
             "format": "int32",
             "nullable": true
