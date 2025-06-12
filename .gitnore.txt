@@ -25,3 +25,6 @@ Desktop.ini
 
 # Others
 *.log
+
+# Do not commit appsettings files
+appsettings.json
