@@ -51,6 +51,44 @@ namespace ComAPI.Controllers.SanPham
 
 
         }
+        [HttpGet]
+        [Route("DSGioHangUser")]
+        public IActionResult dsGioHangUser(int UserID)
+        {
+            //var userclaim = User.Claims;
+            //bool check = false;
+            //foreach (var claim in userclaim)
+            //{
+            //    if (claim.Type == "CN" && claim.Value.Contains("QLCN") && claim.Value.Contains("Xem"))
+            //    {
+            //        check = true;
+            //        break;
+            //    }
+            //}
+
+            //if (check)
+            //{
+            if (UserID < 1) return BadRequest();
+            else
+            {
+                var Result = new GioHangBUS().dsGioHangUser(UserID);
+                if (Result != null) return Ok(Result);
+                else return NotFound();
+            }
+
+            //}
+            //else
+            //{
+            //    return NotFound(new BaseResultMOD
+            //    {
+            //        Status = -99,
+            //        Message = ULT.Constant.NOT_ACCESS
+            //    });
+            //}
+
+
+
+        }
 
         [HttpPost]
         [Route("ThemGioHang")]

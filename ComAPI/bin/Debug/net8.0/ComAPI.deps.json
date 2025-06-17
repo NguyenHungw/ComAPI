@@ -10,6 +10,7 @@
         "dependencies": {
           "COM.BUS": "1.0.0",
           "COM.MOD": "1.0.0",
+          "COM.Services": "1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "2.3.0",
           "Microsoft.AspNetCore.Authentication.Facebook": "8.0.10",
           "Microsoft.AspNetCore.Authentication.Google": "8.0.15",
@@ -1154,6 +1155,17 @@
           }
         }
       },
+      "COM.LIB/1.0.0": {
+        "dependencies": {
+          "COM.MOD": "1.0.0"
+        },
+        "runtime": {
+          "COM.LIB.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "COM.MOD/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Cookies": "2.3.0",
@@ -1163,6 +1175,19 @@
         },
         "runtime": {
           "COM.MOD.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "COM.Services/1.0.0": {
+        "dependencies": {
+          "COM.DAL": "1.0.0",
+          "COM.LIB": "1.0.0",
+          "COM.MOD": "1.0.0"
+        },
+        "runtime": {
+          "COM.Services.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1920,7 +1945,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "COM.LIB/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "COM.MOD/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "COM.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

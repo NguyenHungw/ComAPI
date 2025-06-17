@@ -8,13 +8,14 @@ using Microsoft.AspNetCore.Authentication.Google;
 
 
 var builder = WebApplication.CreateBuilder(args);
+// Set appConnectionStrings before building the app
+COM.ULT.SQLHelper.appConnectionStrings = builder.Configuration.GetConnectionString("DefaultConnection");
 //cấu hình sercet trong db
 var secretDal = new ProviderSettingDAL(builder.Configuration.GetConnectionString("DefaultConnection"));
 var facebookSecret = secretDal.GetByProvider("Facebook");
 var googleSecret = secretDal.GetByProvider("Google");
 
-// Set appConnectionStrings before building the app
-COM.ULT.SQLHelper.appConnectionStrings = builder.Configuration.GetConnectionString("DefaultConnection");
+
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -30,7 +31,7 @@ builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
     //options.DefaultChallengeScheme = FacebookDefaults.AuthenticationScheme;
-    //options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
 
 })
 .AddCookie()
@@ -70,7 +71,8 @@ builder.Services.AddAuthentication(options =>
      //options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
      options.ClientId = googleSecret.ClientId;
      options.ClientSecret = googleSecret.ClientSecret;
-     options.CallbackPath = "/signin-google"; // Đúng với Redirect URI
+     //options.CallbackPath = "/api/Google/google-callback"; // Đúng với Redirect URI
+     options.CallbackPath = "/login-google";
      options.SaveTokens = true; // Lưu token sau login
      options.Scope.Add("profile");
      options.Scope.Add("email");

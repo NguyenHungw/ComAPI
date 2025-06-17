@@ -343,6 +343,22 @@
   },
   {
     "ContainingType": "ComAPI.Controllers.SanPham.GioHangController",
+    "Method": "dsGioHangUser",
+    "RelativePath": "api/GioHang/DSGioHangUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.SanPham.GioHangController",
     "Method": "SuaDV",
     "RelativePath": "api/GioHang/SuaGioHang",
     "HttpMethod": "PUT",
@@ -403,6 +419,16 @@
     "ContainingType": "ComAPI.Controllers.GoogleController",
     "Method": "LoginGoogle",
     "RelativePath": "api/Google/login-google",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.GoogleController",
+    "Method": "GetGoogleLoginLink",
+    "RelativePath": "api/Google/login-google-link",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

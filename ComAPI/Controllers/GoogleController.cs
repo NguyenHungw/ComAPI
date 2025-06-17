@@ -99,6 +99,7 @@ namespace ComAPI.Controllers
             return Ok(jwtresult);
         }
 
+        //[ApiExplorerSettings(IgnoreApi = true)]
         [HttpGet("login-google")]
         public IActionResult LoginGoogle()
         {
@@ -107,7 +108,41 @@ namespace ComAPI.Controllers
                 RedirectUri = "/api/Google/google-callback" // Khi login thành công sẽ về đây
             };
             return Challenge(props, GoogleDefaults.AuthenticationScheme);
-        }  
+        }
+        [HttpGet("login-google-link")]
+        public IActionResult GetGoogleLoginLink()
+        {
+            var properties = new AuthenticationProperties
+            {
+                RedirectUri = "/api/Google/google-callback"
+            };
+
+            // Gọi scheme Google để lấy URL sẽ chuyển hướng tới
+            var challengeResult = Challenge(properties, GoogleDefaults.AuthenticationScheme) as ChallengeResult;
+
+            // Lấy URL login Google thông qua AuthenticationHandler
+            // Nhưng do nó không expose ra URL trực tiếp, ta làm workaround:
+            // Trả về URL thủ công (Google OAuth URL + clientId + redirectUri...)
+
+            // Cách 1: Build URL thủ công (nếu không dùng middleware)
+            var clientId = "34380660482-4lcr5s6j4o75eha13a8ov38kus0p3686.apps.googleusercontent.com";
+            var redirectUri = "http://localhost:2222/api/Google/google-callback";
+            var scope = "openid%20email%20profile";
+
+            var url = $"https://accounts.google.com/o/oauth2/v2/auth" +
+                      $"?client_id={clientId}" +
+                      $"&redirect_uri={Uri.EscapeDataString(redirectUri)}" +
+                      $"&response_type=code" +
+                      $"&scope={scope}" +
+                      $"&access_type=offline" +
+                      $"&prompt=consent";
+
+            return Ok(new
+            {
+                LoginUrl = url
+            });
+        }
+
     }
 
 }

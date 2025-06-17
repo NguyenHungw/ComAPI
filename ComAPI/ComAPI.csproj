@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BUS\COM.BUS.csproj" />
+    <ProjectReference Include="..\COM.Services\COM.Services.csproj" />
     <ProjectReference Include="..\MOD\COM.MOD.csproj" />
   </ItemGroup>
 

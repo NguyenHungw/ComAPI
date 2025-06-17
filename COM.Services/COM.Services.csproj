@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\COM.LIB\COM.LIB.csproj" />
+    <ProjectReference Include="..\DAL\COM.DAL.csproj" />
     <ProjectReference Include="..\MOD\COM.MOD.csproj" />
   </ItemGroup>
 

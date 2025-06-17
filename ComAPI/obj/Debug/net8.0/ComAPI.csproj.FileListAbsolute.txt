@@ -170,3 +170,7 @@ C:\Users\Admin\source\repos\ComAPI\ComAPI\obj\Debug\net8.0\ComAPI.sourcelink.jso
 C:\Users\Admin\source\repos\ComAPI\ComAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
 C:\Users\Admin\source\repos\ComAPI\ComAPI\bin\Debug\net8.0\libsodium.dll
 C:\Users\Admin\source\repos\ComAPI\ComAPI\bin\Debug\net8.0\opus.dll
+C:\Users\Admin\source\repos\ComAPI\ComAPI\bin\Debug\net8.0\COM.LIB.dll
+C:\Users\Admin\source\repos\ComAPI\ComAPI\bin\Debug\net8.0\COM.Services.dll
+C:\Users\Admin\source\repos\ComAPI\ComAPI\bin\Debug\net8.0\COM.Services.pdb
+C:\Users\Admin\source\repos\ComAPI\ComAPI\bin\Debug\net8.0\COM.LIB.pdb

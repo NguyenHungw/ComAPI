@@ -58,6 +58,48 @@ namespace COM.DAL.SanPham
             return result;
 
         }
+        public BaseResultMOD getGioHangUser(int UserID)
+        {
+            //const int ProductPerPage = 10;
+            //int startPage = ProductPerPage * (page - 1);
+            var result = new BaseResultMOD();
+            try
+            {
+                List<GioHangMOD> dscn = new List<GioHangMOD>();
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    SQLCon.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = " Select * from GioHang where UserID = @UserID ";
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        GioHangMOD item = new GioHangMOD();
+                        item.ID = reader.GetInt32(0);
+                        item.SanPhamID = reader.GetInt32(1);
+                        item.UserID = reader.GetInt32(2);
+                        item.GioSoLuong = reader.GetInt32(3);
+
+                        dscn.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dscn;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+
+            }
+            return result;
+
+        }
         public BaseResultMOD ThemGioHang(GioHangMOD item)
         {
             var result = new BaseResultMOD();

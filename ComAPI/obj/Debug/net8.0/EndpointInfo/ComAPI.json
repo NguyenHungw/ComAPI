@@ -528,6 +528,28 @@
         }
       }
     },
+    "/api/GioHang/DSGioHangUser": {
+      "get": {
+        "tags": [
+          "GioHang"
+        ],
+        "parameters": [
+          {
+            "name": "UserID",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/GioHang/ThemGioHang": {
       "post": {
         "tags": [
@@ -625,6 +647,18 @@
       }
     },
     "/api/Google/login-google": {
+      "get": {
+        "tags": [
+          "Google"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Google/login-google-link": {
       "get": {
         "tags": [
           "Google"

@@ -36,6 +36,29 @@ namespace COM.BUS.SanPham
             return result;
 
         }
+        public BaseResultMOD dsGioHangUser(int UserID)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                if (UserID > 0) { result = new GioHangDAL().getGioHangUser(UserID); }
+                else
+                {
+                    result.Status = 0;
+                    result.Message = "lỗi page";
+                }
+            }
+            catch (Exception)
+            {
+                result.Status = -1;
+                result.Message = ULT.Constant.API_Error_System;
+                result.Data = null;
+                throw;
+
+            }
+            return result;
+
+        }
         public BaseResultMOD ThemGH(GioHangMOD item)
         {
             var result = new BaseResultMOD();
