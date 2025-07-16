@@ -36,12 +36,12 @@ namespace COM.BUS.SanPham
             return result;
 
         }
-        public BaseResultMOD dsGioHangUser(int UserID)
+        public BaseResultMOD dsGioHangUserThanhToan(int UserID)
         {
             var result = new BaseResultMOD();
             try
             {
-                if (UserID > 0) { result = new GioHangDAL().getGioHangUser(UserID); }
+                if (UserID > 0) { result = new GioHangDAL().getGioHangUserThanhToan(UserID); }
                 else
                 {
                     result.Status = 0;

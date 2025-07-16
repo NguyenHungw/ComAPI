@@ -10,4 +10,5 @@ public interface IDonHangService
     /// <param name="userId">ID người dùng đang đăng nhập</param>
     /// <returns>URL thanh toán nếu là VNPAY, hoặc URL thành công</returns>
     string TaoDonHangVaThanhToan(DonHangRequestModel item);
+    string TaoUrlThanhToan(string orderID);
 }

@@ -52,7 +52,7 @@ namespace ComAPI.Controllers.SanPham
 
         }
         [HttpGet]
-        [Route("DSGioHangUser")]
+        [Route("DSGioHangUser{UserID}")]
         public IActionResult dsGioHangUser(int UserID)
         {
             //var userclaim = User.Claims;
@@ -71,7 +71,7 @@ namespace ComAPI.Controllers.SanPham
             if (UserID < 1) return BadRequest();
             else
             {
-                var Result = new GioHangBUS().dsGioHangUser(UserID);
+                var Result = new GioHangBUS().dsGioHangUserThanhToan(UserID);
                 if (Result != null) return Ok(Result);
                 else return NotFound();
             }

@@ -75,7 +75,7 @@ namespace ComAPI.Controllers
 
             var chucNangClaims = claimsFB.Where(c => c.Type == "CN").Select(c => c.Value).ToList();
             var time = claimsFB.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;
-            var R = claimsFB.FirstOrDefault(r => r.Type == "NhomNguoiDung")?.Value;
+            var R = claimsFB.FirstOrDefault(r => r.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role")?.Value;
 
             var jwtresult = new jwtmod
             {
@@ -83,7 +83,7 @@ namespace ComAPI.Controllers
                 Message = "Đăng nhập thành công",
                 ID = userId,
                 Username = GoogleJWT.Name,
-                Role = R,
+                Role = role,
                 Email = GoogleJWT.Email,
                 TimeOut = time,
                 ChucNangVaQuyen = chucNangClaims,
@@ -109,6 +109,7 @@ namespace ComAPI.Controllers
             };
             return Challenge(props, GoogleDefaults.AuthenticationScheme);
         }
+
         [HttpGet("login-google-link")]
         public IActionResult GetGoogleLoginLink()
         {

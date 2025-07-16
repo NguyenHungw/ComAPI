@@ -113,6 +113,7 @@ namespace COM.DAL.SanPham
             return result;
         }
 
+
         public void ThemSanPhamAnhVaGia(List<IFormFile> files, SanPhamAnhVaGiaMOD item)
         {
             using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
@@ -137,7 +138,6 @@ namespace COM.DAL.SanPham
                     cmd.Parameters.AddWithValue("@LoaiSanPhamID", item.LoaiSanPhamID);
                     cmd.Parameters.AddWithValue("@DonViTinhID", item.DonViTinhID);
                     
-                    cmd.Parameters.AddWithValue("@DonViTinhID", item.DonViTinhID);
                     cmd.Parameters.AddWithValue("@MoTa", item.MoTa);
                     cmd.Parameters.AddWithValue("@SoLuong", item.SoLuong ?? (object)DBNull.Value); // nếu SoLuong là null thì truyền DBNull
                     int newID = Convert.ToInt32(cmd.ExecuteScalar()); // lấy ra id vừa chèn và chuyển kq sang int
@@ -149,7 +149,7 @@ namespace COM.DAL.SanPham
                     cmdGia.Parameters.AddWithValue("@SanPhamID", newID);
                     cmdGia.Parameters.AddWithValue("@NgayBatDau", DateTime.UtcNow);
 
-                    decimal giaSauGiam = (decimal)(item.GiaBan * (1 - item.SalePercent / 100));
+                    decimal giaSauGiam = (decimal)(item.GiaBan * (1 - item.SalePercent / 100m));
 
                     cmdGia.Parameters.AddWithValue("@GiaBan", item.GiaBan);
                     cmdGia.Parameters.AddWithValue("@SalePercent", item.SalePercent);
@@ -235,7 +235,6 @@ namespace COM.DAL.SanPham
                     cmdGia.Parameters.AddWithValue("@SalePercent", item.SalePercent);
                     cmdGia.Parameters.AddWithValue("@GiaSauGiam", giaSauGiam);
                     cmdGia.ExecuteNonQuery();
-
                     //3. Thêm hình ảnh
                     int index = 0;
 
@@ -264,7 +263,6 @@ namespace COM.DAL.SanPham
                         cmdImg.ExecuteNonQuery();
                     }
                     trans.Commit();
-
                 }
                 catch (Exception ex)
                 {
@@ -285,11 +283,9 @@ namespace COM.DAL.SanPham
                     var cmdGia = new SqlCommand(@"DELETE FROM [GiaBanSanPham] where SanPhamID=@SanPhamID", SQLCon, trans);
                     cmdGia.Parameters.AddWithValue("@SanPhamID", id);
                     cmdGia.ExecuteNonQuery();
-
                     //3. xóa hình ảnh
                     var cmdImg = new SqlCommand(@"DELETE FROM [SanPhamImage] where SanPhamID=@SanPhamID", SQLCon, trans);
                     cmdImg.Parameters.AddWithValue("@SanPhamID", id);
-
 
                     cmdImg.ExecuteNonQuery();
 
@@ -305,18 +301,14 @@ namespace COM.DAL.SanPham
                     result.Data = id;
 
                 }
-
-
                 catch (Exception ex)
                 {
                     trans.Rollback();
                     throw;
                 }
                 return result;
-
             }
         }
-
 
         // Hàm để kiểm tra trùng chức năng
         private bool KiemTraTrungChucNang(string tendonvi)
@@ -332,6 +324,34 @@ namespace COM.DAL.SanPham
                     return existingCount > 0;
                 }
             }
+        }
+        public BaseResultMOD TruSoLuongSanPham(int sanphamID,int soluong)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    SQLCon.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "Update [SanPham] set SoLuong = SoLuong - @SoLuong where ID=@sanphamID ";
+                    cmd.Parameters.AddWithValue("@sanphamID", sanphamID);
+                    cmd.Parameters.AddWithValue("@SoLuong", soluong);   
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    result.Status = 1;
+                    result.Message = "Trừ Số Lượng Thành công";
+                    result.Data = 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = Constant.API_Error_System;
+
+            }
+            return result;
         }
 
         public BaseResultMOD SuaSanPham(SanPhamMOD item)
@@ -389,7 +409,6 @@ namespace COM.DAL.SanPham
 
                     }
                 }
-
             }
             catch (Exception ex)
             {

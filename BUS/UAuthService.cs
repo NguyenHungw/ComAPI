@@ -46,9 +46,9 @@ namespace COM.Services
             }
             if (!NhomNguoiDungClaimExists)
             {
-                additionalClaims.Add(new Claim("NhomNguoiDung", userRole));
+                additionalClaims.Add(new Claim(ClaimTypes.Role, userRole));
             }
-            if (!NhomNguoiDungClaimExists)
+            if (!ThoiHanDangNhapClaimExists)
             {
                 additionalClaims.Add(new Claim("ThoiHanDangNhap", ThoiGianHetHan.ToString(), ClaimValueTypes.Integer));
             }
@@ -143,7 +143,7 @@ namespace COM.Services
             }
             if (!NhomNguoiDungClaimExists)
             {
-                additionalClaims.Add(new Claim("NhomNguoiDung", userRole));
+                additionalClaims.Add(new Claim(ClaimTypes.Role, userRole));
             }
             if (!NhomNguoiDungClaimExists)
             {

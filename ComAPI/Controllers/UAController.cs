@@ -43,7 +43,7 @@ public class TaiKhoanController : ControllerBase
 
             var chucNangClaims = claims.Where(c => c.Type == "CN").Select(c => c.Value).ToList();
             var time = claims.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;
-            var R = claims.FirstOrDefault(r => r.Type == "NhomNguoiDung")?.Value;
+            var R = claims.FirstOrDefault(r => r.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role")?.Value;
 
             var result = new jwtmod
             {

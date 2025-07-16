@@ -71,7 +71,7 @@ namespace ComAPI.Controllers
 
             var chucNangClaims = claimsFB.Where(c => c.Type == "CN").Select(c => c.Value).ToList();
             var time = claimsFB.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;
-            var R = claimsFB.FirstOrDefault(r => r.Type == "NhomNguoiDung")?.Value;
+            var R = claimsFB.FirstOrDefault(r => r.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role")?.Value;
 
             var jwtresult = new jwtmod
             {

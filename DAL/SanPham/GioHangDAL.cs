@@ -58,7 +58,67 @@ namespace COM.DAL.SanPham
             return result;
 
         }
-        public BaseResultMOD getGioHangUser(int UserID)
+        public BaseResultMOD getGioHangUserThanhToan(int UserID)
+        {
+            //const int ProductPerPage = 10;
+            //int startPage = ProductPerPage * (page - 1);
+            var result = new BaseResultMOD();
+            try
+            {
+                List<GioHangUserThanhToanMOD> ghUser = new List<GioHangUserThanhToanMOD>();
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    SQLCon.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = @";
+                   SELECT sp.ID,sp.MSanPham,sp.TenSanPham,SPI.FilePath,gh.GioSoLuong,GBSP.GiaBan,GBSP.SalePercent,GBSP.GiaSauGiam
+                    FROM GioHang gh
+                    LEFT JOIN SanPham sp ON gh.SanPhamID = sp.ID
+                    LEFT JOIN GiaBanSanPham GBSP ON sp.ID = GBSP.SanPhamID
+                    LEFT JOIN SanPhamImage SPI ON sp.ID = SPI.SanPhamID AND IndexOrder=0
+                    WHERE gh.UserID = @UserID;";
+                    cmd.Parameters.AddWithValue("@UserID", UserID);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        GioHangUserThanhToanMOD item = new GioHangUserThanhToanMOD();
+                        item.SanPhamID = reader.GetInt32(0);
+                        item.MSanPham = reader.GetString(1);
+                        item.TenSanPham = reader.GetString(2);
+                        item.HinhAnh = reader.IsDBNull(3) ? null : reader.GetString(3);
+                        item.GioSoLuong = reader.GetInt32(4);
+                        item.DonGia = reader.IsDBNull(5) ? 0 : reader.GetDecimal(5);
+                        item.TrietKhau = reader.IsDBNull(6) ? 0 : reader.GetDecimal(6); 
+                        item.GiaSauGiam = reader.GetDecimal(7);
+                        item.TongTien = item.GioSoLuong * item.GiaSauGiam;
+                        ghUser.Add(item);
+                    }
+                    reader.Close();
+                    //decimal tongTatca = ghUser.Sum(x => x.TongTien ?? 0);
+
+                    result.Status = 1;
+                    result.Data = ghUser;
+                    //result.Data = new
+                    //{
+                    //    DanhSachGioHang = ghUser,
+                    //    TongTatCa = tongTatca
+                    //};
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+
+            }
+            return result;
+
+        }
+        public BaseResultMOD getGioHangUserChiTiet(int UserID)
         {
             //const int ProductPerPage = 10;
             //int startPage = ProductPerPage * (page - 1);
@@ -100,6 +160,7 @@ namespace COM.DAL.SanPham
             return result;
 
         }
+
         public BaseResultMOD ThemGioHang(GioHangMOD item)
         {
             var result = new BaseResultMOD();
@@ -222,8 +283,8 @@ namespace COM.DAL.SanPham
                     SQLCon.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "Delete from GioHang where ID = @ID";
-                    cmd.Parameters.AddWithValue("@ID", id);
+                    cmd.CommandText = "Delete from GioHang where UserID = @UserID";
+                    cmd.Parameters.AddWithValue("@UserID", id);
                     cmd.Connection = SQLCon;
                     int rowaffected = cmd.ExecuteNonQuery();
                     if (rowaffected > 0)

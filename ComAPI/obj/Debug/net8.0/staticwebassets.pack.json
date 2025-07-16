@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\upload"
     },
     {
+      "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\KIKrBTSC_string.jfif",
+      "PackagePath": "staticwebassets\\upload\\KIKrBTSC_string.jfif"
+    },
+    {
       "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\Lsnmn4h8_bf",
       "PackagePath": "staticwebassets\\upload"
     },
@@ -41,6 +45,10 @@
       "PackagePath": "staticwebassets\\upload"
     },
     {
+      "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\i5S6zPHz_uawsaw.jfif",
+      "PackagePath": "staticwebassets\\upload\\i5S6zPHz_uawsaw.jfif"
+    },
+    {
       "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\klTIWsx2_vcx",
       "PackagePath": "staticwebassets\\upload"
     },
@@ -59,6 +67,14 @@
     {
       "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\pwa8EITr_stringz",
       "PackagePath": "staticwebassets\\upload"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\r6PjSavd_xzczxczxc.jfif",
+      "PackagePath": "staticwebassets\\upload\\r6PjSavd_xzczxczxc.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\tYyyKYSK_testss.jfif",
+      "PackagePath": "staticwebassets\\upload\\tYyyKYSK_testss.jfif"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ComAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

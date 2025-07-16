@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_4",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_7",
     "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
@@ -344,7 +344,7 @@
   {
     "ContainingType": "ComAPI.Controllers.SanPham.GioHangController",
     "Method": "dsGioHangUser",
-    "RelativePath": "api/GioHang/DSGioHangUser",
+    "RelativePath": "api/GioHang/DSGioHangUser{UserID}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -352,7 +352,7 @@
       {
         "Name": "UserID",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -1019,6 +1019,42 @@
       {
         "Name": "item",
         "Type": "COM.MOD.TaiKhoanMOD",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.ThanhToanController",
+    "Method": "Callback",
+    "RelativePath": "api/ThanhToan/Callback",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.ThanhToanController",
+    "Method": "IpnAction",
+    "RelativePath": "api/ThanhToan/IpnAction",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.ThanhToanController",
+    "Method": "ThanhToan",
+    "RelativePath": "api/ThanhToan/ThanhToan/{UserID}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserID",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

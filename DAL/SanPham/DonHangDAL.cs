@@ -80,7 +80,7 @@ namespace COM.DAL.SanPham
                         SQLCon.Open();
                         SqlCommand cmd = new SqlCommand();
                         cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = "Insert into DonViTinh (OrderID,UserID,PhuongThucThanhToan,NgayMua,Status) VALUES(@OrderID,@UserID,@PhuongThucThanhToan,@NgayMua,@Status)";
+                        cmd.CommandText = "Insert into DonHang (OrderID,UserID,PhuongThucThanhToan,NgayMua,Status) VALUES(@OrderID,@UserID,@PhuongThucThanhToan,@NgayMua,@Status)";
                         cmd.Parameters.AddWithValue("@OrderID", item.OrderID ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@UserID", item.UserID ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@PhuongThucThanhToan", item.PhuongThucThanhToan ?? (object)DBNull.Value);
@@ -146,6 +146,35 @@ namespace COM.DAL.SanPham
             }
             return result;
         }
+        public BaseResultMOD CapNhatTrangThaiDonHang(string OrderID)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    SQLCon.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "Update [DonHang] set Status =@Status where OrderID =@OrderID ";
+                    cmd.Parameters.AddWithValue("@OrderID", OrderID);
+                    cmd.Parameters.AddWithValue("@Status", 1);
+                    //cmd.Parameters.AddWithValue("@Mota", item.Mota);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+
+                    result.Status = 1;
+                    result.Message = "Cập nhật thành công";
+                    result.Data = 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = Constant.API_Error_System;
+            }
+            return result;
+        }
         public BaseResultMOD XoaDonHang(int OrderID)
         {
             var result = new BaseResultMOD();
@@ -195,7 +224,7 @@ namespace COM.DAL.SanPham
                     SQLCon.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = " Select * from DonHang ";
+                    cmd.CommandText = " Select * from ChiTietDonHang ";
                     cmd.Connection = SQLCon;
                     cmd.ExecuteNonQuery();
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -208,6 +237,96 @@ namespace COM.DAL.SanPham
                         item.PhuongThucThanhToan = reader.GetString(3);
                         item.NgayMua = reader.GetDateTime(4);
                         item.Status = reader.GetInt32(5);
+
+                        dscn.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dscn;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+
+            }
+            return result;
+        }
+       
+        public BaseResultMOD LayDonHangTheoID(string orderID)
+        {
+            var result = new BaseResultMOD();
+
+            try
+            {
+                List<DonHangMOD> dscn = new List<DonHangMOD>();
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    SQLCon.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = " Select * from DonHang where OrderID =@OrderID";
+                    cmd.Parameters.AddWithValue("@OrderID", orderID);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        DonHangMOD item = new DonHangMOD();
+                        item.ID = reader.GetInt32(0);
+                        item.OrderID = reader.GetString(1);
+                        item.UserID = reader.GetInt32(2);
+                        item.PhuongThucThanhToan = reader.GetString(3);
+                        item.NgayMua = reader.GetDateTime(4);
+                        item.Status = reader.GetInt32(5);
+
+                        dscn.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dscn;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+
+            }
+            return result;
+        }
+        public BaseResultMOD LayChiTietDonHangTheoID(string orderID)
+        {
+            //const int ProductPerPage = 10;
+            //int startPage = ProductPerPage * (page - 1);
+            var result = new BaseResultMOD();
+            try
+            {
+                List<ChiTietDonHangMOD> dscn = new List<ChiTietDonHangMOD>();
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    SQLCon.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = " Select * from ChiTietDonHang where OrderID =@OrderID";
+                    cmd.Parameters.AddWithValue("@OrderID", orderID);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        ChiTietDonHangMOD item = new ChiTietDonHangMOD();
+                        //item.ID = reader.GetInt32(0);
+                        item.OrderID = reader.GetString(0);
+                        item.SanPhamID = reader.GetInt32(1);
+                        item.SoLuong = reader.GetInt32(2);
+                        item.DonGia = reader.GetDecimal(3);
+                        item.TrietKhau = reader.GetDecimal(4);
+                        item.ThanhTien = reader.GetDecimal(5);
+
 
                         dscn.Add(item);
                     }
@@ -246,7 +365,7 @@ namespace COM.DAL.SanPham
                         SQLCon.Open();
                         SqlCommand cmd = new SqlCommand();
                         cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = "Insert into DonViTinh (OrderID,SanPhamID,SoLuong,DonGia,TrietKhau,ThanhTien) VALUES(@OrderID,@SanPhamID,@SoLuong,@DonGia,@TrietKhau,@ThanhTien)";
+                        cmd.CommandText = "Insert into ChiTietDonHang (OrderID,SanPhamID,SoLuong,DonGia,TrietKhau,ThanhTien) VALUES(@OrderID,@SanPhamID,@SoLuong,@DonGia,@TrietKhau,@ThanhTien)";
                         cmd.Parameters.AddWithValue("@OrderID", item.OrderID ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@SanPhamID", item.SanPhamID ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@SoLuong", item.SoLuong ?? (object)DBNull.Value);

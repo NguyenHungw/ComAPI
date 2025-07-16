@@ -19,7 +19,7 @@ namespace COM.MOD.SanPham
     }
     public class ChiTietDonHangMOD
     {
-        public int? ID { get; set; }
+        //public int? ID { get; set; }
         public string? OrderID { get; set; }
         public int? SanPhamID { get; set; }
         public int? SoLuong { get; set; }
@@ -37,9 +37,10 @@ namespace COM.MOD.SanPham
     }
     public class DonHangRequestModel
     {
+        public string? OrderID { get; set; } // Sử dụng OrderID để định danh đơn hàng
         public int? UserID { get; set; }
         public string? PhuongThucThanhToan { get; set; }
-        public List<ChiTietDonHangMOD> ChiTiet { get; set; }
+        public List<ChiTietDonHangMOD>? ChiTiet { get; set; }
 
         // Thông tin thanh toán (cho VNPAY, MOMO...)
         public int? Amount { get; set; }
@@ -48,4 +49,9 @@ namespace COM.MOD.SanPham
         public string? OrderType { get; set; }
     }
 
+    //public class DonHangRequestModel
+    //{
+    //    public int UserID { get; set; }
+    //    public List<GioHangUserMOD> DanhSachSanPham { get; set; }
+    //}
 }
