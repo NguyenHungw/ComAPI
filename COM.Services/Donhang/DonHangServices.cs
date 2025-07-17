@@ -65,17 +65,7 @@ namespace COM.Services.Donhang
             var jsonDH = JsonSerializer.Serialize(donHangResult.Data);
             List<DonHangMOD> danhSach = JsonSerializer.Deserialize<List<DonHangMOD>>(jsonDH);
 
-            //var list = JsonSerializer.Deserialize<List<DonHangMOD>>(jsonDH); // ✅ deserialize đúng kiểu
-            //var donhang2 = jsonDH?.FirstOrDefault();
-
-            //Deserialize lại về đúng kiểu mong muốn
-            // var donHang = JsonSerializer.Deserialize<DonHangMOD>(jsonDH);
-            //var result = jsonDH as DonHangMOD;
-            //var json = JsonSerializer.Serialize(result);
-
-            // Fix for CS0029: Return a string instead of an anonymous type  
-
-            //return $"{jsonDH}";
+           
             //lấy đơn hàng đầu tiên từ danh sách
             var donhang = danhSach?.FirstOrDefault();
             //return $"{donHang2}";

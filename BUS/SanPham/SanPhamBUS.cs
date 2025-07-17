@@ -34,6 +34,48 @@ namespace COM.BUS.SanPham
             }
             return result;
         }
+        public BaseResultMOD dsSanPhamTrangChu(int page)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                if (page > 0) { result = new SanPhamDAL().getdsSanPhamView(page); }
+                else
+                {
+                    result.Status = 0;
+                    result.Message = "lỗi page";
+                }
+            }
+            catch (Exception)
+            {
+                result.Status = -1;
+                result.Message = " Lỗi hệ thống ";
+                result.Data = null;
+                throw;
+            }
+            return result;
+        }
+        public BaseResultMOD ChiTietSanPhamTrangChuBUS(int id)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                if (id > 0) { result = new SanPhamDAL().ChiTietSanPhamView(id); }
+                else
+                {
+                    result.Status = 0;
+                    result.Message = "lỗi page";
+                }
+            }
+            catch (Exception)
+            {
+                result.Status = -1;
+                result.Message = " Lỗi hệ thống ";
+                result.Data = null;
+                throw;
+            }
+            return result;
+        }
 
 
         public BaseResultMOD ThemSP(SanPhamMOD item)

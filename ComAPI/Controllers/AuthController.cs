@@ -9,6 +9,7 @@ using COM.MOD;
 using COM.MOD.Jwt;
 using COM.Services;
 using System.Xml.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ComAPI.Controllers
 {
@@ -25,6 +26,7 @@ namespace ComAPI.Controllers
             _authService = authService;
         }
 
+        [AllowAnonymous]
         [HttpGet("facebook-callback")]
         public async Task<IActionResult> FacebookCallback()
         {
@@ -46,8 +48,9 @@ namespace ComAPI.Controllers
 
             // Fix for CS0165: Initialize 'role'  
             string role = string.Empty;
+            int userID = 0;
             List<Claim> claimsFB;
-            var userCheckRole = TaiKhoanDAL.DangNhapFB(FacebookJWT.Email, out claimsFB, out role, out isAuthenticated);
+            var userCheckRole = TaiKhoanDAL.DangNhapFB(FacebookJWT.Email, out userID, out claimsFB, out role, out isAuthenticated);
 
             if (!isAuthenticated)
             {
@@ -61,13 +64,13 @@ namespace ComAPI.Controllers
             //List<Claim> claimsList = claims?.ToList() ?? new List<Claim>();
 
             // Fix for CS1503 (Argument 1): Create a TaiKhoanMOD object  
-            var taiKhoan = new TaiKhoanMOD
-            {
-                Email = FacebookJWT.Email,
+            //var taiKhoan = new TaiKhoanMOD
+            //{
+            //    Email = FacebookJWT.Email,
                
-            };
+            //};
 
-            var (jwtToken, refreshToken) = _authService.GenerateJwtAndRefreshTokenFB(taiKhoan.Email, role, claimsFB);
+            var (jwtToken, refreshToken) = _authService.GenerateJwtAndRefreshTokenFB(FacebookJWT.Email, FacebookJWT.userId, role, claimsFB);
 
             var chucNangClaims = claimsFB.Where(c => c.Type == "CN").Select(c => c.Value).ToList();
             var time = claimsFB.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;
@@ -96,6 +99,8 @@ namespace ComAPI.Controllers
         }
 
         // Đánh dấu đây là API GET, đường dẫn là /api/auth/login-facebook
+        [AllowAnonymous]
+
         [HttpGet("login-facebook")]
         public IActionResult LoginFacebook()
         {

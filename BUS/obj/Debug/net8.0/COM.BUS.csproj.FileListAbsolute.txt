@@ -1,3 +1,9 @@
+C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.AssemblyInfo.cs
+C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.sourcelink.json
 C:\Users\Admin\source\repos\ComAPI\BUS\bin\Debug\net8.0\COM.BUS.deps.json
 C:\Users\Admin\source\repos\ComAPI\BUS\bin\Debug\net8.0\COM.BUS.runtimeconfig.json
 C:\Users\Admin\source\repos\ComAPI\BUS\bin\Debug\net8.0\COM.BUS.dll
@@ -8,15 +14,9 @@ C:\Users\Admin\source\repos\ComAPI\BUS\bin\Debug\net8.0\COM.ULT.dll
 C:\Users\Admin\source\repos\ComAPI\BUS\bin\Debug\net8.0\COM.DAL.pdb
 C:\Users\Admin\source\repos\ComAPI\BUS\bin\Debug\net8.0\COM.MOD.pdb
 C:\Users\Admin\source\repos\ComAPI\BUS\bin\Debug\net8.0\COM.ULT.pdb
-C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.csproj.AssemblyReference.cache
-C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.AssemblyInfoInputs.cache
-C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.AssemblyInfo.cs
-C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.csproj.Up2Date
 C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.dll
 C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\refint\COM.BUS.dll
 C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.pdb
 C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.genruntimeconfig.cache
 C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\ref\COM.BUS.dll
-C:\Users\Admin\source\repos\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.sourcelink.json

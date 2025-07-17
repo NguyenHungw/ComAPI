@@ -21,19 +21,6 @@ namespace ComAPI.Controllers.SanPham
 
         public IActionResult dsSanPham(int page)
         {
-            //var userclaim = User.Claims;
-            //bool check = false;
-            //foreach (var claim in userclaim)
-            //{
-            //    if (claim.Type == "CN" && claim.Value.Contains("QLCN") && claim.Value.Contains("Xem"))
-            //    {
-            //        check = true;
-            //        break;
-            //    }
-            //}
-
-            //if (check)
-            //{
             if (page < 1) return BadRequest();
             else
             {
@@ -41,19 +28,30 @@ namespace ComAPI.Controllers.SanPham
                 if (Result != null) return Ok(Result);
                 else return NotFound();
             }
-
-            //}
-            //else
-            //{
-            //    return NotFound(new BaseResultMOD
-            //    {
-            //        Status = -99,
-            //        Message = ULT.Constant.NOT_ACCESS
-            //    });
-            //}
-
-
-
+        }
+        [HttpGet]
+        [Route("DSSanPhamTrangChu")]
+        public IActionResult dsSanPhamTrangChu(int page)
+        {
+            if (page < 1) return BadRequest();
+            else
+            {
+                var Result = new SanPhamBUS().dsSanPhamTrangChu(page);
+                if (Result != null) return Ok(Result);
+                else return NotFound();
+            }
+        }
+        [HttpPost]
+        [Route("ChiTietSanPhamTrangChu")]
+        public IActionResult ChiTietSanPhamTrangChu(int id)
+        {
+            if (id < 1) return BadRequest();
+            else
+            {
+                var Result = new SanPhamBUS().ChiTietSanPhamTrangChuBUS(id);
+                if (Result != null) return Ok(Result);
+                else return NotFound();
+            }
         }
 
         [HttpPost]
@@ -63,18 +61,6 @@ namespace ComAPI.Controllers.SanPham
         public IActionResult ThemCN([FromBody] SanPhamMOD item)
         {
 
-            //var userclaim = User.Claims;
-            //var check = false;
-            //foreach (var claim in userclaim)
-            //{
-            //    if (claim.Type == "CN" && claim.Value.Contains("QLCN") && claim.Value.Contains("Them"))
-            //    {
-            //        check = true;
-            //        break;
-            //    }
-            //}
-            //if (check)
-            //{
             if (item == null) return BadRequest();
             else
             {
@@ -82,15 +68,7 @@ namespace ComAPI.Controllers.SanPham
                 if (Result != null) return Ok(Result);
                 else return NotFound();
             }
-            //}
-            //else
-            //{
-            //    return NotFound(new BaseResultMOD
-            //    {
-            //        Status = -99,
-            //        Message = ULT.Constant.NOT_ACCESS
-            //    });
-            //}
+        
         }
         [HttpPost]
         [Route("ThemSanPhamAnhVaGia")]

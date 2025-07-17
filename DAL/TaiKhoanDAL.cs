@@ -6,11 +6,12 @@ using System.Security.Claims;
 
 public class TaiKhoanDAL
 {
-    public static jwtmod DangNhap(TaiKhoanMOD item, out List<Claim> claims, out string role, out bool isAuthenticated)
+    public static jwtmod DangNhap(TaiKhoanMOD item, out int userID ,out List<Claim> claims, out string role, out bool isAuthenticated)
     {
         claims = new List<Claim>();
         role = string.Empty;
         isAuthenticated = false;
+        userID = 0;
 
         var jwtitem = new jwtmod();
 
@@ -48,6 +49,7 @@ public class TaiKhoanDAL
 
                             if (isActive == 1)
                             {
+                                userID=jwtitem.ID;
                                 isAuthenticated = true;
                                 role = reader.GetString(reader.GetOrdinal("TenNND"));
                                 string quyen = "";
@@ -73,12 +75,12 @@ public class TaiKhoanDAL
         return jwtitem;
     }
 
-    public static jwtmod DangNhapFB(string email, out List<Claim> claims, out string role, out bool isAuthenticated)
+    public static jwtmod DangNhapFB(string email, out int userID ,out List<Claim> claims, out string role, out bool isAuthenticated)
     {
         claims = new List<Claim>();
         role = string.Empty;
         isAuthenticated = false;
-
+        userID = 0;
         var jwtitem = new jwtmod();
 
         using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
@@ -107,6 +109,7 @@ public class TaiKhoanDAL
                         if (!string.IsNullOrEmpty(email))
                         {
                             jwtitem.ID = reader.GetInt32(reader.GetOrdinal("UserID"));
+                            
 
                             jwtitem.Email = reader.GetString(reader.GetOrdinal("Email"));
 

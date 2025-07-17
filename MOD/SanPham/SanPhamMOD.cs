@@ -19,9 +19,30 @@ namespace COM.MOD.SanPham
 
 
     }
-    public class SanPhamAnhVaGiaMOD
+    public class SanPhamTrangChuMOD
     {
+        public string? FilePath { get; set; }
+        public string? TenSanPham { get; set; }
+        public int? DiemDanhGia { get; set; }
 
+        public decimal? GiaBan { get; set; }
+        public decimal? SalePercent { get; set; }
+        public decimal? GiaSauGiam { get; set; }
+        public DateOnly? NgayBatDau { get; set; }
+    }
+    public class ChiTietSanPhamTrangChuMOD
+    {
+        public string? FilePath { get; set; }
+        public string? TenSanPham { get; set; }
+        public decimal? GiaBan { get; set; }
+
+        public decimal? SalePercent { get; set; }
+        public decimal? GiaSauGiam { get; set; }
+        public DateOnly? NgayBatDau { get; set; }
+        public string? MoTa { get; set; }
+    }
+    public class SanPhamAnhVaGiaMOD  
+    {
         public string? MSanPham { get; set; }
         public string? TenSanPham { get; set; }
         public int? LoaiSanPhamID { get; set; }
@@ -33,7 +54,6 @@ namespace COM.MOD.SanPham
         public decimal? SalePercent { get; set; }
         public decimal? GiaSauGiam { get; set; }
         //public List<SanPhamImage> HinhAnh { get; set; }
-
     }
     public class SanPhamImage
     {
@@ -68,4 +88,5 @@ namespace COM.MOD.SanPham
         public int TrangThai { get; set; } // 0: Chưa kích hoạt, 1: Đang hoạt động, 2: Kết thúc
 
     }
+    
 }

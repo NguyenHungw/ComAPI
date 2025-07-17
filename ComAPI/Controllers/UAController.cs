@@ -27,8 +27,9 @@ public class TaiKhoanController : ControllerBase
             List<Claim> claims;
             string role;
             bool isAuthenticated;
+            int userID = 0;
 
-            var user = TaiKhoanDAL.DangNhap(item, out claims, out role, out isAuthenticated);
+            var user = TaiKhoanDAL.DangNhap(item, out userID, out claims, out role, out isAuthenticated);
 
             if (!isAuthenticated)
             {
@@ -39,7 +40,8 @@ public class TaiKhoanController : ControllerBase
                 });
             }
 
-            var (jwtToken, refreshToken) = _authService.GenerateJwtAndRefreshToken(item, role, claims);
+            var (jwtToken, refreshToken) = _authService.GenerateJwtAndRefreshToken(item,userID, role, claims);
+            
 
             var chucNangClaims = claims.Where(c => c.Type == "CN").Select(c => c.Value).ToList();
             var time = claims.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;

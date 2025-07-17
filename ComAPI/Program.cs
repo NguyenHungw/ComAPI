@@ -6,6 +6,7 @@ using COM.DAL.SanPham;
 using COM.Services;
 using COM.Services.Donhang;
 using COM.Services.Vnpay;
+using ComAPI.Hubs;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Facebook;
 using Microsoft.AspNetCore.Authentication.Google;
@@ -40,6 +41,7 @@ builder.Services.AddScoped<IVnPayService, VnPayService>();
 builder.Services.AddScoped<DonHangDAL>();
 
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddSignalR();
 
 // JWT Authentication Configuration
 var jwtKey = Encoding.UTF8.GetBytes("YourSuperSecretKey");
@@ -202,10 +204,11 @@ builder.Services.AddSwaggerGen(c =>
 });
 builder.Services.AddCors(options =>
 {
+    //file:///C:/Users/Admin/Desktop/chathub.html
     options.AddPolicy(name: MyAllowSpecificOrigins,
         builder =>
         {
-            builder.WithOrigins("http://localhost:2222")
+            builder.WithOrigins("http://127.0.0.1:5500/")
                    .AllowCredentials()
                    .AllowAnyHeader()
                    .AllowAnyMethod()
@@ -213,6 +216,14 @@ builder.Services.AddCors(options =>
                    .SetIsOriginAllowedToAllowWildcardSubdomains()
                    .SetIsOriginAllowed(_ => true);
         });
+
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("http://localhost:2222") // frontend chạy ở đây
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
 });
 //builder.Services.AddScoped<AuthService>();
 var app = builder.Build();
@@ -228,6 +239,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseStaticFiles();
+app.MapHub<ChatHub>("/chatHub");
 
 
 app.UseHttpsRedirection();

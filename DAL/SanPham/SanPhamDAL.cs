@@ -64,6 +64,104 @@ namespace COM.DAL.SanPham
             return result;
 
         }
+        public BaseResultMOD getdsSanPhamView(int page)
+        {
+            const int ProductPerPage = 10;
+            int startPage = ProductPerPage * (page - 1);
+            var result = new BaseResultMOD();
+            try
+            {
+                List<SanPhamTrangChuMOD> dssp = new List<SanPhamTrangChuMOD>();
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    SQLCon.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = @"SELECT spi.FilePath,sp.TenSanPham,dgsp.DiemDanhGia,gb.GiaBan,gb.SalePercent,GiaSauGiam,gb.NgayBatDau  
+                                       From [SanPham] sp  
+                                       LEFT JOIN SanPhamImage spi on sp.ID= spi.SanPhamID  
+                                       LEFT JOIN DanhGiaSanPham dgsp on sp.ID = dgsp.SanPhamID  
+                                       LEFT JOIN GiaBanSanPham gb on sp.ID = gb.SanPhamID   
+                                       WHERE spi.IndexOrder=0  
+                                       ORDER BY sp.id  
+                                       OFFSET @StartPage ROWS  
+                                       FETCH NEXT @ProductPerPage ROWS ONLY";
+                    cmd.Parameters.AddWithValue("@StartPage", startPage);
+                    cmd.Parameters.AddWithValue("@ProductPerPage", ProductPerPage);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        SanPhamTrangChuMOD item = new SanPhamTrangChuMOD();
+                        item.FilePath = reader.IsDBNull(0) ? null : reader.GetString(0);
+                        item.TenSanPham = reader.GetString(1);
+                        item.DiemDanhGia = reader.IsDBNull(2) ? null : reader.GetInt32(2);
+                        item.GiaBan = reader.GetDecimal(3);
+                        item.SalePercent = reader.GetDecimal(4);
+                        item.GiaSauGiam = reader.GetDecimal(5);
+                        item.NgayBatDau = reader.IsDBNull(6) ? null : DateOnly.FromDateTime(reader.GetDateTime(6)); // Fixed conversion issue  
+                        dssp.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dssp;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+            }
+            return result;
+        }
+        public BaseResultMOD ChiTietSanPhamView(int id)
+        {
+            var result = new BaseResultMOD();   
+            try
+            {
+                List<ChiTietSanPhamTrangChuMOD> dssp = new List<ChiTietSanPhamTrangChuMOD>();
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    SQLCon.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = @"SELECT spi.FilePath,sp.TenSanPham,gb.GiaBan,gb.SalePercent,GiaSauGiam,gb.NgayBatDau,sp.MoTa  
+                                       From [SanPham] sp  
+                                       LEFT JOIN SanPhamImage spi on sp.ID= spi.SanPhamID  
+                                       LEFT JOIN DanhGiaSanPham dgsp on sp.ID = dgsp.SanPhamID  
+                                       LEFT JOIN GiaBanSanPham gb on sp.ID = gb.SanPhamID   
+                                       WHERE sp.ID = @id;";
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        ChiTietSanPhamTrangChuMOD item = new ChiTietSanPhamTrangChuMOD();
+                        item.FilePath = reader.IsDBNull(0) ? null : reader.GetString(0);
+                        item.TenSanPham = reader.GetString(1);
+                        item.GiaBan = reader.GetDecimal(2);
+                        item.SalePercent = reader.GetDecimal(3);
+                        item.GiaSauGiam = reader.GetDecimal(4);
+                        item.NgayBatDau = reader.IsDBNull(5) ? (DateOnly?)null : DateOnly.FromDateTime(reader.GetDateTime(5));
+                        item.MoTa = reader.IsDBNull(6) ? null : reader.GetString(6);
+                        dssp.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dssp;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+            }
+            return result;
+        }
         public BaseResultMOD ThemSanPham(SanPhamMOD item)
         {
             var result = new BaseResultMOD();

@@ -8,11 +8,12 @@ using Microsoft.AspNetCore.Mvc;
 using COM.MOD;
 using COM.Services;
 using COM.MOD.Jwt;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ComAPI.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [AllowAnonymous]
 
     public class GoogleController : ControllerBase
     {
@@ -47,11 +48,11 @@ namespace ComAPI.Controllers
 
             var GoogleJWT = new { userId, user.Name, user.Email };
             bool isAuthenticated = true;
-
+            int userID = 0;
             // Fix for CS0165: Initialize 'role'  
             string role = string.Empty;
             List<Claim> claimsFB;
-            var userCheckRole = TaiKhoanDAL.DangNhapFB(GoogleJWT.Email, out claimsFB, out role, out isAuthenticated);
+            var userCheckRole = TaiKhoanDAL.DangNhapFB(GoogleJWT.Email,out userID, out claimsFB, out role, out isAuthenticated);
 
             if (!isAuthenticated)
             {
@@ -65,13 +66,12 @@ namespace ComAPI.Controllers
             //List<Claim> claimsList = claims?.ToList() ?? new List<Claim>();
 
             // Fix for CS1503 (Argument 1): Create a TaiKhoanMOD object  
-            var taiKhoan = new TaiKhoanMOD
-            {
-                Email = GoogleJWT.Email,
+            //var taiKhoan = new TaiKhoanMOD
+            //{
+            //    Email = GoogleJWT.Email,
+            //};
 
-            };
-
-            var (jwtToken, refreshToken) = _authService.GenerateJwtAndRefreshTokenFB(taiKhoan.Email, role, claimsFB);
+            var (jwtToken, refreshToken) = _authService.GenerateJwtAndRefreshTokenFB(GoogleJWT.Email, GoogleJWT.userId, role, claimsFB);
 
             var chucNangClaims = claimsFB.Where(c => c.Type == "CN").Select(c => c.Value).ToList();
             var time = claimsFB.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;

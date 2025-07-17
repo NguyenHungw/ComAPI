@@ -38,6 +38,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ComAPI.Controllers.ChatController",
+    "Method": "LayLichSu",
+    "RelativePath": "api/chat/history",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.ChatController",
+    "Method": "GuiTinNhan",
+    "RelativePath": "api/chat/send",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "chat",
+        "Type": "COM.MOD.ChatMOD",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "COM.Controllers.PhanQuyenVaTaiKhoan.ChucNangController",
     "Method": "dsChucNang",
     "RelativePath": "api/ChucNang/DSChucNang",
@@ -798,8 +824,40 @@
   },
   {
     "ContainingType": "ComAPI.Controllers.SanPham.SanPhamController",
+    "Method": "ChiTietSanPhamTrangChu",
+    "RelativePath": "api/SanPham/ChiTietSanPhamTrangChu",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.SanPham.SanPhamController",
     "Method": "dsSanPham",
     "RelativePath": "api/SanPham/DSSanPham",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.SanPham.SanPhamController",
+    "Method": "dsSanPhamTrangChu",
+    "RelativePath": "api/SanPham/DSSanPhamTrangChu",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

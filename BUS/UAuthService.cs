@@ -22,7 +22,7 @@ namespace COM.Services
             _audience = configuration["Jwt:Audience"];
         }
 
-        public (string jwtToken, string refreshToken) GenerateJwtAndRefreshToken(TaiKhoanMOD item, string userRole, List<Claim> claims)
+        public (string jwtToken, string refreshToken) GenerateJwtAndRefreshToken(TaiKhoanMOD item,int userID, string userRole, List<Claim> claims)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_secretKey);
@@ -36,9 +36,19 @@ namespace COM.Services
                 new Claim("ThoiHanDangNhap", ThoiGianHetHan.ToString(), ClaimValueTypes.Integer),*/
             
             };
+            bool idUser = additionalClaims.Any(claim => claim.Type == "UserID");
             bool phoneEmailClaimExists = additionalClaims.Any(claim => claim.Type == "Email");
             bool NhomNguoiDungClaimExists = additionalClaims.Any(claim => claim.Type == "NhomNguoiDung");
             bool ThoiHanDangNhapClaimExists = additionalClaims.Any(claim => claim.Type == "ThoiHanDangNhap");
+            string userIDString = userID.ToString();
+            if (!idUser)
+            {
+                // Nếu claim "UserID" chưa tồn tại, thêm nó vào danh sách
+                //additionalClaims.Add(new Claim("UserID", item..ToString()));
+                additionalClaims.Add(new Claim("ID", userIDString));
+            }
+
+
             if (!phoneEmailClaimExists) 
             {
                 // Nếu claim "PhoneNumber" chưa tồn tại, thêm nó vào danh sách
@@ -119,7 +129,7 @@ namespace COM.Services
             return (jwtTokenString, refreshToken);
         }
 
-        public (string jwtToken, string refreshToken) GenerateJwtAndRefreshTokenFB(string email, string userRole, List<Claim> claims)
+        public (string jwtToken, string refreshToken) GenerateJwtAndRefreshTokenFB(string email,int userID, string userRole, List<Claim> claims)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_secretKey);
@@ -133,9 +143,18 @@ namespace COM.Services
                   new Claim("ThoiHanDangNhap", ThoiGianHetHan.ToString(), ClaimValueTypes.Integer),*/
 
             };
+            bool idUser = additionalClaims.Any(claim => claim.Type == "UserID");
             bool phoneEmailClaimExists = additionalClaims.Any(claim => claim.Type == "Email");
             bool NhomNguoiDungClaimExists = additionalClaims.Any(claim => claim.Type == "NhomNguoiDung");
             bool ThoiHanDangNhapClaimExists = additionalClaims.Any(claim => claim.Type == "ThoiHanDangNhap");
+            string userIDString = userID.ToString();
+
+            if (!idUser)
+            {
+                // Nếu claim "UserID" chưa tồn tại, thêm nó vào danh sách
+                //additionalClaims.Add(new Claim("UserID", item..ToString()));
+                additionalClaims.Add(new Claim("ID", userIDString));
+            }
             if (!phoneEmailClaimExists)
             {
                 // Nếu claim "PhoneNumber" chưa tồn tại, thêm nó vào danh sách

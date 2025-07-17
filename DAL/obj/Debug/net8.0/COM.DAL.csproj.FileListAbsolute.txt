@@ -11,10 +11,10 @@ C:\Users\Admin\source\repos\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.GeneratedMSBuild
 C:\Users\Admin\source\repos\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.AssemblyInfoInputs.cache
 C:\Users\Admin\source\repos\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.AssemblyInfo.cs
 C:\Users\Admin\source\repos\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.sourcelink.json
 C:\Users\Admin\source\repos\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.csproj.Up2Date
 C:\Users\Admin\source\repos\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.dll
 C:\Users\Admin\source\repos\ComAPI\DAL\obj\Debug\net8.0\refint\COM.DAL.dll
 C:\Users\Admin\source\repos\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.pdb
 C:\Users\Admin\source\repos\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.genruntimeconfig.cache
 C:\Users\Admin\source\repos\ComAPI\DAL\obj\Debug\net8.0\ref\COM.DAL.dll
-C:\Users\Admin\source\repos\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.sourcelink.json
