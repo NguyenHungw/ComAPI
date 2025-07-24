@@ -9,6 +9,10 @@ using COM.MOD;
 using COM.Services;
 using COM.MOD.Jwt;
 using Microsoft.AspNetCore.Authorization;
+using Newtonsoft.Json.Linq;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http.HttpResults;
+using COM.ULT;
 
 namespace ComAPI.Controllers
 {
@@ -25,6 +29,48 @@ namespace ComAPI.Controllers
             _config = config;
             _authService = authService;
         }
+
+
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [HttpGet("me")]
+        public IActionResult GetMe()
+        {
+            var claims = HttpContext.User.Identities.FirstOrDefault()?.Claims;
+
+            int.TryParse(claims?.FirstOrDefault(i => i.Type == "ID")?.Value, out var id);
+            var role = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+            var name = claims?.FirstOrDefault(name => name.Type == "username")?.Value;
+
+            var phone = claims?.FirstOrDefault(name => name.Type == "username")?.Value;
+
+            var email =claims?.FirstOrDefault(name => name.Type == "Email")?.Value;
+            var time = claims?.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;
+            var chucNangClaims = claims?.Where(c => c.Type == "CN").Select(c => c.Value).ToList();
+
+
+            if (HttpContext.Response.StatusCode==200&&role !=null)
+            {
+                var result = new jwtmod
+                {
+                    Status = 1,
+                    Message = "Đăng nhập thành công",
+                    ID = id,
+                    Username = name,
+                    Role = role,
+                    Email = email,
+                    TimeOut = time,
+                    ChucNangVaQuyen = chucNangClaims,
+                    Token = null,
+                    RefreshToken = null
+                };
+                return Ok(new { data = result });
+            }
+            return Ok(new { Mess = "Không có dữ liệu" });
+          
+        }
+
+
+
         [HttpGet("google-callback")]
         public async Task<IActionResult> GoogleCallback()
         {
@@ -62,15 +108,6 @@ namespace ComAPI.Controllers
                     Message = "Tài khoản hoặc mật khẩu không đúng hoặc bị vô hiệu hóa"
                 });
             }
-            // Fix for CS1503 (Argument 3): Convert 'claims' to List<Claim>  
-            //List<Claim> claimsList = claims?.ToList() ?? new List<Claim>();
-
-            // Fix for CS1503 (Argument 1): Create a TaiKhoanMOD object  
-            //var taiKhoan = new TaiKhoanMOD
-            //{
-            //    Email = GoogleJWT.Email,
-            //};
-
             var (jwtToken, refreshToken) = _authService.GenerateJwtAndRefreshTokenFB(GoogleJWT.Email, GoogleJWT.userId, role, claimsFB);
 
             var chucNangClaims = claimsFB.Where(c => c.Type == "CN").Select(c => c.Value).ToList();
@@ -95,8 +132,18 @@ namespace ComAPI.Controllers
             {
                 TaiKhoanDAL.LuuRefreshToken(userId, refreshToken);
             }
+            Response.Cookies.Append("access_token", jwtToken, new CookieOptions
+            {
+                HttpOnly = true, // tránh JS đọc được
+                Secure = true,   // cần HTTPS
+                SameSite = SameSiteMode.None, // nếu dùng frontend ở domain khác
+                Expires = DateTimeOffset.UtcNow.AddDays(1) // thời gian hết hạn
 
-            return Ok(jwtresult);
+
+            });
+
+            //return Ok(jwtresult);
+            return Redirect($"http://localhost:8888/");
         }
 
         //[ApiExplorerSettings(IgnoreApi = true)]

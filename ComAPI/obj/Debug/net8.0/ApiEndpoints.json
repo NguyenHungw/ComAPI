@@ -462,6 +462,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ComAPI.Controllers.GoogleController",
+    "Method": "GetMe",
+    "RelativePath": "api/Google/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ComAPI.Controllers.SanPham.LoaiSanPhamiController",
     "Method": "dsLSP",
     "RelativePath": "api/LoaiSanPhami/DSLoaiSP",
@@ -864,6 +874,27 @@
     "Parameters": [
       {
         "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComAPI.Controllers.SanPham.SanPhamController",
+    "Method": "dsSanPhamTrangChuTotal",
+    "RelativePath": "api/SanPham/DSSanPhamTrangChuTotal",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "s",
         "Type": "System.Int32",
         "IsRequired": false
       }

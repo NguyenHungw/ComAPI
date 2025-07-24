@@ -66,16 +66,7 @@ namespace COM.DAL.SanPham
             var result = new BaseResultMOD();
             try
             {
-                // Kiểm tra trước khi thêm chức năng
-                //bool isDuplicate = KiemTraTrungChucNang(item.TenDonVi);
-                //if (isDuplicate)
-                //{
-                //    result.Status = -1;
-                //    result.Message = "Tên chức năng đã tồn tại.";
-                //}
-                //else
-                //{
-                    // Thêm chức năng vào cơ sở dữ liệu
+              
                     using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
                     {
                         SQLCon.Open();

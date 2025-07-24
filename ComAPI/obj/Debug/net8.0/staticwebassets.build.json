@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ik7LKKJU6E61e3YIRlrBriQ2yK8rQK1KHQerrtiCeQk=",
+  "Hash": "C/KCxpgHMOGGrGvW0OQ4FZJQOKvEABNBrlj85Yfh53U=",
   "Source": "ComAPI",
   "BasePath": "_content/ComAPI",
   "Mode": "Default",
@@ -36,6 +36,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\upload\\1Z8GW1mH_string"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\3Ki5Ryzr_gfd.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/3Ki5Ryzr_gfd#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\3Ki5Ryzr_gfd.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\5WvzusZd_vád.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/5WvzusZd_vád#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\5WvzusZd_vád.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\8F8343Sr_zvx",
@@ -80,6 +122,27 @@
       "OriginalItemSpec": "wwwroot\\upload\\9MhKRlpl_stringz"
     },
     {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\dT534nAK_vád.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/dT534nAK_vád#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\dT534nAK_vád.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\EcQOBFQs_vcx",
       "SourceId": "ComAPI",
       "SourceType": "Discovered",
@@ -99,6 +162,90 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\upload\\EcQOBFQs_vcx"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\EIKwGVLS_vád.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/EIKwGVLS_vád#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\EIKwGVLS_vád.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\FjXBBJXk_vád.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/FjXBBJXk_vád#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\FjXBBJXk_vád.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\G6AXyUX0_vád.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/G6AXyUX0_vád#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\G6AXyUX0_vád.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\gquHpA3K_vád.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/gquHpA3K_vád#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\gquHpA3K_vád.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\hdMy3UEz_vcx",
@@ -164,6 +311,48 @@
       "OriginalItemSpec": "wwwroot\\upload\\i5S6zPHz_uawsaw.jfif"
     },
     {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\IXa7G8Jr_vád.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/IXa7G8Jr_vád#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\IXa7G8Jr_vád.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\jUShdTZf_Vương miện.png",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/jUShdTZf_Vương miện#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xnh5c6071q",
+      "Integrity": "U/NbFK64woH45ssQDIxIFYbgEDhexaSPLTbiiSid7+k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\jUShdTZf_Vương miện.png"
+    },
+    {
       "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\KIKrBTSC_string.jfif",
       "SourceId": "ComAPI",
       "SourceType": "Discovered",
@@ -204,6 +393,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\upload\\klTIWsx2_vcx"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\kUETqY1N_vád.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/kUETqY1N_vád#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\kUETqY1N_vád.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\lBc5KTta_vdx",
@@ -332,6 +542,27 @@
       "OriginalItemSpec": "wwwroot\\upload\\pwa8EITr_stringz"
     },
     {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\qL9J6Wry_test32.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/qL9J6Wry_test32#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\qL9J6Wry_test32.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\r6PjSavd_xzczxczxc.jfif",
       "SourceId": "ComAPI",
       "SourceType": "Discovered",
@@ -351,6 +582,69 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\upload\\r6PjSavd_xzczxczxc.jfif"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\RsaY42Ya_zxcd.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/RsaY42Ya_zxcd#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\RsaY42Ya_zxcd.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\s2kKt8Mr_vád.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/s2kKt8Mr_vád#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\s2kKt8Mr_vád.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\scvfjpiG_zxcd.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/scvfjpiG_zxcd#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\scvfjpiG_zxcd.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\TULIeWwS_vcx.png",
@@ -395,6 +689,48 @@
       "OriginalItemSpec": "wwwroot\\upload\\tYyyKYSK_testss.jfif"
     },
     {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\uhu7Qd03_vád.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/uhu7Qd03_vád#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\uhu7Qd03_vád.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\VA6QtOvK_vád.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/VA6QtOvK_vád#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\VA6QtOvK_vád.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\VnDwxu9Y_zvx",
       "SourceId": "ComAPI",
       "SourceType": "Discovered",
@@ -414,6 +750,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\upload\\VnDwxu9Y_zvx"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\WnaJh1Pn_zxcd.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/WnaJh1Pn_zxcd#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\WnaJh1Pn_zxcd.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\X9R48GNK_vưeq.jpg",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/X9R48GNK_vưeq#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gkgbqj9ubz",
+      "Integrity": "oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\X9R48GNK_vưeq.jpg"
     }
   ],
   "Endpoints": [
@@ -496,6 +874,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-CApW1zFpdCUsNohhZpX/+ZbKOC/KGrSK8AiS5pqDCXI="
+        }
+      ]
+    },
+    {
+      "Route": "upload/3Ki5Ryzr_gfd.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\3Ki5Ryzr_gfd.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 10:39:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/3Ki5Ryzr_gfd.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/3Ki5Ryzr_gfd.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\3Ki5Ryzr_gfd.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 10:39:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/5WvzusZd_vád.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\5WvzusZd_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/5WvzusZd_vád.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/5WvzusZd_vád.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\5WvzusZd_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
         }
       ]
     },
@@ -664,6 +1206,88 @@
       ]
     },
     {
+      "Route": "upload/dT534nAK_vád.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\dT534nAK_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/dT534nAK_vád.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/dT534nAK_vád.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\dT534nAK_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
       "Route": "upload/EcQOBFQs_vcx",
       "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\EcQOBFQs_vcx",
       "Selectors": [],
@@ -742,6 +1366,334 @@
         {
           "Name": "integrity",
           "Value": "sha256-wNayElE2shryqji7cXvWQsx260avRf+UaCGWnJv9mNs="
+        }
+      ]
+    },
+    {
+      "Route": "upload/EIKwGVLS_vád.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\EIKwGVLS_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/EIKwGVLS_vád.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/EIKwGVLS_vád.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\EIKwGVLS_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/FjXBBJXk_vád.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\FjXBBJXk_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 12:32:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/FjXBBJXk_vád.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/FjXBBJXk_vád.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\FjXBBJXk_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 12:32:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/G6AXyUX0_vád.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\G6AXyUX0_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/G6AXyUX0_vád.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/G6AXyUX0_vád.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\G6AXyUX0_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/gquHpA3K_vád.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\gquHpA3K_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/gquHpA3K_vád.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/gquHpA3K_vád.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\gquHpA3K_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
         }
       ]
     },
@@ -992,6 +1944,170 @@
       ]
     },
     {
+      "Route": "upload/IXa7G8Jr_vád.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\IXa7G8Jr_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/IXa7G8Jr_vád.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/IXa7G8Jr_vád.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\IXa7G8Jr_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/jUShdTZf_Vương miện.png",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\jUShdTZf_Vương miện.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2004138"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"U/NbFK64woH45ssQDIxIFYbgEDhexaSPLTbiiSid7+k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 19 Jul 2025 13:48:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-U/NbFK64woH45ssQDIxIFYbgEDhexaSPLTbiiSid7+k="
+        }
+      ]
+    },
+    {
+      "Route": "upload/jUShdTZf_Vương miện.xnh5c6071q.png",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\jUShdTZf_Vương miện.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2004138"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"U/NbFK64woH45ssQDIxIFYbgEDhexaSPLTbiiSid7+k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 19 Jul 2025 13:48:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xnh5c6071q"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/jUShdTZf_Vương miện.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-U/NbFK64woH45ssQDIxIFYbgEDhexaSPLTbiiSid7+k="
+        }
+      ]
+    },
+    {
       "Route": "upload/KIKrBTSC_string.csn54bqc72.jfif",
       "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\KIKrBTSC_string.jfif",
       "Selectors": [],
@@ -1152,6 +2268,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Lm21j+IJM/rZjkKiZ+clr4stQ+O+uO0dXQrkNbcYQ7s="
+        }
+      ]
+    },
+    {
+      "Route": "upload/kUETqY1N_vád.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\kUETqY1N_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/kUETqY1N_vád.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/kUETqY1N_vád.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\kUETqY1N_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
         }
       ]
     },
@@ -1648,6 +2846,88 @@
       ]
     },
     {
+      "Route": "upload/qL9J6Wry_test32.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\qL9J6Wry_test32.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 10:38:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/qL9J6Wry_test32.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/qL9J6Wry_test32.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\qL9J6Wry_test32.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 10:38:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
       "Route": "upload/r6PjSavd_xzczxczxc.csn54bqc72.jfif",
       "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\r6PjSavd_xzczxczxc.jfif",
       "Selectors": [],
@@ -1726,6 +3006,252 @@
         {
           "Name": "integrity",
           "Value": "sha256-rDex1fAO+KMgiCz5jpAmSHxt3zDO3rqYcUxH5teF7cw="
+        }
+      ]
+    },
+    {
+      "Route": "upload/RsaY42Ya_zxcd.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\RsaY42Ya_zxcd.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 10:39:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/RsaY42Ya_zxcd.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/RsaY42Ya_zxcd.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\RsaY42Ya_zxcd.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 10:39:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/s2kKt8Mr_vád.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\s2kKt8Mr_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/s2kKt8Mr_vád.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/s2kKt8Mr_vád.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\s2kKt8Mr_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/scvfjpiG_zxcd.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\scvfjpiG_zxcd.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 10:39:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/scvfjpiG_zxcd.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/scvfjpiG_zxcd.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\scvfjpiG_zxcd.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 10:39:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
         }
       ]
     },
@@ -1894,6 +3420,170 @@
       ]
     },
     {
+      "Route": "upload/uhu7Qd03_vád.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\uhu7Qd03_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/uhu7Qd03_vád.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/uhu7Qd03_vád.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\uhu7Qd03_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/VA6QtOvK_vád.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\VA6QtOvK_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/VA6QtOvK_vád.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/VA6QtOvK_vád.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\VA6QtOvK_vád.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 16:02:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
       "Route": "upload/VnDwxu9Y_zvx",
       "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\VnDwxu9Y_zvx",
       "Selectors": [],
@@ -1972,6 +3662,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-GKisHYO/mkZP2x5OzCC5qfOpHelSYgN3dyDMr//wLTI="
+        }
+      ]
+    },
+    {
+      "Route": "upload/WnaJh1Pn_zxcd.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\WnaJh1Pn_zxcd.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 10:39:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/WnaJh1Pn_zxcd.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/WnaJh1Pn_zxcd.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\WnaJh1Pn_zxcd.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 10:39:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/X9R48GNK_vưeq.gkgbqj9ubz.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\X9R48GNK_vưeq.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 10:39:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gkgbqj9ubz"
+        },
+        {
+          "Name": "label",
+          "Value": "upload/X9R48GNK_vưeq.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
+        }
+      ]
+    },
+    {
+      "Route": "upload/X9R48GNK_vưeq.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\ComAPI\\ComAPI\\wwwroot\\upload\\X9R48GNK_vưeq.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15909"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Jul 2025 10:39:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oL72ZGUqaeAD1yZe7xqJ4c4XcfSQ/SYg8lqnS4Q1/aY="
         }
       ]
     }

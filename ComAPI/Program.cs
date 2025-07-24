@@ -103,6 +103,7 @@ builder.Services.AddAuthentication(options =>
     options.SaveTokens = true;
 
 })
+//.AddCookie()
 .AddGoogle(options =>
 {
     //options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
@@ -111,6 +112,7 @@ builder.Services.AddAuthentication(options =>
     options.ClientSecret = googleSecret.ClientSecret;
     //options.CallbackPath = "/api/Google/google-callback"; // Đúng với Redirect URI
     options.CallbackPath = "/login-google";
+
     options.SaveTokens = true; // Lưu token sau login
     options.Scope.Add("profile");
     options.Scope.Add("email");
@@ -208,7 +210,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
         builder =>
         {
-            builder.WithOrigins("http://127.0.0.1:5500/")
+            builder.WithOrigins("http://localhost:8888")
                    .AllowCredentials()
                    .AllowAnyHeader()
                    .AllowAnyMethod()
@@ -219,7 +221,7 @@ builder.Services.AddCors(options =>
 
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("http://localhost:2222") // frontend chạy ở đây
+        policy.WithOrigins("http://localhost:8888") // frontend chạy ở đây
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();

@@ -678,6 +678,18 @@
         }
       }
     },
+    "/api/Google/me": {
+      "get": {
+        "tags": [
+          "Google"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Google/google-callback": {
       "get": {
         "tags": [
@@ -1356,6 +1368,36 @@
         "parameters": [
           {
             "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/SanPham/DSSanPhamTrangChuTotal": {
+      "get": {
+        "tags": [
+          "SanPham"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "s",
             "in": "query",
             "schema": {
               "type": "integer",

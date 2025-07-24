@@ -55,6 +55,27 @@ namespace COM.BUS.SanPham
             }
             return result;
         }
+        public BaseResultMOD dsSanPhamTrangChuTotal(int page,int s)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                if (page > 0) { result = new SanPhamDAL().getdsSanPhamViewTotal(page,s); }
+                else
+                {
+                    result.Status = 0;
+                    result.Message = "lỗi page";
+                }
+            }
+            catch (Exception)
+            {
+                result.Status = -1;
+                result.Message = " Lỗi hệ thống ";
+                result.Data = null;
+                throw;
+            }
+            return result;
+        }
         public BaseResultMOD ChiTietSanPhamTrangChuBUS(int id)
         {
             var result = new BaseResultMOD();
