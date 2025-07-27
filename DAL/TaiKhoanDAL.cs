@@ -171,7 +171,7 @@ public class TaiKhoanDAL
         {
             insertCmd.Parameters.AddWithValue("@UserId", userId);
             insertCmd.Parameters.AddWithValue("@TokenValue", refreshToken);
-            insertCmd.Parameters.AddWithValue("@ExpirationDate", DateTime.UtcNow.AddDays(30));
+            insertCmd.Parameters.AddWithValue("@ExpirationDate", DateTime.UtcNow.AddDays(7));
             insertCmd.ExecuteNonQuery();
         }
     }

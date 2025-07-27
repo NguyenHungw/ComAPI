@@ -7,6 +7,9 @@ using System.Security.Claims;
 using System.Text;
 using COM.Services;
 using Microsoft.Extensions.Configuration;
+using COM.MOD.Jwt;
+using COM.ULT;
+using System.Data.SqlClient;
 namespace COM.Services
 {
     public class AuthService
@@ -220,6 +223,53 @@ namespace COM.Services
                 return null;
             }
         }
+        public RefreshToken GetRefreshTokenFromDatabase(string userId, string refreshToken)
+        {
+            using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+            {
+                SQLCon.Open();
 
+                string sqlQuery = "SELECT * FROM RefreshTokens WHERE UserID = @UserId AND TokenValue = @TokenValue";
+                using (SqlCommand cmd = new SqlCommand(sqlQuery, SQLCon))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+                    cmd.Parameters.AddWithValue("@TokenValue", refreshToken);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            var dbRefreshToken = new RefreshToken
+
+                            {
+                                UserId = userId,
+                                TokenValue = reader.GetString(reader.GetOrdinal("TokenValue")),
+                                ExpirationDate = reader.GetDateTime(reader.GetOrdinal("ExpirationDate"))
+                            };
+                            return dbRefreshToken;
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        public void UpdateRefreshTokenInDatabase(string userId, string oldRefreshToken, string newRefreshToken)
+        {
+            using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+            {
+                SQLCon.Open();
+
+                string sqlQuery = "UPDATE RefreshTokens SET TokenValue = @NewRefreshToken WHERE UserId = @UserId AND TokenValue = @OldRefreshToken";
+                using (SqlCommand cmd = new SqlCommand(sqlQuery, SQLCon))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+                    cmd.Parameters.AddWithValue("@OldRefreshToken", oldRefreshToken);
+                    cmd.Parameters.AddWithValue("@NewRefreshToken", newRefreshToken);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

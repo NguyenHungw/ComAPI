@@ -1114,6 +1114,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "TaiKhoanController",
+    "Method": "RefreshToken",
+    "RelativePath": "api/TaiKhoan/refresh",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "refreshTokenRequest",
+        "Type": "COM.MOD.Jwt.RefreshTokenRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ComAPI.Controllers.ThanhToanController",
     "Method": "Callback",
     "RelativePath": "api/ThanhToan/Callback",
