@@ -31,7 +31,7 @@ namespace ComAPI.Controllers
         }
 
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)] //
         [HttpGet("me")]
         public IActionResult GetMe()
         {
@@ -65,8 +65,13 @@ namespace ComAPI.Controllers
                 };
                 return Ok(new { data = result });
             }
-            return Ok(new { Mess = "Không có dữ liệu" });
-          
+            //return Ok(new { Status = 401, Mess = "Không có dữ liệu" });
+            return Unauthorized(new
+            {
+                Status=401,
+                Message="Bạn cần AccessToken để truy cập API"
+
+            });
         }
 
 
@@ -138,7 +143,6 @@ namespace ComAPI.Controllers
                 Secure = true,   // cần HTTPS
                 SameSite = SameSiteMode.None, // nếu dùng frontend ở domain khác
                 Expires = DateTimeOffset.UtcNow.AddDays(1) // thời gian hết hạn
-
 
             });
 

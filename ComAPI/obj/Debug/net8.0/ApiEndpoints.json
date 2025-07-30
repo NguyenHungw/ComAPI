@@ -1117,16 +1117,10 @@
     "ContainingType": "TaiKhoanController",
     "Method": "RefreshToken",
     "RelativePath": "api/TaiKhoan/refresh",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "refreshTokenRequest",
-        "Type": "COM.MOD.Jwt.RefreshTokenRequest",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

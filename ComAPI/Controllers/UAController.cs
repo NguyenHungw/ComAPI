@@ -9,6 +9,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Data.SqlClient;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Data;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -70,6 +72,15 @@ public class TaiKhoanController : ControllerBase
             if ((user.ID !=0) && !string.IsNullOrEmpty(refreshToken))
             {
                 TaiKhoanDAL.LuuRefreshToken(user.ID, refreshToken);
+
+                Response.Cookies.Append("refresh_token", refreshToken, new CookieOptions
+                {
+                    HttpOnly = true, // tránh JS đọc được
+                    Secure = true,   // cần HTTPS
+                    SameSite = SameSiteMode.None, // nếu dùng frontend ở domain khác
+                    Expires = DateTimeOffset.UtcNow.AddDays(1) // thời gian hết hạn
+
+                });
             }
 
             return Ok(result);
@@ -85,44 +96,26 @@ public class TaiKhoanController : ControllerBase
         }
 
 
-       
-}
-    [HttpPost("refresh")]
-    public IActionResult RefreshToken([FromBody] RefreshTokenRequest refreshTokenRequest)
+
+    }
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)] //
+
+    [HttpGet("refresh")]
+    public IActionResult RefreshToken()
     {
-        // Kiểm tra tính hợp lệ của AccessToken và lấy Principal
-        List<Claim> claims = new List<Claim>();
-        var principal = _authService.GetPrincipalFromExpiredToken(refreshTokenRequest.AccessToken);
-        var cvk = new jwtmod();
-        if (principal == null)
+        // Đọc cookie tên "refreshToken"
+        if (Request.Cookies.TryGetValue("refresh_token", out string refreshToken))
         {
-            return Unauthorized(new BaseResultMOD
-            {
-                Status = 0,
-                Message = "AccessToken hết hạn hoặc không hợp lệ."
-            });
-        }
+          
 
-        // Lấy secret key từ cấu hình hoặc từ nơi khác
-        string secretKey = _configuration["Jwt:Key"];
-        var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secretKey));
+        var claims = new List<Claim>(); // Initialize the claims variable
+            //string role;
+            //bool isAuthenticated;
+            //int userID = 0;
+            //string email;
 
-        var handler = new JwtSecurityTokenHandler();
-        SecurityToken token;
-
-        principal = handler.ValidateToken(refreshTokenRequest.AccessToken, new TokenValidationParameters
-        {
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = key,
-            ValidateIssuer = false, // Chỉnh sửa cài đặt theo yêu cầu
-            ValidateAudience = false, // Chỉnh sửa cài đặt theo yêu cầu
-        }, out token);
-        // Lấy UserID từ AccessToken
-
-        var userId = principal.Claims.FirstOrDefault(c => c.Type == "ID")?.Value;
-
-        // Kiểm tra Refresh Token có tồn tại và hợp lệ trong cơ sở dữ liệu
-        var refreshTokenFromDb = _authService.GetRefreshTokenFromDatabase(userId, refreshTokenRequest.RefreshToken);
+         
+        var refreshTokenFromDb = _authService.GetRefreshTokenFromDatabaseNoID(refreshToken);
 
         if (refreshTokenFromDb == null)
         {
@@ -141,30 +134,44 @@ public class TaiKhoanController : ControllerBase
                 Status = 0,
                 Message = "Refresh Token đã hết hạn."
             });
+            }
+           
+            var user = _authService.GetUserInfoFromRefreshToken(refreshToken, out claims); // Use 'out' keyword for the second argument
+            var chucNangClaims = claims.Where(c => c.Type == "CN").Select(c => c.Value).ToList();
+           
+
+            //var time = claims.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;
+            //var R = claims.FirstOrDefault(r => r.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role")?.Value;
+
+            var (jwtToken, newRefreshToken) = _authService.GenerateJwtAndRefreshTokenNoID(claims,user.UserID,user.Email,user.Role);
+            //var tokeninf = claims.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;
+            var time = claims.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;
+
+            // Cập nhật Refresh Token mới vào cơ sở dữ liệu
+            _authService.UpdateRefreshTokenInDatabaseNoID(refreshToken, newRefreshToken);
+
+            var result = new jwtmod
+            {
+                Status = 1,
+                Message = "Đăng nhập thành công",
+                ID = user.UserID,
+                Username = null,
+                Role = user.Role,
+                PhoneNumber = null,
+                Email = user.Email,
+                TimeOut = time,
+                ChucNangVaQuyen = chucNangClaims,
+                Token = jwtToken,
+                RefreshToken = newRefreshToken
+            };
+
+            return Ok(result);
         }
-
-
-        var (jwtToken, newRefreshToken) = _authService.GenerateJwtAndRefreshToken2(refreshTokenFromDb.UserId, principal.Claims.ToList());
-
-        // Cập nhật Refresh Token mới vào cơ sở dữ liệu
-        _authService.UpdateRefreshTokenInDatabase(userId, refreshTokenRequest.RefreshToken, newRefreshToken);
-
-        var aidi = principal.Claims.FirstOrDefault(n => n.Type == "idUser")?.Value;
-
-        var name = principal.Claims.FirstOrDefault(n => n.Type == "Username")?.Value;
-        var time = principal.Claims.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;
-        var R = principal.Claims.FirstOrDefault(r => r.Type == "NhomNguoiDung")?.Value;
-
-
-        var response = new jwtRefreshMod
+        else
         {
-            Status = 1,
-            Message = "Refresh Token thành công",
-            Token = jwtToken,
-            RefreshToken = newRefreshToken,
-        };
-
-        return Ok(response);
+            // Cookie không tồn tại
+            return Unauthorized(new { message = "Refresh token not found" });
+        }
     }
 
     
