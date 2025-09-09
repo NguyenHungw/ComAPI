@@ -1,0 +1,16 @@
+C:\Users\Admin\source\repos\ComAPI\COM.LIB\bin\Debug\net8.0\COM.LIB.deps.json
+C:\Users\Admin\source\repos\ComAPI\COM.LIB\bin\Debug\net8.0\COM.LIB.dll
+C:\Users\Admin\source\repos\ComAPI\COM.LIB\bin\Debug\net8.0\COM.LIB.pdb
+C:\Users\Admin\source\repos\ComAPI\COM.LIB\bin\Debug\net8.0\COM.MOD.dll
+C:\Users\Admin\source\repos\ComAPI\COM.LIB\bin\Debug\net8.0\COM.MOD.pdb
+C:\Users\Admin\source\repos\ComAPI\COM.LIB\obj\Debug\net8.0\COM.LIB.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\ComAPI\COM.LIB\obj\Debug\net8.0\COM.LIB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\ComAPI\COM.LIB\obj\Debug\net8.0\COM.LIB.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\ComAPI\COM.LIB\obj\Debug\net8.0\COM.LIB.AssemblyInfo.cs
+C:\Users\Admin\source\repos\ComAPI\COM.LIB\obj\Debug\net8.0\COM.LIB.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\ComAPI\COM.LIB\obj\Debug\net8.0\COM.LIB.sourcelink.json
+C:\Users\Admin\source\repos\ComAPI\COM.LIB\obj\Debug\net8.0\COM.LIB.csproj.Up2Date
+C:\Users\Admin\source\repos\ComAPI\COM.LIB\obj\Debug\net8.0\COM.LIB.dll
+C:\Users\Admin\source\repos\ComAPI\COM.LIB\obj\Debug\net8.0\refint\COM.LIB.dll
+C:\Users\Admin\source\repos\ComAPI\COM.LIB\obj\Debug\net8.0\COM.LIB.pdb
+C:\Users\Admin\source\repos\ComAPI\COM.LIB\obj\Debug\net8.0\ref\COM.LIB.dll
