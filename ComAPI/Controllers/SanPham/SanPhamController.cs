@@ -54,6 +54,18 @@ namespace ComAPI.Controllers.SanPham
             }
         }
         [HttpGet]
+        [Route("DSSanPhamAdminSearch")]
+        public IActionResult dsSanPhamAdminSearch(string keyword,int page, int s)
+        {
+            if (page < 1) return BadRequest();
+            else
+            {
+                var Result = new SanPhamBUS().dsSanPhamAdminSearch(keyword, page, s);
+                if (Result != null) return Ok(Result);
+                else return NotFound();
+            }
+        }
+        [HttpGet]
         [Route("DSSanPhamTrangChuTotal")]
         public IActionResult dsSanPhamTrangChuTotal(int page,int s)
         {
