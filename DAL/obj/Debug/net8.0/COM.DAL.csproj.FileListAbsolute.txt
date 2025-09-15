@@ -37,3 +37,4 @@ D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\refint\COM.DAL.dll
 D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.pdb
 D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.genruntimeconfig.cache
 D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\ref\COM.DAL.dll
+D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.sourcelink.json

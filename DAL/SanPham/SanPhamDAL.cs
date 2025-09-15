@@ -143,7 +143,7 @@ namespace COM.DAL.SanPham
 
 
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = @"SELECT spi.FilePath,sp.TenSanPham,dgsp.DiemDanhGia,gb.GiaBan,gb.SalePercent,GiaSauGiam,gb.NgayBatDau  
+                    cmd.CommandText = @"SELECT sp.ID, spi.FilePath,sp.TenSanPham,dgsp.DiemDanhGia,gb.GiaBan,gb.SalePercent,GiaSauGiam,gb.NgayBatDau  
                                        From [SanPham] sp  
                                        LEFT JOIN SanPhamImage spi on sp.ID= spi.SanPhamID  
                                        LEFT JOIN DanhGiaSanPham dgsp on sp.ID = dgsp.SanPhamID  
@@ -160,19 +160,90 @@ namespace COM.DAL.SanPham
                     while (reader.Read())
                     {
                         SanPhamTrangChuMOD item = new SanPhamTrangChuMOD();
-                        item.FilePath = reader.IsDBNull(0) ? null : reader.GetString(0);
-                        item.TenSanPham = reader.GetString(1);
-                        item.DiemDanhGia = reader.IsDBNull(2) ? null : reader.GetInt32(2);
-                        item.GiaBan = reader.GetDecimal(3);
-                        item.SalePercent = reader.GetDecimal(4);
-                        item.GiaSauGiam = reader.GetDecimal(5);
-                        item.NgayBatDau = reader.IsDBNull(6) ? null : DateOnly.FromDateTime(reader.GetDateTime(6)); // Fixed conversion issue  
+                        item.ID = reader.GetInt32(0);
+                        item.FilePath = reader.IsDBNull(1) ? null : reader.GetString(1);
+                        item.TenSanPham = reader.GetString(2);
+                        item.DiemDanhGia = reader.IsDBNull(3) ? null : reader.GetInt32(3);
+                        item.GiaBan = reader.GetDecimal(4);
+                        item.SalePercent = reader.GetDecimal(5);
+                        item.GiaSauGiam = reader.GetDecimal(6);
+                        item.NgayBatDau = reader.IsDBNull(7) ? null : DateOnly.FromDateTime(reader.GetDateTime(7)); // Fixed conversion issue  
                         dssp.Add(item);
                     }
                     reader.Close();
                     result.Status = 1;
                     result.Data = dssp;
                     result.TotalRow =totalItems;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+            }
+            return result;
+        }
+        public BaseResultMOD getdsSanPhamAdmin(int page, int ProductPerPage)
+        {
+            //const int ProductPerPage = 10;
+            int startPage = ProductPerPage * (page - 1);
+            var result = new BaseResultMOD();
+            try
+            {
+                List<SanPhamAdminMOD> dssp = new List<SanPhamAdminMOD>();
+                int totalItems = 0;
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    //count
+                    SQLCon.Open();
+                    var cmdCount = new SqlCommand();
+                    cmdCount.CommandType = CommandType.Text;
+                    cmdCount.CommandText = @"SELECT COUNT(*) AS TotalItems
+                                            FROM SanPham sp
+                                            LEFT JOIN SanPhamImage spi ON sp.ID = spi.SanPhamID
+                                            WHERE spi.IndexOrder = 0;";
+                    cmdCount.Connection = SQLCon;
+                    totalItems = (int)cmdCount.ExecuteScalar();
+
+                    SqlCommand cmd = new SqlCommand();
+
+
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = @"SELECT sp.ID, spi.FilePath,sp.TenSanPham,gb.GiaBan,gb.SalePercent,GiaSauGiam,lsp.TenLoaiSP,dv.TenDonVi, gb.NgayBatDau  
+                                       From [SanPham] sp  
+                                       LEFT JOIN SanPhamImage spi on sp.ID= spi.SanPhamID  
+                                       LEFT JOIN GiaBanSanPham gb on sp.ID = gb.SanPhamID   
+									   LEFT JOIN LoaiSanPham lsp on sp.LoaiSanPhamID = lsp.LoaiSanPhamID
+									   LEFT JOIN DonViTinh dv on sp.DonViTinhID = dv.DonViTinhID
+                                       WHERE spi.IndexOrder=0  
+                                       ORDER BY sp.id  
+                                       OFFSET @StartPage ROWS  
+                                       FETCH NEXT @ProductPerPage ROWS ONLY";
+                    cmd.Parameters.AddWithValue("@StartPage", startPage);
+                    cmd.Parameters.AddWithValue("@ProductPerPage", ProductPerPage);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        SanPhamAdminMOD item = new SanPhamAdminMOD();
+                        item.ID = reader.GetInt32(0);
+                        item.FilePath = reader.IsDBNull(1) ? null : reader.GetString(1);
+                        item.TenSanPham = reader.GetString(2);
+                        item.GiaBan = reader.GetDecimal(3);
+                        item.SalePercent = reader.GetDecimal(4);
+                        item.GiaSauGiam = reader.GetDecimal(5);
+                        item.TenLoaiSP = reader.IsDBNull(6) ? null : reader.GetString(6);
+                        item.TenDonVi = reader.IsDBNull(7) ? null : reader.GetString(7);
+                        item.NgayBatDau = reader.IsDBNull(8) ? null : DateOnly.FromDateTime(reader.GetDateTime(8)); // Fixed conversion issue  
+                        dssp.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dssp;
+                    result.TotalRow = totalItems;
                 }
             }
             catch (Exception ex)

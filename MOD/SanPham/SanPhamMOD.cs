@@ -21,6 +21,7 @@ namespace COM.MOD.SanPham
     }
     public class SanPhamTrangChuMOD
     {
+        public int? ID { get; set; }
         public string? FilePath { get; set; }
         public string? TenSanPham { get; set; }
         public int? DiemDanhGia { get; set; }
@@ -28,6 +29,19 @@ namespace COM.MOD.SanPham
         public decimal? GiaBan { get; set; }
         public decimal? SalePercent { get; set; }
         public decimal? GiaSauGiam { get; set; }
+        public DateOnly? NgayBatDau { get; set; }
+    }
+    public class SanPhamAdminMOD
+    {
+        public int? ID { get; set; }
+        public string? FilePath { get; set; }
+        public string? TenSanPham { get; set; }
+
+        public decimal? GiaBan { get; set; }
+        public decimal? SalePercent { get; set; }
+        public decimal? GiaSauGiam { get; set; }
+        public string? TenLoaiSP { get;set; }
+        public string? TenDonVi { get; set; }
         public DateOnly? NgayBatDau { get; set; }
     }
     public class ChiTietSanPhamTrangChuMOD

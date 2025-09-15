@@ -27,3 +27,4 @@ D:\BackEnd\ComAPI\MOD\obj\Debug\net8.0\refint\COM.MOD.dll
 D:\BackEnd\ComAPI\MOD\obj\Debug\net8.0\COM.MOD.pdb
 D:\BackEnd\ComAPI\MOD\obj\Debug\net8.0\COM.MOD.genruntimeconfig.cache
 D:\BackEnd\ComAPI\MOD\obj\Debug\net8.0\ref\COM.MOD.dll
+D:\BackEnd\ComAPI\MOD\obj\Debug\net8.0\COM.MOD.sourcelink.json

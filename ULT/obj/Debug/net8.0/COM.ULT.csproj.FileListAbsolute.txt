@@ -33,3 +33,4 @@ D:\BackEnd\ComAPI\ULT\obj\Debug\net8.0\refint\COM.ULT.dll
 D:\BackEnd\ComAPI\ULT\obj\Debug\net8.0\COM.ULT.pdb
 D:\BackEnd\ComAPI\ULT\obj\Debug\net8.0\COM.ULT.genruntimeconfig.cache
 D:\BackEnd\ComAPI\ULT\obj\Debug\net8.0\ref\COM.ULT.dll
+D:\BackEnd\ComAPI\ULT\obj\Debug\net8.0\COM.ULT.sourcelink.json

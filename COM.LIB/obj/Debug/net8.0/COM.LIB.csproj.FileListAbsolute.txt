@@ -29,3 +29,4 @@ D:\BackEnd\ComAPI\COM.LIB\obj\Debug\net8.0\COM.LIB.dll
 D:\BackEnd\ComAPI\COM.LIB\obj\Debug\net8.0\refint\COM.LIB.dll
 D:\BackEnd\ComAPI\COM.LIB\obj\Debug\net8.0\COM.LIB.pdb
 D:\BackEnd\ComAPI\COM.LIB\obj\Debug\net8.0\ref\COM.LIB.dll
+D:\BackEnd\ComAPI\COM.LIB\obj\Debug\net8.0\COM.LIB.sourcelink.json

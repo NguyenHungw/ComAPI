@@ -41,3 +41,4 @@ D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\refint\COM.BUS.dll
 D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.pdb
 D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.genruntimeconfig.cache
 D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\ref\COM.BUS.dll
+D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.sourcelink.json
