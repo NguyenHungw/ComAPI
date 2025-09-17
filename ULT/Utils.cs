@@ -1324,6 +1324,39 @@ namespace COM.ULT
 
         public static class Utilities
         {
+            private static readonly string[] VietnameseSigns = new string[]
+        {
+
+            "aAeEoOuUiIdDyY",
+
+            "áàạảãâấầậẩẫăắằặẳẵ",
+
+            "ÁÀẠẢÃÂẤẦẬẨẪĂẮẰẶẲẴ",
+
+            "éèẹẻẽêếềệểễ",
+
+            "ÉÈẸẺẼÊẾỀỆỂỄ",
+
+            "óòọỏõôốồộổỗơớờợởỡ",
+
+            "ÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠ",
+
+            "úùụủũưứừựửữ",
+
+            "ÚÙỤỦŨƯỨỪỰỬỮ",
+
+            "íìịỉĩ",
+
+            "ÍÌỊỈĨ",
+
+            "đ",
+
+            "Đ",
+
+            "ýỳỵỷỹ",
+
+            "ÝỲỴỶỸ"
+        };
             //random
             public static string GenerateRandomCode(int length)
             {
@@ -1334,6 +1367,8 @@ namespace COM.ULT
             }
             // convert vietnamese to normal
 
+
+            //bỏ dấu tiếng việt
             public static string RemoveDiacritics(string text)
             {
                 var normalized = text.Normalize(NormalizationForm.FormD);
@@ -1341,8 +1376,7 @@ namespace COM.ULT
 
                 foreach (var c in normalized)
                 {
-                    var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
-                    if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+                    if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
                     {
                         sb.Append(c);
                     }
@@ -1351,11 +1385,63 @@ namespace COM.ULT
                 return sb.ToString().Normalize(NormalizationForm.FormC).ToUpper();
 
             }
+
+            // Bỏ dấu + làm sạch file name
+            public static string NormalizeFileName(string filePath)
+            {
+                if (string.IsNullOrWhiteSpace(filePath)) return filePath;
+
+                // Tách path và file name
+                var directory = Path.GetDirectoryName(filePath);
+                var fileName = Path.GetFileName(filePath);
+
+                // Bỏ dấu
+                var normalized = fileName.Normalize(NormalizationForm.FormD);
+                var sb = new StringBuilder();
+                foreach (var c in normalized)
+                {
+                    if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                    {
+                        sb.Append(c);
+                    }
+                }
+                var noDiacritics = sb.ToString().Normalize(NormalizationForm.FormC);
+
+                // Thay khoảng trắng bằng gạch ngang (hoặc xóa nếu bạn muốn)
+                noDiacritics = noDiacritics.Replace(" ", "-");
+
+                // Giữ lại ký tự hợp lệ (chữ, số, ., _, -)
+                var safe = new string(noDiacritics
+                    .Where(ch => char.IsLetterOrDigit(ch) || ch == '.' || ch == '_' || ch == '-')
+                    .ToArray());
+
+                // Ghép lại full path
+                return Path.Combine(directory ?? "", safe).Replace("\\", "/");
+
+
+
+
+            }
+            public static string RemoveSign4VietnameseString(string str)
+            {
+                if (string.IsNullOrWhiteSpace(str)) return str;
+
+                str = str.Normalize(NormalizationForm.FormC); // chuẩn hóa trước
+
+                for (int i = 1; i < VietnameseSigns.Length; i++)
+                {
+                    for (int j = 0; j < VietnameseSigns[i].Length; j++)
+                    {
+                        str = str.Replace(VietnameseSigns[i][j], VietnameseSigns[0][i - 1]);
+                    }
+                }
+
+                return str;
+            }
+
         }
-
-
-        #region DataTable
-        public static List<T> ConvertDataTable<T>(DataTable dt)
+            #region DataTable
+            public static List<T> ConvertDataTable<T>(DataTable dt)
         {
             List<T> data = new List<T>();
             foreach (DataRow row in dt.Rows)

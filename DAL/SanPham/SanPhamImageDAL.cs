@@ -202,7 +202,7 @@ namespace COM.DAL.SanPham
                     if (file.Length > 0)
                     {
                         string extension = Path.GetExtension(file.FileName);
-                        string name = Utils.Utilities.RemoveDiacritics(tenSanPham.Replace(" ", "")); //để dấu gạch cho chuẩn seo
+                        string name = Utils.Utilities.NormalizeFileName(tenSanPham); //để dấu gạch cho chuẩn seo
                         string newName = $"{shortGuid2}_{tenSanPham}{extension}";
                         string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "upload");
                         string filePath = Path.Combine(uploadsFolder, newName);

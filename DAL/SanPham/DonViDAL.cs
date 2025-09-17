@@ -17,7 +17,45 @@ namespace COM.DAL.SanPham
     public class DonViDAL
     {
         // private string SQLHelper.appConnectionStrings = "Data Source=DESKTOP-PMRM3DP\\SQLEXPRESS;Initial Catalog=CT;Persist Security Info=True;User ID=Hungw;Password=123456;Trusted_Connection=True;Max Pool Size=100";
-        public BaseResultMOD getdsDonVi(int page)
+        public BaseResultMOD getdsDonVi()
+        {
+           
+            var result = new BaseResultMOD();
+            try
+            {
+                List<DonViMOD> dscn = new List<DonViMOD>();
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    SQLCon.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = " Select * from DonViTinh ";
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        DonViMOD item = new DonViMOD();
+                        item.DonViTinhID = reader.GetInt32(0);
+                        item.TenDonVi = reader.GetString(1);
+                        dscn.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dscn;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+
+            }
+            return result;
+
+        }
+        public BaseResultMOD getdsDonViPage(int page)
         {
             const int ProductPerPage = 10;
             int startPage = ProductPerPage * (page - 1);
@@ -39,9 +77,6 @@ namespace COM.DAL.SanPham
                         DonViMOD item = new DonViMOD();
                         item.DonViTinhID = reader.GetInt32(0);
                         item.TenDonVi = reader.GetString(1);
-
-
-
                         dscn.Add(item);
                     }
                     reader.Close();

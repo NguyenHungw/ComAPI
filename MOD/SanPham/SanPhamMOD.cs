@@ -42,6 +42,21 @@ namespace COM.MOD.SanPham
         public decimal? GiaSauGiam { get; set; }
         public string? TenLoaiSP { get;set; }
         public string? TenDonVi { get; set; }
+        public string? Mota { get; set; }
+        public DateOnly? NgayBatDau { get; set; }
+    }
+    public class SanPhamAdminNhieuIMGMOD
+    {
+        public int? ID { get; set; }
+        public string? TenSanPham { get; set; }
+        public decimal? GiaBan { get; set; }
+        public decimal? SalePercent { get; set; }
+        public decimal? GiaSauGiam { get; set; }
+        public string? MoTa { get; set; }
+        public string? TenLoaiSP { get; set; }
+        public string? DonViTinh { get; set; }
+        public string? AnhChinh { get; set; }
+        public List<string> DanhSachAnh { get; set; } = new();
         public DateOnly? NgayBatDau { get; set; }
     }
     public class ChiTietSanPhamTrangChuMOD

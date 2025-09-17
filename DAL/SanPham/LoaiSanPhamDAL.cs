@@ -15,7 +15,47 @@ namespace COM.DAL.SanPham
     public class LoaiSanPhamDAL
     {
         // private string SQLHelper.appConnectionStrings = "Data Source=DESKTOP-PMRM3DP\\SQLEXPRESS;Initial Catalog=CT;Persist Security Info=True;User ID=Hungw;Password=123456;Trusted_Connection=True;Max Pool Size=100";
-        public BaseResultMOD getdsLoaiSanPham(int page)
+        public BaseResultMOD getdsLoaiSanPham()
+        {
+         
+            var result = new BaseResultMOD();
+            try
+            {
+                List<LoaiSanPhamMOD> dscn = new List<LoaiSanPhamMOD>();
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    SQLCon.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = " Select * from LoaiSanPham Where TrangThai=1 ";
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        LoaiSanPhamMOD item = new LoaiSanPhamMOD();
+                        item.LoaiSanPhamID = reader.GetInt32(0);
+                        item.TenLoaiSanPham = reader.GetString(1);
+                        item.MoTaLoaiSP = reader.GetString(2);
+                        item.TrangThai = reader.GetInt32(3);
+                        dscn.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dscn;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+
+            }
+            return result;
+
+        }
+        public BaseResultMOD getdsLoaiSanPhamPage(int page)
         {
             const int ProductPerPage = 10;
             int startPage = ProductPerPage * (page - 1);

@@ -15,7 +15,7 @@ namespace ComAPI.Controllers.SanPham
         [Route("DSLoaiSP")]
         // [Authorize]
 
-        public IActionResult dsLSP(int page)
+        public IActionResult dsLSP()
         {
             //var userclaim = User.Claims;
             //bool check = false;
@@ -30,13 +30,11 @@ namespace ComAPI.Controllers.SanPham
 
             //if (check)
             //{
-            if (page < 1) return BadRequest();
-            else
-            {
-                var Result = new LoaiSanPhamBUS().dsLoaiSanPham(page);
+          
+                var Result = new LoaiSanPhamBUS().dsLoaiSanPham();
                 if (Result != null) return Ok(Result);
                 else return NotFound();
-            }
+       
 
             //}
             //else

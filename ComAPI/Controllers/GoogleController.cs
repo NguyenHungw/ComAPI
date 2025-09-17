@@ -137,7 +137,7 @@ namespace ComAPI.Controllers
             {
                 TaiKhoanDAL.LuuRefreshToken(userId, refreshToken);
             }
-            Response.Cookies.Append("access_token", jwtToken, new CookieOptions
+            Response.Cookies.Append("refresh_token", refreshToken, new CookieOptions
             {
                 HttpOnly = true, // tránh JS đọc được
                 Secure = true,   // cần HTTPS

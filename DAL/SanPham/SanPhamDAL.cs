@@ -211,7 +211,7 @@ namespace COM.DAL.SanPham
 
 
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = @"SELECT sp.ID, spi.FilePath,sp.TenSanPham,gb.GiaBan,gb.SalePercent,GiaSauGiam,lsp.TenLoaiSP,dv.TenDonVi, gb.NgayBatDau  
+                    cmd.CommandText = @"SELECT sp.ID, spi.FilePath,sp.TenSanPham,gb.GiaBan,gb.SalePercent,GiaSauGiam,lsp.TenLoaiSP,dv.TenDonVi,sp.MoTa, gb.NgayBatDau  
                                        From [SanPham] sp  
                                        LEFT JOIN SanPhamImage spi on sp.ID= spi.SanPhamID  
                                        LEFT JOIN GiaBanSanPham gb on sp.ID = gb.SanPhamID   
@@ -237,7 +237,156 @@ namespace COM.DAL.SanPham
                         item.GiaSauGiam = reader.GetDecimal(5);
                         item.TenLoaiSP = reader.IsDBNull(6) ? null : reader.GetString(6);
                         item.TenDonVi = reader.IsDBNull(7) ? null : reader.GetString(7);
-                        item.NgayBatDau = reader.IsDBNull(8) ? null : DateOnly.FromDateTime(reader.GetDateTime(8)); // Fixed conversion issue  
+                        item.Mota = reader.IsDBNull(8) ? null : reader.GetString(8);
+
+                        item.NgayBatDau = reader.IsDBNull(9) ? null : DateOnly.FromDateTime(reader.GetDateTime(9)); // Fixed conversion issue  
+                        dssp.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dssp;
+                    result.TotalRow = totalItems;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+            }
+            return result;
+        }
+        public BaseResultMOD getdsSanPhamAdminNhieuIMG(int page, int ProductPerPage)
+        {
+            //const int ProductPerPage = 10;
+            int startPage = ProductPerPage * (page - 1);
+            var result = new BaseResultMOD();
+            try
+            {
+                List<SanPhamAdminMOD> dssp = new List<SanPhamAdminMOD>();
+                int totalItems = 0;
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    //count
+                    SQLCon.Open();
+                    var cmdCount = new SqlCommand();
+                    cmdCount.CommandType = CommandType.Text;
+                    cmdCount.CommandText = @"SELECT COUNT(*) AS TotalItems
+                                            FROM SanPham sp
+                                            LEFT JOIN SanPhamImage spi ON sp.ID = spi.SanPhamID
+                                            WHERE spi.IndexOrder = 0;";
+                    cmdCount.Connection = SQLCon;
+                    totalItems = (int)cmdCount.ExecuteScalar();
+
+                    SqlCommand cmd = new SqlCommand();
+
+
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = @"SELECT sp.ID, spi.FilePath,sp.TenSanPham,gb.GiaBan,gb.SalePercent,GiaSauGiam,lsp.TenLoaiSP,dv.TenDonVi,sp.MoTa, gb.NgayBatDau  
+                                       From [SanPham] sp  
+                                       LEFT JOIN SanPhamImage spi on sp.ID= spi.SanPhamID  
+                                       LEFT JOIN GiaBanSanPham gb on sp.ID = gb.SanPhamID   
+									   LEFT JOIN LoaiSanPham lsp on sp.LoaiSanPhamID = lsp.LoaiSanPhamID
+									   LEFT JOIN DonViTinh dv on sp.DonViTinhID = dv.DonViTinhID
+                                       WHERE spi.IndexOrder=0  
+                                       ORDER BY sp.id  
+                                       OFFSET @StartPage ROWS  
+                                       FETCH NEXT @ProductPerPage ROWS ONLY";
+                    cmd.Parameters.AddWithValue("@StartPage", startPage);
+                    cmd.Parameters.AddWithValue("@ProductPerPage", ProductPerPage);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        SanPhamAdminMOD item = new SanPhamAdminMOD();
+                        item.ID = reader.GetInt32(0);
+                        item.FilePath = reader.IsDBNull(1) ? null : reader.GetString(1);
+                        item.TenSanPham = reader.GetString(2);
+                        item.GiaBan = reader.GetDecimal(3);
+                        item.SalePercent = reader.GetDecimal(4);
+                        item.GiaSauGiam = reader.GetDecimal(5);
+                        item.TenLoaiSP = reader.IsDBNull(6) ? null : reader.GetString(6);
+                        item.TenDonVi = reader.IsDBNull(7) ? null : reader.GetString(7);
+                        item.Mota = reader.IsDBNull(8) ? null : reader.GetString(8);
+
+                        item.NgayBatDau = reader.IsDBNull(9) ? null : DateOnly.FromDateTime(reader.GetDateTime(9)); // Fixed conversion issue  
+                        dssp.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dssp;
+                    result.TotalRow = totalItems;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+            }
+            return result;
+        }
+        public BaseResultMOD getdsSanPhamAdminSearch(string keyword,int page, int ProductPerPage)
+        {
+            //const int ProductPerPage = 10;
+            int startPage = ProductPerPage * (page - 1);
+            var result = new BaseResultMOD();
+            try
+            {
+                List<SanPhamAdminMOD> dssp = new List<SanPhamAdminMOD>();
+                int totalItems = 0;
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    //count
+                    SQLCon.Open();
+                    var cmdCount = new SqlCommand();
+                    cmdCount.CommandType = CommandType.Text;
+                    cmdCount.CommandText = @"SELECT COUNT(*) AS TotalItems
+                                            FROM SanPham sp
+                                            LEFT JOIN SanPhamImage spi ON sp.ID = spi.SanPhamID
+                                            WHERE spi.IndexOrder = 0;";
+                    cmdCount.Connection = SQLCon;
+                    totalItems = (int)cmdCount.ExecuteScalar();
+
+                    SqlCommand cmd = new SqlCommand();
+
+
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = @"SELECT sp.ID, spi.FilePath,sp.TenSanPham,gb.GiaBan,gb.SalePercent,GiaSauGiam,lsp.TenLoaiSP,dv.TenDonVi,sp.MoTa, gb.NgayBatDau  
+                                       From [SanPham] sp  
+                                       LEFT JOIN SanPhamImage spi on sp.ID= spi.SanPhamID  
+                                       LEFT JOIN DanhGiaSanPham dgsp on sp.ID = dgsp.SanPhamID  
+                                       LEFT JOIN GiaBanSanPham gb on sp.ID = gb.SanPhamID 
+									   LEFT JOIN LoaiSanPham lsp on sp.LoaiSanPhamID = lsp.LoaiSanPhamID
+									   LEFT JOIN DonViTinh dv on sp.DonViTinhID = dv.DonViTinhID
+                                       WHERE (sp.ID = TRY_CAST(@keyword as int) or sp.TenSanPham Like N'%'+@keyword+N'%' or lsp.TenLoaiSP Like N'%'+@keyword+N'%')
+									   and spi.IndexOrder=0
+                                       ORDER BY sp.id  
+									   OFFSET @StartPage ROWS  
+									   FETCH NEXT @ProductPerPage ROWS ONLY;";
+                    cmd.Parameters.AddWithValue("@keyword", keyword);
+                    cmd.Parameters.AddWithValue("@StartPage", startPage);
+                    cmd.Parameters.AddWithValue("@ProductPerPage", ProductPerPage);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        SanPhamAdminMOD item = new SanPhamAdminMOD();
+                        item.ID = reader.GetInt32(0);
+                        item.FilePath = reader.IsDBNull(1) ? null : reader.GetString(1);
+                        item.TenSanPham = reader.GetString(2);
+                        item.GiaBan = reader.GetDecimal(3);
+                        item.SalePercent = reader.GetDecimal(4);
+                        item.GiaSauGiam = reader.GetDecimal(5);
+                        item.TenLoaiSP = reader.IsDBNull(6) ? null : reader.GetString(6);
+                        item.TenDonVi = reader.IsDBNull(7) ? null : reader.GetString(7);
+                        item.Mota = reader.IsDBNull(8) ? null : reader.GetString(8);
+
+                        item.NgayBatDau = reader.IsDBNull(9) ? null : DateOnly.FromDateTime(reader.GetDateTime(9)); // Fixed conversion issue  
                         dssp.Add(item);
                     }
                     reader.Close();
@@ -401,8 +550,8 @@ namespace COM.DAL.SanPham
                         {
                             string extension = Path.GetExtension(file.FileName);
 
-                            string name = Utils.Utilities.RemoveDiacritics(item.TenSanPham.Replace(" ", "")); //để dấu gạch cho chuẩn seo
-                            string newName = $"{shortGuid2}_{item.TenSanPham}{extension}";
+                            string name = Utils.Utilities.RemoveSign4VietnameseString(item.TenSanPham.Replace(" ","-")); //để dấu gạch cho chuẩn seo
+                            string newName = $"{shortGuid2}_{name+ index}{extension}";
                             string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "upload");
                             string filePath = Path.Combine(uploadsFolder, newName);
                             using (Stream stream = File.Create(filePath))

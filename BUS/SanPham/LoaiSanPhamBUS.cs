@@ -13,17 +13,13 @@ namespace COM.BUS.SanPham
 {
     public class LoaiSanPhamBUS
     {
-        public BaseResultMOD dsLoaiSanPham(int page)
+        public BaseResultMOD dsLoaiSanPham()
         {
             var result = new BaseResultMOD();
             try
             {
-                if (page > 0) { result = new LoaiSanPhamDAL().getdsLoaiSanPham(page); }
-                else
-                {
-                    result.Status = 0;
-                    result.Message = "lỗi page";
-                }
+                 result = new LoaiSanPhamDAL().getdsLoaiSanPham(); 
+              
             }
             catch (Exception)
             {

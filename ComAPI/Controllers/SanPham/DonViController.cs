@@ -15,40 +15,12 @@ namespace ComAPI.Controllers.SanPham
         [Route("DSDonVi")]
         // [Authorize]
 
-        public IActionResult dsDonVi(int page)
+        public IActionResult dsDonVi()
         {
-            //var userclaim = User.Claims;
-            //bool check = false;
-            //foreach (var claim in userclaim)
-            //{
-            //    if (claim.Type == "CN" && claim.Value.Contains("QLCN") && claim.Value.Contains("Xem"))
-            //    {
-            //        check = true;
-            //        break;
-            //    }
-            //}
 
-            //if (check)
-            //{
-            if (page < 1) return BadRequest();
-            else
-            {
-                var Result = new DonViBUS().dsDonVi(page);
+                var Result = new DonViBUS().dsDonVi();
                 if (Result != null) return Ok(Result);
                 else return NotFound();
-            }
-
-            //}
-            //else
-            //{
-            //    return NotFound(new BaseResultMOD
-            //    {
-            //        Status = -99,
-            //        Message = ULT.Constant.NOT_ACCESS
-            //    });
-            //}
-
-
 
         }
 

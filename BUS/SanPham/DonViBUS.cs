@@ -13,17 +13,13 @@ namespace COM.BUS.SanPham
 {
     public class DonViBUS
     {
-        public BaseResultMOD dsDonVi(int page)
+        public BaseResultMOD dsDonVi()
         {
             var result = new BaseResultMOD();
             try
             {
-                if (page > 0) { result = new DonViDAL().getdsDonVi(page); }
-                else
-                {
-                    result.Status = 0;
-                    result.Message = "lỗi page";
-                }
+                result = new DonViDAL().getdsDonVi(); 
+                
             }
             catch (Exception)
             {
