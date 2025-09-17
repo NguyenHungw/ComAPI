@@ -263,7 +263,7 @@ namespace COM.DAL.SanPham
             var result = new BaseResultMOD();
             try
             {
-                List<SanPhamAdminMOD> dssp = new List<SanPhamAdminMOD>();
+                List<SanPhamAdminNhieuIMGMOD> dssp = new List<SanPhamAdminNhieuIMGMOD>();
                 int totalItems = 0;
                 using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
                 {
@@ -283,14 +283,13 @@ namespace COM.DAL.SanPham
 
 
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = @"SELECT sp.ID, spi.FilePath,sp.TenSanPham,gb.GiaBan,gb.SalePercent,GiaSauGiam,lsp.TenLoaiSP,dv.TenDonVi,sp.MoTa, gb.NgayBatDau  
-                                       From [SanPham] sp  
-                                       LEFT JOIN SanPhamImage spi on sp.ID= spi.SanPhamID  
-                                       LEFT JOIN GiaBanSanPham gb on sp.ID = gb.SanPhamID   
-									   LEFT JOIN LoaiSanPham lsp on sp.LoaiSanPhamID = lsp.LoaiSanPhamID
-									   LEFT JOIN DonViTinh dv on sp.DonViTinhID = dv.DonViTinhID
-                                       WHERE spi.IndexOrder=0  
-                                       ORDER BY sp.id  
+                    cmd.CommandText = @"SELECT sp.ID,sp.TenSanPham,gb.GiaBan,gb.SalePercent,gb.GiaSauGiam,lsp.TenLoaiSP,dv.TenDonVi,sp.MoTa,spi.FilePath AS AnhChinh ,gb.NgayBatDau
+                                        FROM SanPham sp
+                                        LEFT JOIN GiaBanSanPham gb ON sp.ID = gb.SanPhamID
+                                        LEFT JOIN LoaiSanPham lsp ON sp.LoaiSanPhamID = lsp.LoaiSanPhamID
+                                        LEFT JOIN DonViTinh dv ON sp.DonViTinhID = dv.DonViTinhID
+                                        LEFT JOIN SanPhamImage spi ON sp.ID = spi.SanPhamID AND spi.IndexOrder = 0
+                                        ORDER BY sp.ID
                                        OFFSET @StartPage ROWS  
                                        FETCH NEXT @ProductPerPage ROWS ONLY";
                     cmd.Parameters.AddWithValue("@StartPage", startPage);
@@ -300,21 +299,78 @@ namespace COM.DAL.SanPham
                     SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        SanPhamAdminMOD item = new SanPhamAdminMOD();
+                        SanPhamAdminNhieuIMGMOD item = new SanPhamAdminNhieuIMGMOD();
                         item.ID = reader.GetInt32(0);
-                        item.FilePath = reader.IsDBNull(1) ? null : reader.GetString(1);
-                        item.TenSanPham = reader.GetString(2);
-                        item.GiaBan = reader.GetDecimal(3);
-                        item.SalePercent = reader.GetDecimal(4);
-                        item.GiaSauGiam = reader.GetDecimal(5);
-                        item.TenLoaiSP = reader.IsDBNull(6) ? null : reader.GetString(6);
-                        item.TenDonVi = reader.IsDBNull(7) ? null : reader.GetString(7);
-                        item.Mota = reader.IsDBNull(8) ? null : reader.GetString(8);
+                       
+                        item.TenSanPham = reader.GetString(1);
+                        item.GiaBan = reader.GetDecimal(2);
+                        item.SalePercent = reader.GetDecimal(3);
+                        item.GiaSauGiam = reader.GetDecimal(4);
+                        item.TenLoaiSP = reader.IsDBNull(5) ? null : reader.GetString(5);
+                        item.TenDonVi = reader.IsDBNull(6) ? null : reader.GetString(6);
+                        item.MoTa = reader.IsDBNull(7) ? null : reader.GetString(7);
+                        item.AnhChinh = reader.IsDBNull(8) ? null : reader.GetString(8);
 
                         item.NgayBatDau = reader.IsDBNull(9) ? null : DateOnly.FromDateTime(reader.GetDateTime(9)); // Fixed conversion issue  
                         dssp.Add(item);
+                        
+
                     }
                     reader.Close();
+
+                    //lấy tất cả id sp trong trang
+                    var sanPhamIds = dssp.Select(p => p.ID).ToList();
+
+                    if (sanPhamIds.Count > 0) 
+                    {
+                        //ghép ds id thành chuỗi
+                        string idList = string.Join(",", sanPhamIds);
+
+                        SqlCommand cmdImg = new SqlCommand();
+                        cmdImg.CommandType = CommandType.Text;
+
+                        //  lấy tất cả ảnh của các sản phẩm trong danh sách idList
+                        cmdImg.CommandText = $@"
+                                            SELECT SanPhamID, IndexOrder, FilePath
+                                            FROM SanPhamImage
+                                            WHERE SanPhamID IN ({idList}) 
+                                            ORDER BY SanPhamID, IndexOrder";
+
+                        cmdImg.Connection = SQLCon;
+
+                        SqlDataReader readerImg = cmdImg.ExecuteReader();
+
+                        // đọc kq trả về từ db cmdImg
+                        while (readerImg.Read())
+                        {
+                           
+                            int spId = readerImg.GetInt32(0);
+
+
+                            int indexOrder = readerImg.GetInt32(1);
+
+                           
+                            string filePath = readerImg.GetString(2);
+
+                            // tìm sản phẩm trong danh sách dssp theo ID
+                            var sp = dssp.FirstOrDefault(x => x.ID == spId);
+
+                            if (sp != null) // Nếu tìm thấy sản phẩm
+                            {
+                                // thêm ảnh mới vào list DanhSachAnh của sản phẩm đó
+                                sp.DanhSachAnh.Add(new DanhSachIMG
+                                {
+                                    IndexOrder = indexOrder,
+                                    FilePath = filePath
+                                });
+                            }
+                        }
+
+                        // Đóng reader sau khi đọc xong dữ liệu
+                        readerImg.Close();
+                    }
+
+
                     result.Status = 1;
                     result.Data = dssp;
                     result.TotalRow = totalItems;

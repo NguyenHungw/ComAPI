@@ -98,6 +98,28 @@ namespace COM.BUS.SanPham
             }
             return result;
         }
+        public BaseResultMOD dsSanPhamAdminNhieuIMG(int page, int s)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                if (page > 0) { result = new SanPhamDAL().getdsSanPhamAdminNhieuIMG(page, s); }
+
+                else
+                {
+                    result.Status = 0;
+                    result.Message = "lỗi page";
+                }
+            }
+            catch (Exception)
+            {
+                result.Status = -1;
+                result.Message = " Lỗi hệ thống ";
+                result.Data = null;
+                throw;
+            }
+            return result;
+        }
         public BaseResultMOD dsSanPhamAdminSearch(string keyword,int page, int s)
         {
             var result = new BaseResultMOD();
