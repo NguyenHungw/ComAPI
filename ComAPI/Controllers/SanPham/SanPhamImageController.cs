@@ -56,7 +56,7 @@ namespace ComAPI.Controllers.SanPham
         [Route("ThemHinhAnhSP")]
         //[Authorize]
 
-        public IActionResult ThemIMG(List<IFormFile> files, int id)
+        public IActionResult ThemIMG([FromForm] List<IFormFile> files, [FromForm] int id)
         {
             //var userclaim = User.Claims;
             //var check = false;
@@ -74,6 +74,39 @@ namespace ComAPI.Controllers.SanPham
             else
             {
                 var Result = new SanPhamImageDAL().ThemImage(files, id);
+                if (Result != null) return Ok(Result);
+                else return NotFound();
+            }
+            //}
+            //else
+            //{
+            //    return NotFound(new BaseResultMOD
+            //    {
+            //        Status = -99,
+            //        Message = ULT.Constant.NOT_ACCESS
+            //    });
+            //}
+        }
+        [HttpPut]
+        [Route("SuaIMG")]
+        public IActionResult SuaIMG([FromForm] List<IFormFile> files, [FromForm] int id)
+        {
+            //var userclaim = User.Claims;
+            //var check = false;
+            //foreach (var claim in userclaim)
+            //{
+            //    if (claim.Type == "CN" && claim.Value.Contains("QLCN") && claim.Value.Contains("Them"))
+            //    {
+            //        check = true;
+            //        break;
+            //    }
+            //}
+            //if (check)
+            //{
+            if (id == null || id <= 0) return BadRequest();
+            else
+            {
+                var Result = new SanPhamImageDAL().SuaIMG(files, id);
                 if (Result != null) return Ok(Result);
                 else return NotFound();
             }

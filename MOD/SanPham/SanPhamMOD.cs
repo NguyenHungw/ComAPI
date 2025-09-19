@@ -47,6 +47,7 @@ namespace COM.MOD.SanPham
     }
     public class DanhSachIMG
     {
+        public int IdPic { get; set; }
         public int IndexOrder { get; set; }
         public string FilePath { get; set; }
     }
@@ -57,6 +58,7 @@ namespace COM.MOD.SanPham
         public decimal? GiaBan { get; set; }
         public decimal? SalePercent { get; set; }
         public decimal? GiaSauGiam { get; set; }
+        public int? SoLuong {  get; set; }
         public string? TenLoaiSP { get; set; }
         public string? TenDonVi { get; set; }
         public string? MoTa { get; set; }

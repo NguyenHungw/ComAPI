@@ -283,7 +283,7 @@ namespace COM.DAL.SanPham
 
 
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = @"SELECT sp.ID,sp.TenSanPham,gb.GiaBan,gb.SalePercent,gb.GiaSauGiam,lsp.TenLoaiSP,dv.TenDonVi,sp.MoTa,spi.FilePath AS AnhChinh ,gb.NgayBatDau
+                    cmd.CommandText = @"SELECT sp.ID,sp.TenSanPham,gb.GiaBan,gb.SalePercent,gb.GiaSauGiam,sp.SoLuong,lsp.TenLoaiSP,dv.TenDonVi,sp.MoTa,spi.FilePath AS AnhChinh ,gb.NgayBatDau
                                         FROM SanPham sp
                                         LEFT JOIN GiaBanSanPham gb ON sp.ID = gb.SanPhamID
                                         LEFT JOIN LoaiSanPham lsp ON sp.LoaiSanPhamID = lsp.LoaiSanPhamID
@@ -306,12 +306,13 @@ namespace COM.DAL.SanPham
                         item.GiaBan = reader.GetDecimal(2);
                         item.SalePercent = reader.GetDecimal(3);
                         item.GiaSauGiam = reader.GetDecimal(4);
-                        item.TenLoaiSP = reader.IsDBNull(5) ? null : reader.GetString(5);
-                        item.TenDonVi = reader.IsDBNull(6) ? null : reader.GetString(6);
-                        item.MoTa = reader.IsDBNull(7) ? null : reader.GetString(7);
-                        item.AnhChinh = reader.IsDBNull(8) ? null : reader.GetString(8);
+                        item.SoLuong = reader.IsDBNull(5) ? null : reader.GetInt32(5);
+                        item.TenLoaiSP = reader.IsDBNull(6) ? null : reader.GetString(6);
+                        item.TenDonVi = reader.IsDBNull(7) ? null : reader.GetString(7);
+                        item.MoTa = reader.IsDBNull(8) ? null : reader.GetString(8);
+                        item.AnhChinh = reader.IsDBNull(9) ? null : reader.GetString(9);
 
-                        item.NgayBatDau = reader.IsDBNull(9) ? null : DateOnly.FromDateTime(reader.GetDateTime(9)); // Fixed conversion issue  
+                        item.NgayBatDau = reader.IsDBNull(10) ? null : DateOnly.FromDateTime(reader.GetDateTime(10)); // Fixed conversion issue  
                         dssp.Add(item);
                         
 
@@ -331,7 +332,7 @@ namespace COM.DAL.SanPham
 
                         //  lấy tất cả ảnh của các sản phẩm trong danh sách idList
                         cmdImg.CommandText = $@"
-                                            SELECT SanPhamID, IndexOrder, FilePath
+                                            SELECT ID, SanPhamID, IndexOrder, FilePath
                                             FROM SanPhamImage
                                             WHERE SanPhamID IN ({idList}) 
                                             ORDER BY SanPhamID, IndexOrder";
@@ -343,14 +344,15 @@ namespace COM.DAL.SanPham
                         // đọc kq trả về từ db cmdImg
                         while (readerImg.Read())
                         {
+                            int idpic = readerImg.GetInt32(0);
                            
-                            int spId = readerImg.GetInt32(0);
+                            int spId = readerImg.GetInt32(1);
 
 
-                            int indexOrder = readerImg.GetInt32(1);
+                            int indexOrder = readerImg.GetInt32(2);
 
                            
-                            string filePath = readerImg.GetString(2);
+                            string filePath = readerImg.GetString(3);
 
                             // tìm sản phẩm trong danh sách dssp theo ID
                             var sp = dssp.FirstOrDefault(x => x.ID == spId);
@@ -360,6 +362,7 @@ namespace COM.DAL.SanPham
                                 // thêm ảnh mới vào list DanhSachAnh của sản phẩm đó
                                 sp.DanhSachAnh.Add(new DanhSachIMG
                                 {
+                                    IdPic = idpic,
                                     IndexOrder = indexOrder,
                                     FilePath = filePath
                                 });
@@ -604,6 +607,8 @@ namespace COM.DAL.SanPham
                     {
                         if (file.Length > 0)
                         {
+                            shortGuid2 = Utils.Utilities.GenerateRandomCode(8);
+
                             string extension = Path.GetExtension(file.FileName);
 
                             string name = Utils.Utilities.RemoveSign4VietnameseString(item.TenSanPham.Replace(" ","-")); //để dấu gạch cho chuẩn seo
@@ -721,6 +726,15 @@ namespace COM.DAL.SanPham
                 var trans = SQLCon.BeginTransaction();
                 try
                 {
+                    //xóa giỏ hàng
+                    var cmdGioHang = new SqlCommand(@"DELETE FROM [GioHang] where SanPhamID=@SanPhamID", SQLCon, trans);
+                    cmdGioHang.Parameters.AddWithValue("@SanPhamID", id);
+                    cmdGioHang.ExecuteNonQuery();
+                    //
+                    var cmdDanhGia = new SqlCommand(@"DELETE FROM [DanhGiaSanPham] where SanPhamID=@SanPhamID", SQLCon, trans);
+                    cmdDanhGia.Parameters.AddWithValue("@SanPhamID", id);
+                    cmdDanhGia.ExecuteNonQuery();
+
                     var cmdGia = new SqlCommand(@"DELETE FROM [GiaBanSanPham] where SanPhamID=@SanPhamID", SQLCon, trans);
                     cmdGia.Parameters.AddWithValue("@SanPhamID", id);
                     cmdGia.ExecuteNonQuery();

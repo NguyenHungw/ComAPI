@@ -70,19 +70,14 @@ namespace COM.DAL.SanPham
                     {
                     string Picture;
                     string tenSanPham = "";
-
-                    string shortGuid2 = Utils.Utilities.GenerateRandomCode(8);
-
                     SQLCon.Open();
-                    
-
                     SqlCommand cmdGet = new SqlCommand();
                     cmdGet.Connection = SQLCon;
                     cmdGet.CommandType = CommandType.Text;
                   
-                    cmdGet.CommandText = @"SELECT sp.TenSanPham
+                    cmdGet.CommandText = @"SELECT TOP 1 sp.TenSanPham
                     FROM SanPham sp 
-                    LEFT JOIN SanPhamImage SPI ON sp.ID = SPI.SanPhamID
+                    
                     Where sp.ID= @SanPhamID";
                     cmdGet.Parameters.AddWithValue("@SanPhamID", id);
                     var data = cmdGet.ExecuteScalar();
@@ -100,9 +95,10 @@ namespace COM.DAL.SanPham
                     {
                         if (file.Length > 0)
                         {
+                            string shortGuid2 = Utils.Utilities.GenerateRandomCode(8);
                             string extension = Path.GetExtension(file.FileName); 
                             string name = Utils.Utilities.RemoveDiacritics(tenSanPham.Replace(" ", "")); //để dấu gạch cho chuẩn seo
-                            string newName = $"{shortGuid2}_{tenSanPham}{extension}";
+                            string newName = $"{shortGuid2}_{name}{extension}";
                             string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "upload");
                             string filePath = Path.Combine(uploadsFolder, newName);
                             using (Stream stream = File.Create(filePath))
@@ -147,6 +143,70 @@ namespace COM.DAL.SanPham
             }
             return result;
         }
+        public BaseResultMOD SuaIMG(List<IFormFile> files,int id)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                  
+                    SQLCon.Open();
+
+                    foreach (var file in files)
+                    {
+                        string Picture = "";
+                        if (file.Length > 0)
+                        {
+
+                            string fileName = Path.GetFileName(file.FileName);
+                            string extension = Path.GetExtension(file.FileName);
+                            string shortGuid2 = Utils.Utilities.GenerateRandomCode(8);
+                            
+                            string name = Utils.Utilities.RemoveDiacritics(fileName.Replace(" ", "")); //để dấu gạch cho chuẩn seo
+                            string newName = $"{shortGuid2}_{name}{extension}";
+                            string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "upload");
+                            string filePath = Path.Combine(uploadsFolder, newName);
+                            using (Stream stream = File.Create(filePath))
+                            {
+                                file.CopyTo(stream);
+                            }
+                            Picture = "/upload/" + newName;
+                        }
+                        else
+                        {
+                            Picture = "";
+                        }
+                                            SqlCommand cmd = new SqlCommand();
+
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "UPDATE [SanPhamImage] SET FilePath = @FilePath WHERE ID = @id";
+                        cmd.Parameters.AddWithValue("@FilePath", Picture);
+                        cmd.Parameters.AddWithValue("@id", id);
+                        //cmd.Parameters.AddWithValue("@IndexOrder", item.IndexOrder ?? (object)DBNull.Value);
+
+
+
+                        cmd.Connection = SQLCon;
+                        
+
+                        cmd.ExecuteNonQuery();
+                        result.Status = 1;
+                        result.Message = "Cập nhật ảnh thành công";
+                        result.Data = 1;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = Constant.API_Error_System;
+
+            }
+            return result;
+        }
+
 
         // Hàm để kiểm tra trùng chức năng
         private bool KiemTraTrungChucNang(string tendonvi)
@@ -354,9 +414,9 @@ namespace COM.DAL.SanPham
                     foreach (var item in list)
                     {
                         SqlCommand cmd = new SqlCommand(@"
-                    UPDATE SanPhamImage 
-                    SET IndexOrder = @IndexOrder 
-                    WHERE ID = @ID", SQLCon, trans);
+                        UPDATE SanPhamImage 
+                        SET IndexOrder = @IndexOrder 
+                        WHERE ID = @ID", SQLCon, trans);
 
                         cmd.Parameters.AddWithValue("@IndexOrder", item.NewIndex);
                         cmd.Parameters.AddWithValue("@ID", item.ImageID);
