@@ -283,7 +283,7 @@ namespace COM.DAL.SanPham
 
 
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = @"SELECT sp.ID,sp.TenSanPham,gb.GiaBan,gb.SalePercent,gb.GiaSauGiam,sp.SoLuong,lsp.TenLoaiSP,dv.TenDonVi,sp.MoTa,spi.FilePath AS AnhChinh ,gb.NgayBatDau
+                    cmd.CommandText = @"SELECT sp.ID,sp.TenSanPham,gb.GiaBan,gb.SalePercent,gb.GiaSauGiam,sp.SoLuong,lsp.LoaiSanPhamID,lsp.TenLoaiSP,dv.DonViTinhID,dv.TenDonVi,sp.MoTa,spi.FilePath AS AnhChinh ,gb.NgayBatDau
                                         FROM SanPham sp
                                         LEFT JOIN GiaBanSanPham gb ON sp.ID = gb.SanPhamID
                                         LEFT JOIN LoaiSanPham lsp ON sp.LoaiSanPhamID = lsp.LoaiSanPhamID
@@ -307,12 +307,14 @@ namespace COM.DAL.SanPham
                         item.SalePercent = reader.GetDecimal(3);
                         item.GiaSauGiam = reader.GetDecimal(4);
                         item.SoLuong = reader.IsDBNull(5) ? null : reader.GetInt32(5);
-                        item.TenLoaiSP = reader.IsDBNull(6) ? null : reader.GetString(6);
-                        item.TenDonVi = reader.IsDBNull(7) ? null : reader.GetString(7);
-                        item.MoTa = reader.IsDBNull(8) ? null : reader.GetString(8);
-                        item.AnhChinh = reader.IsDBNull(9) ? null : reader.GetString(9);
+                        item.LoaiSanPhamID = reader.IsDBNull(6) ? null : reader.GetInt32(6);
+                        item.TenLoaiSP = reader.IsDBNull(7) ? null : reader.GetString(7);
+                        item.DonViTinhID = reader.IsDBNull(8) ? null : reader.GetInt32(8);
+                        item.TenDonVi = reader.IsDBNull(9) ? null : reader.GetString(9);
+                        item.MoTa = reader.IsDBNull(10) ? null : reader.GetString(10);
+                        item.AnhChinh = reader.IsDBNull(11) ? null : reader.GetString(11);
 
-                        item.NgayBatDau = reader.IsDBNull(10) ? null : DateOnly.FromDateTime(reader.GetDateTime(10)); // Fixed conversion issue  
+                        item.NgayBatDau = reader.IsDBNull(12) ? null : DateOnly.FromDateTime(reader.GetDateTime(12)); // Fixed conversion issue  
                         dssp.Add(item);
                         
 
@@ -809,7 +811,7 @@ namespace COM.DAL.SanPham
             return result;
         }
 
-        public BaseResultMOD SuaSanPham(SanPhamMOD item)
+        public BaseResultMOD SuaSanPham(SuaSanPhamMOD item)
         {
             var result = new BaseResultMOD();
             try
@@ -819,14 +821,51 @@ namespace COM.DAL.SanPham
                     SQLCon.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "Update [SanPham] set TenSanPham = @TenSanPham, LoaiSanPhamID = @LoaiSanPhamID, DonViTinhID = @DonViTinhID where MSanPham=@MSanPham ";
+                    cmd.CommandText = "Update [SanPham] set TenSanPham = @TenSanPham, LoaiSanPhamID = @LoaiSanPhamID, DonViTinhID = @DonViTinhID,MoTa =@MoTa,SoLuong=@SoLuong where ID=@ID ";
                     cmd.Parameters.AddWithValue("@TenSanPham", item.TenSanPham);
                     cmd.Parameters.AddWithValue("@LoaiSanPhamID", item.LoaiSanPhamID);
                     cmd.Parameters.AddWithValue("@DonViTinhID", item.DonViTinhID);
+                    cmd.Parameters.AddWithValue("@MoTa", item.MoTa);
+                    cmd.Parameters.AddWithValue("@SoLuong", item.SoLuong);
+                    cmd.Parameters.AddWithValue("@ID", item.ID);
                     cmd.Connection = SQLCon;
                     cmd.ExecuteNonQuery();
                     result.Status = 1;
                     result.Message = "Sửa sản phẩm thành công";
+                    result.Data = 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = Constant.API_Error_System;
+
+            }
+            return result;
+        }
+        public BaseResultMOD SuaGiaSanPham(SuaGiaSanPhamMOD item)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    decimal giaSauGiam = (decimal)(item.GiaBan * (1 - item.SalePercent / 100));
+
+                    SQLCon.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "Update [GiaBanSanPham] set GiaBan = @GiaBan, SalePercent = @SalePercent,GiaSauGiam=@GiaSauGiam WHERE SanPhamID=@SanPhamID ";
+                    cmd.Parameters.AddWithValue("@SanPhamID", item.SanPhamID);
+                    cmd.Parameters.AddWithValue("@GiaBan", item.GiaBan);
+                    cmd.Parameters.AddWithValue("@SalePercent", item.SalePercent);
+                    cmd.Parameters.AddWithValue("@GiaSauGiam", giaSauGiam);
+
+
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    result.Status = 1;
+                    result.Message = "Sửa giá phẩm thành công";
                     result.Data = 1;
                 }
             }

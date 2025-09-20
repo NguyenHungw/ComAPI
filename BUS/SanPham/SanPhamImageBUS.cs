@@ -236,15 +236,15 @@ namespace COM.BUS.SanPham
 
             return result;
         }
-        public BaseResultMOD SuaSP(SanPhamMOD item)
+        public BaseResultMOD SuaSP(SuaSanPhamMOD item)
         {
             var result = new BaseResultMOD();
             try
             {
-                if (item == null || item.MSanPham == null)
+                if (item == null || item.ID == null)
                 {
                     result.Status = 0;
-                    result.Message = item.MSanPham + " không hợp lệ";
+                    result.Message = item.ID + " không hợp lệ";
                 }
                 else if (item == null || item.TenSanPham == null || item.TenSanPham == "")
                 {

@@ -335,15 +335,15 @@ namespace COM.BUS.SanPham
 
             return result;
         }
-        public BaseResultMOD SuaSP(SanPhamMOD item)
+        public BaseResultMOD SuaSP(SuaSanPhamMOD item)
         {
             var result = new BaseResultMOD();
             try
             {
-                if (item == null || item.MSanPham == null)
+                if (item == null || item.ID == null)
                 {
                     result.Status = 0;
-                    result.Message = item.MSanPham + " không hợp lệ";
+                    result.Message = item.ID + " không hợp lệ";
                 }
                 else if (item == null || item.TenSanPham == null || item.TenSanPham == "")
                 {
@@ -354,6 +354,35 @@ namespace COM.BUS.SanPham
                 else
                 {
                     result = new SanPhamDAL().SuaSanPham(item);
+                }
+            }
+            catch
+            {
+                result.Status = -1;
+                result.Message = ULT.Constant.API_Error_System;
+            }
+            return result;
+
+        }
+        public BaseResultMOD SuaGiaSP(SuaGiaSanPhamMOD item)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                if (item == null || item.SanPhamID == null)
+                {
+                    result.Status = 0;
+                    result.Message = item.SanPhamID + " không hợp lệ";
+                }
+                else if (item == null || item.GiaBan == null || item.SalePercent == null)
+                {
+                    result.Status = 0;
+                    result.Message = "Tên sản phẩm không được để trống";
+
+                }
+                else
+                {
+                    result = new SanPhamDAL().SuaGiaSanPham(item);
                 }
             }
             catch

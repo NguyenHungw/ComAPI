@@ -163,20 +163,8 @@ namespace ComAPI.Controllers.SanPham
         [Route("SuaSanPham")]
         //[Authorize]
 
-        public IActionResult SuaCN([FromBody] SanPhamMOD item)
+        public IActionResult SuaCN([FromBody] SuaSanPhamMOD item)
         {
-            //var userclaim = User.Claims;
-            //var check = false;
-            //foreach (var claim in userclaim)
-            //{
-            //    if (claim.Type == "CN" && claim.Value.Contains("QLCN") && claim.Value.Contains("Sua"))
-            //    {
-            //        check = true;
-            //        break;
-            //    }
-            //}
-            //if (check)
-            //{
             if (item == null) return BadRequest();
             else
             {
@@ -185,21 +173,21 @@ namespace ComAPI.Controllers.SanPham
                 else return NotFound();
 
             }
-            //}
-            //else
-            //{
-            //    return NotFound(new BaseResultMOD
-            //    {
-            //        Status = -99,
-            //        Message = ULT.Constant.NOT_ACCESS
-            //    });
-            //}
+        }
+        [HttpPut]
+        [Route("SuaGiaSanPham")]
+        //[Authorize]
 
+        public IActionResult SuaGiaSP([FromBody] SuaGiaSanPhamMOD model)
+        {
+            if (model == null) return BadRequest();
+            else
+            {
+                var Result = new SanPhamBUS().SuaGiaSP(model);
+                if (Result != null) return Ok(Result);
+                else return NotFound();
 
-
-
-
-
+            }
         }
         [HttpDelete]
         [Route("XoaSanPhamAnhGia{id}")]

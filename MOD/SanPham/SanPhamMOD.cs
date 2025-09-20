@@ -19,6 +19,23 @@ namespace COM.MOD.SanPham
 
 
     }
+    public class SuaSanPhamMOD
+    {
+        public int? ID { get; set; }
+        public string? TenSanPham { get; set; }
+        public int? LoaiSanPhamID { get; set; }
+        public int? DonViTinhID { get; set; }
+        public string? MoTa { get; set; }
+        public int? SoLuong { get; set; }
+
+
+    }
+    public class SuaGiaSanPhamMOD
+    {
+        public int? SanPhamID { get; set; }
+        public decimal? GiaBan { get; set; }
+        public decimal? SalePercent { get; set; }
+    }
     public class SanPhamTrangChuMOD
     {
         public int? ID { get; set; }
@@ -59,7 +76,9 @@ namespace COM.MOD.SanPham
         public decimal? SalePercent { get; set; }
         public decimal? GiaSauGiam { get; set; }
         public int? SoLuong {  get; set; }
+        public int? LoaiSanPhamID { get; set; }
         public string? TenLoaiSP { get; set; }
+        public int? DonViTinhID {get; set; }
         public string? TenDonVi { get; set; }
         public string? MoTa { get; set; }
         public string? AnhChinh { get; set; }
