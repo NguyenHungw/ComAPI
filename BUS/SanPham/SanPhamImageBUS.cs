@@ -34,6 +34,27 @@ namespace COM.BUS.SanPham
             }
             return result;
         }
+        public BaseResultMOD ChiTietIMGsp(int id)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                if (id > 0) { result = new SanPhamImageDAL().ChiTietHinhAnhSP(id); }
+                else
+                {
+                    result.Status = 0;
+                    result.Message = "id không hợp lệ";
+                }
+            }
+            catch (Exception)
+            {
+                result.Status = -1;
+                result.Message = " Lỗi hệ thống ";
+                result.Data = null;
+                throw;
+            }
+            return result;
+        }
 
 
         public BaseResultMOD ThemIMG(List<IFormFile> files, int id)

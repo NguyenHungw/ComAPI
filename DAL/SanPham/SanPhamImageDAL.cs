@@ -61,6 +61,47 @@ namespace COM.DAL.SanPham
             return result;
 
         }
+        public BaseResultMOD ChiTietHinhAnhSP(int id)
+        {
+         
+            var result = new BaseResultMOD();
+            try
+            {
+                List<SanPhamImageMOD> dsimgsp = new List<SanPhamImageMOD>();
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    SQLCon.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = " Select * from SanPhamImage Where SanPhamID = @id ";
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        SanPhamImageMOD item = new SanPhamImageMOD();
+                        item.ID = reader.GetInt32(0);
+                        item.SanPhamImageID = reader.GetInt32(1);
+                        item.FilePath = reader.GetString(2);
+                        item.IndexOrder = reader.GetInt32(3);
+                        dsimgsp.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dsimgsp;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+
+            }
+            return result;
+
+        }
         public BaseResultMOD ThemImage(List<IFormFile> files, int id)
         {
             var result = new BaseResultMOD();
