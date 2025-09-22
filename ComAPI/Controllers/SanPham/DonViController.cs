@@ -23,6 +23,18 @@ namespace ComAPI.Controllers.SanPham
                 else return NotFound();
 
         }
+        [HttpGet]
+        [Route("DSDonViPage")]
+        // [Authorize]
+
+        public IActionResult dsDonViPage( int p,int s)
+        {
+
+            var Result = new DonViBUS().dsDonViPage(p,s);
+            if (Result != null) return Ok(Result);
+            else return NotFound();
+
+        }
 
         [HttpPost]
         [Route("ThemDonVi")]

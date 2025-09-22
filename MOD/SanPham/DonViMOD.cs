@@ -12,4 +12,6 @@ namespace COM.MOD.SanPham
         public string TenDonVi { get; set; }
         public string Mota { get; set; }
     }
+   
+
 }

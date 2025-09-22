@@ -55,45 +55,60 @@ namespace COM.DAL.SanPham
             return result;
 
         }
-        public BaseResultMOD getdsLoaiSanPhamPage(int page)
+        public BaseResultMOD getdsLoaiSanPhamPage(int page ,int ProductPerPage)
         {
-            const int ProductPerPage = 10;
-            int startPage = ProductPerPage * (page - 1);
-            var result = new BaseResultMOD();
-            try
-            {
-                List<LoaiSanPhamMOD> dscn = new List<LoaiSanPhamMOD>();
-                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+           
+                int startPage = ProductPerPage * (page - 1);
+                var result = new BaseResultMOD();
+                try
                 {
-                    SQLCon.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = " Select * from LoaiSanPham ";
-                    cmd.Connection = SQLCon;
-                    cmd.ExecuteNonQuery();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    List<LoaiSanPhamMOD> dssp = new List<LoaiSanPhamMOD>();
+                    int totalItems = 0;
+                    using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
                     {
-                        LoaiSanPhamMOD item = new LoaiSanPhamMOD();
-                        item.LoaiSanPhamID = reader.GetInt32(0);
-                        item.TenLoaiSanPham = reader.GetString(1);
-                        item.MoTaLoaiSP = reader.GetString(2);
-                        item.TrangThai = reader.GetInt32(3);
-                        dscn.Add(item);
-                    }
-                    reader.Close();
-                    result.Status = 1;
-                    result.Data = dscn;
-                }
-            }
-            catch (Exception ex)
-            {
-                result.Status = -1;
-                result.Message = "Lỗi hệ thống" + ex;
-                throw;
+                        //count
+                        SQLCon.Open();
+                        var cmdCount = new SqlCommand();
+                        cmdCount.CommandType = CommandType.Text;
+                        cmdCount.CommandText = @"SELECT COUNT(*) AS TotalItems FROM LoaiSanPham;";
+                        cmdCount.Connection = SQLCon;
+                        totalItems = (int)cmdCount.ExecuteScalar();
 
-            }
-            return result;
+                        SqlCommand cmd = new SqlCommand();
+
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = @"SELECT * FROM LoaiSanPham
+                                       ORDER BY LoaiSanPhamID
+                                       OFFSET @StartPage ROWS  
+                                       FETCH NEXT @ProductPerPage ROWS ONLY";
+                        cmd.Parameters.AddWithValue("@StartPage", startPage);
+                        cmd.Parameters.AddWithValue("@ProductPerPage", ProductPerPage);
+                        cmd.Connection = SQLCon;
+                        cmd.ExecuteNonQuery();
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            LoaiSanPhamMOD item = new LoaiSanPhamMOD();
+                            item.LoaiSanPhamID = reader.GetInt32(0);
+                            item.TenLoaiSanPham = reader.IsDBNull(1) ? null : reader.GetString(1);
+                            item.MoTaLoaiSP = reader.IsDBNull(2) ? null : reader.GetString(2);
+                            item.TrangThai = reader.IsDBNull(3) ? null : reader.GetInt32(3);
+
+                        dssp.Add(item);
+                        }
+                        reader.Close();
+                        result.Status = 1;
+                        result.Data = dssp;
+                        result.TotalRow = totalItems;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    result.Status = -1;
+                    result.Message = "Lỗi hệ thống" + ex;
+                    throw;
+                }
+                return result;
 
         }
         public BaseResultMOD ThemLoaiSanPham(LoaiSanPhamMOD item)

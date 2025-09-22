@@ -16,38 +16,21 @@ namespace ComAPI.Controllers.SanPham
         // [Authorize]
 
         public IActionResult dsLSP()
-        {
-            //var userclaim = User.Claims;
-            //bool check = false;
-            //foreach (var claim in userclaim)
-            //{
-            //    if (claim.Type == "CN" && claim.Value.Contains("QLCN") && claim.Value.Contains("Xem"))
-            //    {
-            //        check = true;
-            //        break;
-            //    }
-            //}
-
-            //if (check)
-            //{
-          
+        {  
                 var Result = new LoaiSanPhamBUS().dsLoaiSanPham();
                 if (Result != null) return Ok(Result);
                 else return NotFound();
-       
+        }
 
-            //}
-            //else
-            //{
-            //    return NotFound(new BaseResultMOD
-            //    {
-            //        Status = -99,
-            //        Message = ULT.Constant.NOT_ACCESS
-            //    });
-            //}
+        [HttpGet]
+        [Route("DSLoaiSPPage")]
+        // [Authorize]
 
-
-
+        public IActionResult dsLSPpage(int p,int s)
+        {
+            var Result = new LoaiSanPhamBUS().dsLoaiSanPhamPage(p,s);
+            if (Result != null) return Ok(Result);
+            else return NotFound();
         }
 
         [HttpPost]

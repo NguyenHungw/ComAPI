@@ -55,20 +55,35 @@ namespace COM.DAL.SanPham
             return result;
 
         }
-        public BaseResultMOD getdsDonViPage(int page)
+        public BaseResultMOD getdsDonViPage(int page, int ProductPerPage)
         {
-            const int ProductPerPage = 10;
             int startPage = ProductPerPage * (page - 1);
             var result = new BaseResultMOD();
             try
             {
-                List<DonViMOD> dscn = new List<DonViMOD>();
+                List<DonViMOD> dssp = new List<DonViMOD>();
+                int totalItems = 0;
                 using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
                 {
+                    //count
                     SQLCon.Open();
+                    var cmdCount = new SqlCommand();
+                    cmdCount.CommandType = CommandType.Text;
+                    cmdCount.CommandText = @"SELECT COUNT(*) AS TotalItems FROM DonViTinh;";
+                    cmdCount.Connection = SQLCon;
+                    totalItems = (int)cmdCount.ExecuteScalar();
+
                     SqlCommand cmd = new SqlCommand();
+
+
+
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = " Select * from DonViTinh ";
+                    cmd.CommandText = @"SELECT * FROM DonViTinh
+                                       ORDER BY DonViTinhID
+                                       OFFSET @StartPage ROWS  
+                                       FETCH NEXT @ProductPerPage ROWS ONLY";
+                    cmd.Parameters.AddWithValue("@StartPage", startPage);
+                    cmd.Parameters.AddWithValue("@ProductPerPage", ProductPerPage);
                     cmd.Connection = SQLCon;
                     cmd.ExecuteNonQuery();
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -76,12 +91,14 @@ namespace COM.DAL.SanPham
                     {
                         DonViMOD item = new DonViMOD();
                         item.DonViTinhID = reader.GetInt32(0);
-                        item.TenDonVi = reader.GetString(1);
-                        dscn.Add(item);
+                        item.TenDonVi = reader.IsDBNull(1) ? null : reader.GetString(1);
+                        item.Mota = reader.IsDBNull(2) ? null : reader.GetString(2);
+                        dssp.Add(item);
                     }
                     reader.Close();
                     result.Status = 1;
-                    result.Data = dscn;
+                    result.Data = dssp;
+                    result.TotalRow = totalItems;
                 }
             }
             catch (Exception ex)
@@ -89,7 +106,6 @@ namespace COM.DAL.SanPham
                 result.Status = -1;
                 result.Message = "Lỗi hệ thống" + ex;
                 throw;
-
             }
             return result;
 

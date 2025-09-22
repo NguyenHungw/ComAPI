@@ -32,6 +32,31 @@ namespace COM.BUS.SanPham
             return result;
 
         }
+        public BaseResultMOD dsLoaiSanPhamPage(int p, int s)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                if(p>0) { result = new LoaiSanPhamDAL().getdsLoaiSanPhamPage(p, s); }
+                else
+                {
+                    result.Status = 0;
+                    result.Message = "Lỗi Page";
+                }
+                
+
+            }
+            catch (Exception)
+            {
+                result.Status = -1;
+                result.Message = " Lỗi hệ thống ";
+                result.Data = null;
+                throw;
+
+            }
+            return result;
+
+        }
         public BaseResultMOD ThemLSP(LoaiSanPhamMOD item)
         {
             var result = new BaseResultMOD();

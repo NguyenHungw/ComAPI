@@ -32,6 +32,31 @@ namespace COM.BUS.SanPham
             return result;
 
         }
+        public BaseResultMOD dsDonViPage(int page, int pagesize)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                if(page >0) { result = new DonViDAL().getdsDonViPage(page, pagesize); }
+                
+                 else
+                {
+                    result.Status = 0;
+                    result.Message = "lỗi page";
+                }
+
+            }
+            catch (Exception)
+            {
+                result.Status = -1;
+                result.Message = " Lỗi hệ thống ";
+                result.Data = null;
+                throw;
+
+            }
+            return result;
+
+        }
         public BaseResultMOD ThemDV(DonViMOD item)
         {
             var result = new BaseResultMOD();
