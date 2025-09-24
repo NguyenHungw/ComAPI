@@ -36,7 +36,7 @@ namespace COM.DAL.SanPham
                         LoaiSanPhamMOD item = new LoaiSanPhamMOD();
                         item.LoaiSanPhamID = reader.GetInt32(0);
                         item.TenLoaiSanPham = reader.GetString(1);
-                        item.MoTaLoaiSP = reader.GetString(2);
+                        item.MoTaLoaiSP = reader.IsDBNull(2) ? null : reader.GetString(2);
                         item.TrangThai = reader.GetInt32(3);
                         dscn.Add(item);
                     }

@@ -177,9 +177,10 @@ namespace COM.DAL.SanPham
                     SQLCon.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "Update [DonViTinh] set TenDonVi =@TenDonVi where DonViTinhID =@DonViTinhID ";
-                    cmd.Parameters.AddWithValue("@TenChucNang", item.TenDonVi);
+                    cmd.CommandText = "Update [DonViTinh] set TenDonVi =@TenDonVi ,Mota = @Mota where DonViTinhID =@DonViTinhID ";
+                    cmd.Parameters.AddWithValue("@TenDonVi", item.TenDonVi);
                     cmd.Parameters.AddWithValue("@Mota", item.Mota);
+                    cmd.Parameters.AddWithValue("@DonViTinhID", item.DonViTinhID);
                     cmd.Connection = SQLCon;
                     cmd.ExecuteNonQuery();
 

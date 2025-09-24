@@ -1,4 +1,5 @@
 ﻿using COM.MOD;
+using COM.MOD.SanPham;
 using COM.ULT;
 //using Microsoft.Data.SqlClient;
 using System;
@@ -44,8 +45,8 @@ namespace CT.DAL
                     {
                         DanhSachNhomNDMOD item = new DanhSachNhomNDMOD();
                         item.NNDID = reader.GetInt32(0);
-                        item.TenNND = reader.GetString(1);
-                        item.GhiChu = reader.GetString(2);
+                        item.TenNND = reader.IsDBNull(1) ? null : reader.GetString(1);
+                        item.GhiChu = reader.IsDBNull(2) ? null : reader.GetString(2);
                         dsnnd.Add(item);
 
                     }
@@ -61,6 +62,61 @@ namespace CT.DAL
 
             }
             return result;
+        }
+        public BaseResultMOD getdsNNDPage(int page, int ProductPerPage)
+        {
+            int startPage = ProductPerPage * (page - 1);
+            var result = new BaseResultMOD();
+            try
+            {
+                List<DanhSachNhomNDMOD> dssp = new List<DanhSachNhomNDMOD>();
+                int totalItems = 0;
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    //count
+                    SQLCon.Open();
+                    var cmdCount = new SqlCommand();
+                    cmdCount.CommandType = CommandType.Text;
+                    cmdCount.CommandText = @"SELECT COUNT(*) AS TotalItems FROM NhomNguoiDung;";
+                    cmdCount.Connection = SQLCon;
+                    totalItems = (int)cmdCount.ExecuteScalar();
+
+                    SqlCommand cmd = new SqlCommand();
+
+
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = @"SELECT * FROM NhomNguoiDung
+                                       ORDER BY NNDID
+                                       OFFSET @StartPage ROWS  
+                                       FETCH NEXT @ProductPerPage ROWS ONLY";
+                    cmd.Parameters.AddWithValue("@StartPage", startPage);
+                    cmd.Parameters.AddWithValue("@ProductPerPage", ProductPerPage);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        DanhSachNhomNDMOD item = new DanhSachNhomNDMOD();
+                        item.NNDID = reader.GetInt32(0);
+                        item.TenNND = reader.IsDBNull(1) ? null : reader.GetString(1);
+                        item.GhiChu = reader.IsDBNull(2) ? null : reader.GetString(2);
+                        dssp.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dssp;
+                    result.TotalRow = totalItems;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+            }
+            return result;
+
         }
 
         public BaseResultMOD ThemNND(ThemMoiNND item)

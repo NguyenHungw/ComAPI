@@ -40,7 +40,7 @@ namespace ComAPI.Controllers.SanPham
         [Route("ThemDonVi")]
         //[Authorize]
 
-        public IActionResult ThemCN([FromBody] DonViMOD item)
+        public IActionResult ThemCN([FromBody] DonViMOD model)
         {
 
             //var userclaim = User.Claims;
@@ -55,10 +55,10 @@ namespace ComAPI.Controllers.SanPham
             //}
             //if (check)
             //{
-            if (item.TenDonVi == null || item.TenDonVi == "") return BadRequest();
+            if (model.TenDonVi == null || model.TenDonVi == "") return BadRequest();
             else
             {
-                var Result = new DonViBUS().ThemDV(item);
+                var Result = new DonViBUS().ThemDV(model);
                 if (Result != null) return Ok(Result);
                 else return NotFound();
             }
@@ -119,7 +119,7 @@ namespace ComAPI.Controllers.SanPham
         [Route("XoaDonVi")]
         //[Authorize]
 
-        public IActionResult XoaCN(int id)
+        public IActionResult XoaDV(int id)
         {
             //var userclaim = User.Claims;
             //var check = false;
@@ -138,7 +138,7 @@ namespace ComAPI.Controllers.SanPham
             if (id == null) return BadRequest();
             else
             {
-                var Result = new ChucNangBUS().XoaCN(id);
+                var Result = new DonViBUS().XoaDV(id);
                 if (Result != null) return Ok(Result);
                 else return NotFound();
             }

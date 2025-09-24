@@ -15,21 +15,6 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
         //[Authorize]
         public IActionResult DanhSachNND(int page)
         {
-            //var userClaims = User.Claims;
-
-            //bool hasSecondPermission = false; // Biến này để kiểm tra quyền thứ hai
-
-            //foreach (var claim in userClaims)
-            //{
-            //    if (claim.Type == "CN" && claim.Value.Contains("QLNND") && claim.Value.Contains("Xem")) // Kiểm tra quyền thứ hai
-            //    {
-            //        hasSecondPermission = true;
-            //        break; // Nếu tìm thấy quyền thứ hai, thoát khỏi vòng lặp
-            //    }
-            //}
-            //if (hasSecondPermission)
-            //{
-
                 if (page < 1) return BadRequest();
                 else
                 {
@@ -37,19 +22,19 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
                     if (Result != null) return Ok(Result);
                     else return NotFound();
                 }
-            //}
-            //else
-            //{
-
-            //    return NotFound(new BaseResultMOD
-            //    {
-            //        Status = -99,
-            //        Message = ULT.Constant.NOT_ACCESS
-
-            //    });
-
-            //}
-
+        }
+        [HttpGet]
+        [Route("DanhSachNNDPage")]
+        //[Authorize]
+        public IActionResult DanhSachNNDPage(int page , int size)
+        {
+            if (page < 1) return BadRequest();
+            else
+            {
+                var Result = new NhomNguoiDungBUS().DanhSachNNDPage(page, size);
+                if (Result != null) return Ok(Result);
+                else return NotFound();
+            }
         }
         [HttpPost]
         [Route("ThemNND")]

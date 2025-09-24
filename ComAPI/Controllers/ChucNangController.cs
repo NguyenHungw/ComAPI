@@ -15,7 +15,7 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
 
         [HttpGet]
         [Route("DSChucNang")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public IActionResult dsChucNang(int page)
         {
             //var userclaim = User.Claims;
