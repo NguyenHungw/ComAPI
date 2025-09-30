@@ -35,6 +35,52 @@ namespace COM.BUS
             return result;
 
         }
+        public BaseResultMOD dsChucNangPage(int page,int size)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                if (page > 0) { result = new ChucNangDAL().getdsChucNangPage(page, size); }
+                else
+                {
+                    result.Status = 0;
+                    result.Message = "lỗi page";
+                }
+            }
+            catch (Exception)
+            {
+                result.Status = -1;
+                result.Message = " Lỗi hệ thống ";
+                result.Data = null;
+                throw;
+
+            }
+            return result;
+
+        }
+        public BaseResultMOD DSChucNangChuaCo(int page, int size,int id)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                if (page > 0) { result = new ChucNangDAL().DanhSachCNchuaco(page, size,id); }
+                else
+                {
+                    result.Status = 0;
+                    result.Message = "lỗi page";
+                }
+            }
+            catch (Exception)
+            {
+                result.Status = -1;
+                result.Message = " Lỗi hệ thống ";
+                result.Data = null;
+                throw;
+
+            }
+            return result;
+
+        }
         public BaseResultMOD ThemCN(string namecn)
         {
             var result = new BaseResultMOD();

@@ -339,6 +339,7 @@ D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\ComAPI.AssemblyInfo.cs
 D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\ComAPI.csproj.CoreCompileInputs.cache
 D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\ComAPI.MvcApplicationPartsAssemblyInfo.cs
 D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\ComAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\ComAPI.sourcelink.json
 D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\staticwebassets.build.json
 D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\staticwebassets.development.json
 D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\staticwebassets\msbuild.ComAPI.Microsoft.AspNetCore.StaticWebAssets.props
@@ -353,4 +354,3 @@ D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\refint\ComAPI.dll
 D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\ComAPI.pdb
 D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\ComAPI.genruntimeconfig.cache
 D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\ref\ComAPI.dll
-D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\ComAPI.sourcelink.json

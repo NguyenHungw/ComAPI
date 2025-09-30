@@ -36,6 +36,19 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
                 else return NotFound();
             }
         }
+        [HttpGet]
+        [Route("ChiTietNNDPage")]
+        //[Authorize]
+        public IActionResult ChiTietNND(int page, int size,int id)
+        {
+            if (page < 1) return BadRequest();
+            else
+            {
+                var Result = new NhomNguoiDungBUS().ChiTietNNDPage(page, size,id);
+                if (Result != null) return Ok(Result);
+                else return NotFound();
+            }
+        }
         [HttpPost]
         [Route("ThemNND")]
         //[Authorize]

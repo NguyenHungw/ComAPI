@@ -36,9 +36,9 @@ D:\BackEnd\ComAPI\COM.Services\obj\Debug\net8.0\COM.Services.GeneratedMSBuildEdi
 D:\BackEnd\ComAPI\COM.Services\obj\Debug\net8.0\COM.Services.AssemblyInfoInputs.cache
 D:\BackEnd\ComAPI\COM.Services\obj\Debug\net8.0\COM.Services.AssemblyInfo.cs
 D:\BackEnd\ComAPI\COM.Services\obj\Debug\net8.0\COM.Services.csproj.CoreCompileInputs.cache
+D:\BackEnd\ComAPI\COM.Services\obj\Debug\net8.0\COM.Services.sourcelink.json
 D:\BackEnd\ComAPI\COM.Services\obj\Debug\net8.0\COM.Services.csproj.CopyComplete
 D:\BackEnd\ComAPI\COM.Services\obj\Debug\net8.0\COM.Services.dll
 D:\BackEnd\ComAPI\COM.Services\obj\Debug\net8.0\refint\COM.Services.dll
 D:\BackEnd\ComAPI\COM.Services\obj\Debug\net8.0\COM.Services.pdb
 D:\BackEnd\ComAPI\COM.Services\obj\Debug\net8.0\ref\COM.Services.dll
-D:\BackEnd\ComAPI\COM.Services\obj\Debug\net8.0\COM.Services.sourcelink.json

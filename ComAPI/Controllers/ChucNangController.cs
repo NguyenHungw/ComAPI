@@ -18,19 +18,6 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
         //[Authorize(Roles = "Admin")]
         public IActionResult dsChucNang(int page)
         {
-            //var userclaim = User.Claims;
-            //bool check = false;
-            //foreach (var claim in userclaim)
-            //{
-            //    if (claim.Type == "CN" && claim.Value.Contains("QLCN") && claim.Value.Contains("Xem"))
-            //    {
-            //        check = true;
-            //        break;
-            //    }
-            //}
-
-            //if (check)
-            //{
                 if (page < 1) return BadRequest();
                 else
                 {
@@ -38,19 +25,32 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
                     if (Result != null) return Ok(Result);
                     else return NotFound();
                 }
-
-            //}
-            //else
-            //{
-            //    return NotFound(new BaseResultMOD
-            //    {
-            //        Status = -99,
-            //        Message = ULT.Constant.NOT_ACCESS
-            //    });
-            //}
-
-
-
+        }
+        [HttpGet]
+        [Route("DSChucNangPage")]
+        //[Authorize(Roles = "Admin")]
+        public IActionResult dsChucNangPage(int page, int size)
+        {
+            if (page < 1) return BadRequest();
+            else
+            {
+                var Result = new ChucNangBUS().dsChucNangPage(page, size);
+                if (Result != null) return Ok(Result);
+                else return NotFound();
+            }
+        }
+        [HttpGet]
+        [Route("DSChucNangChuaCo")]
+        //[Authorize(Roles = "Admin")]
+        public IActionResult DSChucNangChuaCo(int page, int size, int id)
+        {
+            if (page < 1) return BadRequest();
+            else
+            {
+                var Result = new ChucNangBUS().DSChucNangChuaCo(page, size ,id);
+                if (Result != null) return Ok(Result);
+                else return NotFound();
+            }
         }
 
         [HttpPost]

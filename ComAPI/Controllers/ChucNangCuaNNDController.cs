@@ -170,18 +170,7 @@ namespace CT.Controllers.PhanQuyenVaTaiKhoan
         public IActionResult XoaCN(int id)
         {
 
-            //var userclain = User.Claims;
-            //var check = false;
-            //foreach (var claim in userclain)
-            //{
-            //    if (claim.Type == "CN" && claim.Value.Contains("QLQuyen") && claim.Value.Contains("Xoa"))
-            //    {
-            //        check = true;
-            //        break;
-            //    }
-            //}
-            //if (check)
-            //{
+        
                 if (id == null) return BadRequest();
                 else
                 {
@@ -190,17 +179,7 @@ namespace CT.Controllers.PhanQuyenVaTaiKhoan
                     else return NotFound();
 
                 }
-            //}
-            //else
-            //{
-            //    return NotFound(new BaseResultMOD
-            //    {
-            //        Status = -99,
-            //        Message = COM.ULT.Constant.NOT_ACCESS
-            //    });
-
-           // }
-
+       
 
         }
 
@@ -211,33 +190,12 @@ namespace CT.Controllers.PhanQuyenVaTaiKhoan
         public IActionResult ChiTietCNCNND(int id)
         {
 
-            //var userclain = User.Claims;
-            //var check = false;
-            //foreach (var claim in userclain)
-            //{
-            //    if (claim.Type == "CN" && claim.Value.Contains("QLQuyen") && claim.Value.Contains("Xem"))
-            //    {
-            //        check = true;
-            //        break;
-            //    }
-            //}
-            //if (check)
-            //{
+          
                 if (id == null || id <= 0) return BadRequest();
                 var Result = new ChucNangCuaNNDBUS().ChiTCNCN(id);
                 if (Result != null) return Ok(Result);
                 else return NotFound();
-            //}
-
-            //else
-            //{
-            //    return NotFound(new BaseResultMOD
-            //    {
-            //        Status = -99,
-            //        Message = COM.ULT.Constant.NOT_ACCESS
-            //    });
-           // }
-
+        
 
         }
     }

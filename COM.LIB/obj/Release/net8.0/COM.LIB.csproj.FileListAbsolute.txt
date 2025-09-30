@@ -1,0 +1,16 @@
+D:\BackEnd\ComAPI\COM.LIB\bin\Release\net8.0\COM.LIB.deps.json
+D:\BackEnd\ComAPI\COM.LIB\bin\Release\net8.0\COM.LIB.dll
+D:\BackEnd\ComAPI\COM.LIB\bin\Release\net8.0\COM.LIB.pdb
+D:\BackEnd\ComAPI\COM.LIB\bin\Release\net8.0\COM.MOD.dll
+D:\BackEnd\ComAPI\COM.LIB\bin\Release\net8.0\COM.MOD.pdb
+D:\BackEnd\ComAPI\COM.LIB\obj\Release\net8.0\COM.LIB.csproj.AssemblyReference.cache
+D:\BackEnd\ComAPI\COM.LIB\obj\Release\net8.0\COM.LIB.GeneratedMSBuildEditorConfig.editorconfig
+D:\BackEnd\ComAPI\COM.LIB\obj\Release\net8.0\COM.LIB.AssemblyInfoInputs.cache
+D:\BackEnd\ComAPI\COM.LIB\obj\Release\net8.0\COM.LIB.AssemblyInfo.cs
+D:\BackEnd\ComAPI\COM.LIB\obj\Release\net8.0\COM.LIB.csproj.CoreCompileInputs.cache
+D:\BackEnd\ComAPI\COM.LIB\obj\Release\net8.0\COM.LIB.sourcelink.json
+D:\BackEnd\ComAPI\COM.LIB\obj\Release\net8.0\COM.LIB.csproj.CopyComplete
+D:\BackEnd\ComAPI\COM.LIB\obj\Release\net8.0\COM.LIB.dll
+D:\BackEnd\ComAPI\COM.LIB\obj\Release\net8.0\refint\COM.LIB.dll
+D:\BackEnd\ComAPI\COM.LIB\obj\Release\net8.0\COM.LIB.pdb
+D:\BackEnd\ComAPI\COM.LIB\obj\Release\net8.0\ref\COM.LIB.dll

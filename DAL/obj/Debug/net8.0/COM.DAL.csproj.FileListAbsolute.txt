@@ -31,10 +31,10 @@ D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.GeneratedMSBuildEditorConfig.edit
 D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.AssemblyInfoInputs.cache
 D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.AssemblyInfo.cs
 D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.csproj.CoreCompileInputs.cache
+D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.sourcelink.json
 D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.csproj.CopyComplete
 D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.dll
 D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\refint\COM.DAL.dll
 D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.pdb
 D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.genruntimeconfig.cache
 D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\ref\COM.DAL.dll
-D:\BackEnd\ComAPI\DAL\obj\Debug\net8.0\COM.DAL.sourcelink.json

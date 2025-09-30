@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jkt6HmEWsvTxcmUWOPWfwslVriCXYSZSFIsdxx4Aolg=",
+  "Hash": "IhwE7MzIC5r6gm9hHlNuqVgVOZQJw+QX/bimIGdZfbE=",
   "Source": "ComAPI",
   "BasePath": "_content/ComAPI",
   "Mode": "Default",
@@ -5164,6 +5164,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\upload\\g8nnMR3r_99.GIF.gif"
+    },
+    {
+      "Identity": "D:\\BackEnd\\ComAPI\\ComAPI\\wwwroot\\upload\\GaQnOE41_VVVV.png",
+      "SourceId": "ComAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BackEnd\\ComAPI\\ComAPI\\wwwroot\\",
+      "BasePath": "_content/ComAPI",
+      "RelativePath": "upload/GaQnOE41_VVVV.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\GaQnOE41_VVVV.png"
     },
     {
       "Identity": "D:\\BackEnd\\ComAPI\\ComAPI\\wwwroot\\upload\\gAZ5TA2Q_MEOCONXINHIU.png",

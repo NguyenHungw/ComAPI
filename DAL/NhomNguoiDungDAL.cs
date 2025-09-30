@@ -118,6 +118,85 @@ namespace CT.DAL
             return result;
 
         }
+        public BaseResultMOD ChiTietNND(int page, int ProductPerPage,int id)
+        {
+            int startPage = ProductPerPage * (page - 1);
+            var result = new BaseResultMOD();
+            try
+            {
+                List<ChiTietNND> dssp = new List<ChiTietNND>();
+                int totalItems = 0;
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    //count
+                    SQLCon.Open();
+                    var cmdCount = new SqlCommand();
+                    cmdCount.CommandType = CommandType.Text;
+                    cmdCount.CommandText = @"SELECT COUNT(DISTINCT CNCNND.ChucNangID) AS TotalItems
+                                            FROM ChucNangCuaNhomND CNCNND
+                                            LEFT JOIN NhomNguoiDung AS NND ON CNCNND.NNDID = NND.NNDID
+                                            LEFT JOIN ChucNang AS CN ON CNCNND.ChucNangid = CN.ChucNangid
+                                            WHERE NND.NNDID = @id;";
+                    cmdCount.Parameters.AddWithValue("@id", id);
+
+                    cmdCount.Connection = SQLCon;
+                    totalItems = (int)cmdCount.ExecuteScalar();
+
+                    SqlCommand cmd = new SqlCommand();
+
+
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = @" select distinct CNCNND.ChucNangID,CNCNND.NNDID,NND.TenNND,CNCNND.ChucNangid,CN.TenChucNang, Xem , Them,Sua , Xoa
+                                        From ChucNangCuaNhomND CNCNND
+                                        left join NhomNguoiDung as NND on  CNCNND.NNDID = NND.NNDID
+                                        left join ChucNang as CN on CNCNND.ChucNangid = CN.ChucNangid 
+										where NND.NNDID = @id
+                                        ORDER BY CNCNND.ChucNangID
+                                       OFFSET @StartPage ROWS  
+                                       FETCH NEXT @ProductPerPage ROWS ONLY";
+                    cmd.Parameters.AddWithValue("@StartPage", startPage);
+                    cmd.Parameters.AddWithValue("@ProductPerPage", ProductPerPage);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        ChiTietNND item = new ChiTietNND();
+                        item.ID = reader.GetInt32(0);
+                        item.NNDID = reader.IsDBNull(1) ? null : reader.GetInt32(1);
+                        item.TenNND = reader.IsDBNull(2) ? null : reader.GetString(2);
+
+                        item.ChucNangID = reader.IsDBNull(3) ? null : reader.GetInt32(3);
+
+                        item.TenChucNang = reader.IsDBNull(4) ? null : reader.GetString(4);
+
+                        item.Xem = reader.IsDBNull(5) ? null : reader.GetBoolean(5);
+                        item.Them = reader.IsDBNull(6) ? null : reader.GetBoolean(6);
+
+                        item.Sua = reader.IsDBNull(7) ? null : reader.GetBoolean(7);
+
+                        item.Xoa = reader.IsDBNull(8) ? null : reader.GetBoolean(8);
+
+
+                        dssp.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dssp;
+                    result.TotalRow = totalItems;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+            }
+            return result;
+
+        }
 
         public BaseResultMOD ThemNND(ThemMoiNND item)
         {

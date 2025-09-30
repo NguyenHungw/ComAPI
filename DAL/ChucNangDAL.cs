@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace COM.DAL
@@ -56,6 +57,131 @@ namespace COM.DAL
             return result;
 
         }
+        public BaseResultMOD getdsChucNangPage(int page, int ProductPerPage)
+        {
+            int startPage = ProductPerPage * (page - 1);
+            var result = new BaseResultMOD();
+            try
+            {
+                List<ChucNangMOD> dssp = new List<ChucNangMOD>();
+                int totalItems = 0;
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    //count
+                    SQLCon.Open();
+                    var cmdCount = new SqlCommand();
+                    cmdCount.CommandType = CommandType.Text;
+                    cmdCount.CommandText = @"SELECT COUNT(*) AS TotalItems FROM ChucNang;";
+                    cmdCount.Connection = SQLCon;
+                    totalItems = (int)cmdCount.ExecuteScalar();
+
+                    SqlCommand cmd = new SqlCommand();
+
+
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = @"SELECT * FROM ChucNang
+                                       ORDER BY ChucNangID
+                                       OFFSET @StartPage ROWS  
+                                       FETCH NEXT @ProductPerPage ROWS ONLY";
+                    cmd.Parameters.AddWithValue("@StartPage", startPage);
+                    cmd.Parameters.AddWithValue("@ProductPerPage", ProductPerPage);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        ChucNangMOD item = new ChucNangMOD();
+                        item.ChucNangid = reader.GetInt32(0);
+                        item.TenChucNang = reader.IsDBNull(1) ? null : reader.GetString(1);
+                     
+                        dssp.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dssp;
+                    result.TotalRow = totalItems;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+            }
+            return result;
+
+        }
+        public BaseResultMOD DanhSachCNchuaco(int page, int ProductPerPage,int idNhomNguoiDung)
+        {
+            int startPage = ProductPerPage * (page - 1);
+            var result = new BaseResultMOD();
+            try
+            {
+                List<ChucNangMOD> dssp = new List<ChucNangMOD>();
+                int totalItems = 0;
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    //count
+                    SQLCon.Open();
+                    var cmdCount = new SqlCommand();
+                    cmdCount.CommandType = CommandType.Text;
+                    cmdCount.CommandText = @"SELECT COUNT(*) AS TotalItems
+                                            FROM ChucNang cn
+                                            WHERE cn.ChucNangID NOT IN (
+                                                SELECT cncnnd.ChucNangID
+                                                FROM ChucNangCuaNhomND cncnnd
+                                                INNER JOIN NhomNguoiDung nnd ON cncnnd.NNDID = nnd.NNDID
+                                                WHERE nnd.NNDID = @id);";
+                    cmdCount.Parameters.AddWithValue("@id", idNhomNguoiDung);
+                    cmdCount.Connection = SQLCon;
+                    totalItems = (int)cmdCount.ExecuteScalar();
+
+                    SqlCommand cmd = new SqlCommand();
+                    
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = @"SELECT cn.ChucNangID, cn.TenChucNang
+                                        FROM ChucNang cn
+                                        WHERE cn.ChucNangID NOT IN (
+                                            SELECT cncnnd.ChucNangID
+                                            FROM ChucNangCuaNhomND cncnnd
+                                            INNER JOIN NhomNguoiDung nnd ON cncnnd.NNDID = nnd.NNDID
+                                            WHERE nnd.NNDID = @id
+
+                                        )
+                                       ORDER BY ChucNangID
+                                       OFFSET @StartPage ROWS  
+                                       FETCH NEXT @ProductPerPage ROWS ONLY";
+                    cmd.Parameters.AddWithValue("@StartPage", startPage);
+                    cmd.Parameters.AddWithValue("@ProductPerPage", ProductPerPage);
+                    cmd.Parameters.AddWithValue("@id", idNhomNguoiDung);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        ChucNangMOD item = new ChucNangMOD();
+                        item.ChucNangid = reader.GetInt32(0);
+                        item.TenChucNang = reader.IsDBNull(1) ? null : reader.GetString(1);
+
+                        dssp.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dssp;
+                    result.TotalRow = totalItems;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+            }
+            return result;
+
+        }
+
         public BaseResultMOD ThemChucNang(string namecn)
         {
             var result = new BaseResultMOD();

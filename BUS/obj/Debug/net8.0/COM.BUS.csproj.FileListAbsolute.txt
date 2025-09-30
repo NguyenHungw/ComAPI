@@ -35,10 +35,10 @@ D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.GeneratedMSBuildEditorConfig.edit
 D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.AssemblyInfoInputs.cache
 D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.AssemblyInfo.cs
 D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.csproj.CoreCompileInputs.cache
+D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.sourcelink.json
 D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.csproj.CopyComplete
 D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.dll
 D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\refint\COM.BUS.dll
 D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.pdb
 D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.genruntimeconfig.cache
 D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\ref\COM.BUS.dll
-D:\BackEnd\ComAPI\BUS\obj\Debug\net8.0\COM.BUS.sourcelink.json

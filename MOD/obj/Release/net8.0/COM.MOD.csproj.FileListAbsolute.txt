@@ -1,0 +1,15 @@
+D:\BackEnd\ComAPI\MOD\bin\Release\net8.0\COM.MOD.deps.json
+D:\BackEnd\ComAPI\MOD\bin\Release\net8.0\COM.MOD.runtimeconfig.json
+D:\BackEnd\ComAPI\MOD\bin\Release\net8.0\COM.MOD.dll
+D:\BackEnd\ComAPI\MOD\bin\Release\net8.0\COM.MOD.pdb
+D:\BackEnd\ComAPI\MOD\obj\Release\net8.0\COM.MOD.csproj.AssemblyReference.cache
+D:\BackEnd\ComAPI\MOD\obj\Release\net8.0\COM.MOD.GeneratedMSBuildEditorConfig.editorconfig
+D:\BackEnd\ComAPI\MOD\obj\Release\net8.0\COM.MOD.AssemblyInfoInputs.cache
+D:\BackEnd\ComAPI\MOD\obj\Release\net8.0\COM.MOD.AssemblyInfo.cs
+D:\BackEnd\ComAPI\MOD\obj\Release\net8.0\COM.MOD.csproj.CoreCompileInputs.cache
+D:\BackEnd\ComAPI\MOD\obj\Release\net8.0\COM.MOD.sourcelink.json
+D:\BackEnd\ComAPI\MOD\obj\Release\net8.0\COM.MOD.dll
+D:\BackEnd\ComAPI\MOD\obj\Release\net8.0\refint\COM.MOD.dll
+D:\BackEnd\ComAPI\MOD\obj\Release\net8.0\COM.MOD.pdb
+D:\BackEnd\ComAPI\MOD\obj\Release\net8.0\COM.MOD.genruntimeconfig.cache
+D:\BackEnd\ComAPI\MOD\obj\Release\net8.0\ref\COM.MOD.dll

@@ -73,6 +73,33 @@ namespace COM.BUS
             }
             return Result;
         }
+        public BaseResultMOD ChiTietNNDPage(int page, int size ,int id)
+        {
+            var Result = new BaseResultMOD();
+            try
+            {
+                if (page == 0)
+                {
+                    Result.Status = 0;
+                    Result.Message = "Vui long nhap so trang";
+
+                }
+                else
+                {
+
+                    Result = new NhomNgoiDungDAL().ChiTietNND(page, size,id);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Result.Status = -1;
+                Result.Data = null;
+                Result.Message = "Loi khi lay ds sp" + ex.Message;
+
+            }
+            return Result;
+        }
         public BaseResultMOD ThemNND(ThemMoiNND item)
         {
             var Result = new BaseResultMOD();
