@@ -265,6 +265,7 @@ namespace COM.DAL
             }
             return result;
         }
+     
         public BaseResultMOD XoaChucNang(int id)
         {
             var result = new BaseResultMOD();

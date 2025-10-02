@@ -147,7 +147,7 @@ namespace CT.DAL
 
 
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = @" select distinct CNCNND.ChucNangID,CNCNND.NNDID,NND.TenNND,CNCNND.ChucNangid,CN.TenChucNang, Xem , Them,Sua , Xoa
+                    cmd.CommandText = @" select distinct CNCNND.ID,CNCNND.NNDID,NND.TenNND,CNCNND.ChucNangid,CN.TenChucNang, Xem , Them,Sua , Xoa
                                         From ChucNangCuaNhomND CNCNND
                                         left join NhomNguoiDung as NND on  CNCNND.NNDID = NND.NNDID
                                         left join ChucNang as CN on CNCNND.ChucNangid = CN.ChucNangid 

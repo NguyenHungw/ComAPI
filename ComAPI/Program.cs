@@ -7,6 +7,7 @@ using COM.Services;
 using COM.Services.Donhang;
 using COM.Services.Vnpay;
 using ComAPI.Hubs;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Facebook;
 using Microsoft.AspNetCore.Authentication.Google;
@@ -116,6 +117,12 @@ builder.Services.AddAuthentication(options =>
     options.SaveTokens = true; // Lưu token sau login
     options.Scope.Add("profile");
     options.Scope.Add("email");
+    // Map các field bổ sung từ Google
+    options.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "sub");
+    options.ClaimActions.MapJsonKey(ClaimTypes.Name, "name");
+    options.ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
+    options.ClaimActions.MapJsonKey("urn:google:picture", "picture", "url");
+    options.ClaimActions.MapJsonKey("urn:google:locale", "locale", "string");
 });
 
 // Cấu hình phân quyền theo Role

@@ -45,5 +45,19 @@ namespace COM.BUS
                 throw;
             }
         }
+       /* public BaseResultMOD DanhSachUserBUS(int page ,int size)
+        {
+            var Result = new BaseResultMOD();
+            try
+            {
+
+                else { return new UserDAL().RegisterDAL(item); }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Caught exception: " + ex.Message);
+                throw;
+            }
+        }*/
     }
 }

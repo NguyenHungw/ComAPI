@@ -47,6 +47,7 @@ namespace COM.MOD.Jwt
     public class TokenInfo
     {
         public int UserID { get; set; }
+        public string Name {  get; set; } 
         public string Email { get; set; }
         public List<Claim> Claims { get; set; }
         public string Role { get; set; }

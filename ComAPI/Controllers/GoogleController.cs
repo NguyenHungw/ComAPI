@@ -39,7 +39,11 @@ namespace ComAPI.Controllers
 
             int.TryParse(claims?.FirstOrDefault(i => i.Type == "ID")?.Value, out var id);
             var role = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
-            var name = claims?.FirstOrDefault(name => name.Type == "username")?.Value;
+           // var claimsIdentity = (ClaimsIdentity)User.Identity;
+
+            var name = claims?.FirstOrDefault(c => c.Type == "FullName")?.Value;
+
+            //var name = claims?.FirstOrDefault(name => name.Type == "username")?.Value;
 
             var phone = claims?.FirstOrDefault(name => name.Type == "username")?.Value;
 
@@ -93,11 +97,12 @@ namespace ComAPI.Controllers
             };
 
             var providerKey = claims?.FirstOrDefault(c => c.Type.Contains("nameidentifier"))?.Value;
-
             var bus = new ExternalLoginBUS(_config);
-            int userId = bus.HandleGoogleLogin(user, providerKey);
 
+            int userId = bus.HandleGoogleLogin(user, providerKey);
             var GoogleJWT = new { userId, user.Name, user.Email };
+
+
             bool isAuthenticated = true;
             int userID = 0;
             // Fix for CS0165: Initialize 'role'  
@@ -113,7 +118,7 @@ namespace ComAPI.Controllers
                     Message = "Tài khoản hoặc mật khẩu không đúng hoặc bị vô hiệu hóa"
                 });
             }
-            var (jwtToken, refreshToken) = _authService.GenerateJwtAndRefreshTokenFB(GoogleJWT.Email, GoogleJWT.userId, role, claimsFB);
+            var (jwtToken, refreshToken) = _authService.GenerateJwtAndRefreshTokenFB(GoogleJWT.Name, GoogleJWT.Email, GoogleJWT.userId, role, claimsFB);
 
             var chucNangClaims = claimsFB.Where(c => c.Type == "CN").Select(c => c.Value).ToList();
             var time = claimsFB.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;

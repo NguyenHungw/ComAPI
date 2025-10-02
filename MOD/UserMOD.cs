@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace COM.MOD
 {
-    
+
     public class LoginUSER
     {
         public string Email { get; set; }
@@ -29,6 +29,14 @@ namespace COM.MOD
     //    [JsonIgnore]
     //    public string Password { get; set; }
     //}
+    public class UserMOD
+    {
+        public int UserID { get; set; }
+        public string FullName { get; set; }
+        public string Email { get; set; }
+        public int isActive { get; set; }
+        public string TenNND { get; set; }
+    }
 }
 
 

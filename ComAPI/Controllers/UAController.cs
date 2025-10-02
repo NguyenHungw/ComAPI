@@ -157,7 +157,7 @@ public class TaiKhoanController : ControllerBase
             //var time = claims.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;
             //var R = claims.FirstOrDefault(r => r.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role")?.Value;
 
-            var (jwtToken, newRefreshToken) = _authService.GenerateJwtAndRefreshTokenNoID(claims,user.UserID,user.Email,user.Role);
+            var (jwtToken, newRefreshToken) = _authService.GenerateJwtAndRefreshTokenNoID(claims, user.Name, user.UserID,user.Email,user.Role);
             //var tokeninf = claims.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;
             var time = claims.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;
 
@@ -177,7 +177,7 @@ public class TaiKhoanController : ControllerBase
                 Status = 1,
                 Message = "Đăng nhập thành công",
                 ID = user.UserID,
-                Username = null,
+                Username = user.Name,
                 Role = user.Role,
                 PhoneNumber = null,
                 Email = user.Email,
@@ -239,7 +239,7 @@ public class TaiKhoanController : ControllerBase
             //var time = claims.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;
             //var R = claims.FirstOrDefault(r => r.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role")?.Value;
 
-            var (jwtToken, newRefreshToken) = _authService.GenerateJwtAndRefreshTokenNoID(claims, user.UserID, user.Email, user.Role);
+            var (jwtToken, newRefreshToken) = _authService.GenerateJwtAndRefreshTokenNoID(claims, user.Name,user.UserID, user.Email, user.Role);
             //var tokeninf = claims.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;
             var time = claims.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;
 

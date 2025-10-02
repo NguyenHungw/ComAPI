@@ -10,6 +10,7 @@ using BCrypt.Net;
 using COM.MOD;
 using COM.ULT;
 using System.Data.SqlTypes;
+using COM.MOD.SanPham;
 
 namespace COM.DAL
 {
@@ -57,6 +58,69 @@ namespace COM.DAL
             }
             return Result;
         }
-    }
 
+        public BaseResultMOD DanhSachUser(int page, int ProductPerPage)
+        {
+            int startPage = ProductPerPage * (page - 1);
+            var result = new BaseResultMOD();
+            try
+            {
+                List<UserMOD> dssp = new List<UserMOD>();
+                int totalItems = 0;
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    //count
+                    SQLCon.Open();
+                    var cmdCount = new SqlCommand();
+                    cmdCount.CommandType = CommandType.Text;
+                    cmdCount.CommandText = @"SELECT COUNT(*) AS TotalItems FROM [Users];";
+                    cmdCount.Connection = SQLCon;
+                    totalItems = (int)cmdCount.ExecuteScalar();
+
+                    SqlCommand cmd = new SqlCommand();
+
+
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = @"SELECT distinct  
+                                        u.UserID,u.FullName, u.Email, u.isActive,   
+                                        NND.TenNND
+                                        FROM [Users] u  
+                                        LEFT JOIN NguoiDungTrongNhom NDTN ON u.UserID = NDTN.UserID  
+                                        LEFT JOIN NhomNguoiDung NND ON NDTN.NNDID = NND.NNDID  
+                                        LEFT JOIN ChucNangCuaNhomND CNCNND ON NND.NNDID = CNCNND.NNDID  
+                                        LEFT JOIN ChucNang CN ON CNCNND.ChucNangid = CN.ChucNangid  ";
+                    cmd.Parameters.AddWithValue("@StartPage", startPage);
+                    cmd.Parameters.AddWithValue("@ProductPerPage", ProductPerPage);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        UserMOD item = new UserMOD();
+                        item.UserID = reader.GetInt32(0);
+                        item.FullName = reader.IsDBNull(1) ? null : reader.GetString(0);
+                        item.Email = reader.IsDBNull(2) ? null : reader.GetString(1);
+                        item.isActive = reader.IsDBNull(2) ? 0 : reader.GetInt32(2);
+                        item.TenNND = reader.IsDBNull(2) ? null : reader.GetString(3);
+                        dssp.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dssp;
+                    result.TotalRow = totalItems;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+            }
+            return result;
+
+        }
+    }
+    
 }
+

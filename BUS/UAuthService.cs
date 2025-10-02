@@ -135,16 +135,19 @@ namespace COM.Services
 
             return (jwtTokenString, refreshToken);
         }
-        public ( string jwtToken, string refreshToken) GenerateJwtAndRefreshTokenNoID(List<Claim> claims,int userID,string email,string role)
+        public ( string jwtToken, string refreshToken) GenerateJwtAndRefreshTokenNoID(List<Claim> claims,string name,int userID,string email,string role)
         {
           
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_secretKey);
             //var ThoiGianHetHan = DateTime.Now.AddMinutes(10);
-            var ThoiGianHetHan = DateTime.Now.AddSeconds(10);
+            //var ThoiGianHetHan = DateTime.Now.AddSeconds(10);
+            var ThoiGianHetHan = DateTime.Now.AddDays(10);
+
 
             var additionalClaims = new List<Claim>(); // Khởi tạo danh sách Claims
             bool idUser = additionalClaims.Any(claim => claim.Type == "UserID");
+            bool nameExits = additionalClaims.Any(claim => claim.Type == "FullName");
             bool phoneEmailClaimExists = additionalClaims.Any(claim => claim.Type == "Email");
             string userIDString = userID.ToString();
             bool NhomNguoiDungClaimExists = additionalClaims.Any(claim => claim.Type == "NhomNguoiDung");
@@ -152,6 +155,10 @@ namespace COM.Services
             if (!idUser)
             {
                 additionalClaims.Add(new Claim("ID", userIDString));
+            }
+            if (!nameExits)
+            {
+                additionalClaims.Add(new Claim("FullName", name));
             }
             if (!phoneEmailClaimExists)
             {
@@ -200,7 +207,7 @@ namespace COM.Services
             return (jwtTokenString, refreshToken);
         }
 
-        public (string jwtToken, string refreshToken) GenerateJwtAndRefreshTokenFB(string email,int userID, string userRole, List<Claim> claims)
+        public (string jwtToken, string refreshToken) GenerateJwtAndRefreshTokenFB(string name,string email,int userID, string userRole, List<Claim> claims)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_secretKey);
@@ -216,6 +223,7 @@ namespace COM.Services
             };
             bool idUser = additionalClaims.Any(claim => claim.Type == "UserID");
             bool phoneEmailClaimExists = additionalClaims.Any(claim => claim.Type == "Email");
+            bool NameClaimsExits = additionalClaims.Any(claim => claim.Type == "FullName");
             bool NhomNguoiDungClaimExists = additionalClaims.Any(claim => claim.Type == "NhomNguoiDung");
             bool ThoiHanDangNhapClaimExists = additionalClaims.Any(claim => claim.Type == "ThoiHanDangNhap");
             string userIDString = userID.ToString();
@@ -226,11 +234,16 @@ namespace COM.Services
                 //additionalClaims.Add(new Claim("UserID", item..ToString()));
                 additionalClaims.Add(new Claim("ID", userIDString));
             }
+            if (!NameClaimsExits)
+            {
+                additionalClaims.Add(new Claim("FullName", name));
+            }
             if (!phoneEmailClaimExists)
             {
                 // Nếu claim "PhoneNumber" chưa tồn tại, thêm nó vào danh sách
                 additionalClaims.Add(new Claim("Email", email));
             }
+          
             if (!NhomNguoiDungClaimExists)
             {
                 additionalClaims.Add(new Claim(ClaimTypes.Role, userRole));
@@ -423,7 +436,7 @@ namespace COM.Services
                 // 2. Dùng UserID để truy vấn thông tin chi tiết  
                 string userDetailQuery = @"  
                SELECT   
-                   u.UserID, u.Email, u.isActive,   
+                   u.UserID,u.FullName, u.Email, u.isActive,   
                    NND.TenNND, CN.TenChucNang, CNCNND.Xem, CNCNND.Them, CNCNND.Sua, CNCNND.Xoa  
                FROM [Users] u  
                INNER JOIN NguoiDungTrongNhom NDTN ON u.UserID = NDTN.UserID  
@@ -443,7 +456,7 @@ namespace COM.Services
                         {   
                             do
                             {
-
+                                userInfo.Name = reader.GetString(reader.GetOrdinal("FullName"));
                                 userInfo.UserID = reader.GetInt32(reader.GetOrdinal("UserID"));
 
                                 userInfo.Email = reader.GetString(reader.GetOrdinal("Email"));

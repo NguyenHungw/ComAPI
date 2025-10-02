@@ -231,9 +231,9 @@ namespace COM.DAL
                     SQLCon.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "Update ChucNangCuaNhomND set ChucNangid=@ChucNangid ,NNDID=@NNDID,Xem=@Xem,Them=@Them,Sua=@Sua,Xoa=@Xoa where ID=@idChucNangCuaNND ";
+                    cmd.CommandText = "Update ChucNangCuaNhomND set ChucNangID=@ChucNangID ,NNDID=@NNDID,Xem=@Xem,Them=@Them,Sua=@Sua,Xoa=@Xoa where ID=@idChucNangCuaNND ";
                     cmd.Parameters.AddWithValue("@idChucNangCuaNND", item.idChucNangCuaNND);
-                    cmd.Parameters.AddWithValue("@ChucNangid",item.ChucNang);
+                    cmd.Parameters.AddWithValue("@ChucNangID", item.ChucNang);
                     cmd.Parameters.AddWithValue("@NNDID", item.NNDID);
                     cmd.Parameters.AddWithValue("@Xem", item.Xem);
                     cmd.Parameters.AddWithValue("@Them", item.Them);
@@ -250,6 +250,42 @@ namespace COM.DAL
                 }
 
             }catch(Exception ex)
+            {
+                result.Status = -1;
+                result.Message = Constant.API_Error_System;
+            }
+            return result;
+        }
+        public BaseResultMOD XoaChucNangCuaNND(int idNND, int idCN)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    SQLCon.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "delete from ChucNangCuaNhomND where NNDID =@idnnd and ChucNangID =@idcn";
+                    cmd.Parameters.AddWithValue("@idnnd", idNND);
+                    cmd.Parameters.AddWithValue("idcn", idCN);
+                    cmd.Connection = SQLCon;
+                    int rowaffected = cmd.ExecuteNonQuery();
+                    if (rowaffected > 0)
+                    {
+                        result.Status = 1;
+                        result.Message = "Xóa chức năng thành công";
+                    }
+                    else
+                    {
+                        result.Status = 0;
+                        result.Message = "{id} không hợp lệ";
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
             {
                 result.Status = -1;
                 result.Message = Constant.API_Error_System;

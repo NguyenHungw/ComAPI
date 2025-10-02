@@ -42,7 +42,7 @@ namespace COM.DAL
 
             int userId = 0;
 
-            // 👉 1. Kiểm tra xem Email đã tồn tại chưa
+            //  1. Kiểm tra xem Email đã tồn tại chưa
             string sqlCheckUser = "SELECT UserID FROM Users WHERE Email = @Email";
             using (SqlCommand cmdCheck = new SqlCommand(sqlCheckUser, conn, trans))
             {
@@ -55,7 +55,7 @@ namespace COM.DAL
                 }
                 else
                 {
-                    // 👉 2. Nếu chưa có thì thêm user mới
+                    //  2. Nếu chưa có thì thêm user mới
                     string sqlUser = "INSERT INTO Users (Email, CreateAt, isActive) OUTPUT INSERTED.UserID VALUES (@Email, @CreateAt, @isActive)";
                     using SqlCommand cmdUser = new SqlCommand(sqlUser, conn, trans);
                     cmdUser.Parameters.AddWithValue("@Email", user.Email ?? (object)DBNull.Value);
@@ -66,7 +66,7 @@ namespace COM.DAL
                 }
             }
 
-            // 👉 3. Thêm ExternalLogin (nếu cần)
+            //  3. Thêm ExternalLogin (nếu cần)
             string sqlLogin = @"INSERT INTO ExternalLogins (UserID, Provider, ProviderKey, Email)
                         VALUES (@UserID, @Provider, @ProviderKey, @Email)";
             using (SqlCommand cmdLogin = new SqlCommand(sqlLogin, conn, trans))
@@ -86,6 +86,7 @@ namespace COM.DAL
         public int CreateUserAndExternalLoginGoogle(GoogleUserMOD user, string provider, string providerKey)
         {
             using SqlConnection conn = new SqlConnection(_connectionString);
+
             conn.Open();
             using var trans = conn.BeginTransaction();
             var vietnamTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");
@@ -105,9 +106,10 @@ namespace COM.DAL
                 {
                     // 1. Thêm user
                     // output là sau khi chèn thành công thì trả ngược lại giá trị vừa được tạo ở userid
-                    string sqlUser = "INSERT INTO Users (Email,CreateAt,isActive) OUTPUT INSERTED.UserID VALUES (@Email,@CreateAt,@isActive)";
+                    string sqlUser = "INSERT INTO Users (FullName,Email,CreateAt,isActive) OUTPUT INSERTED.UserID VALUES (@FullName,@Email,@CreateAt,@isActive)";
                     using SqlCommand cmdUser = new SqlCommand(sqlUser, conn, trans);
                     //cmdUser.Parameters.AddWithValue("@Name", user.Name);
+                    cmdUser.Parameters.AddWithValue("FullName", user.Name);
                     cmdUser.Parameters.AddWithValue("@Email", user.Email ?? (object)DBNull.Value);
                     cmdUser.Parameters.AddWithValue("@CreateAt", vietnamTime);
                     cmdUser.Parameters.AddWithValue("@isActive", 1);

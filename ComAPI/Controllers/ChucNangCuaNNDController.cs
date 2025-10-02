@@ -182,6 +182,23 @@ namespace CT.Controllers.PhanQuyenVaTaiKhoan
        
 
         }
+        [HttpDelete]
+        [Route("XoaCNcuaNND")]
+        public IActionResult XoaCNcuaNND(int idNND,int idCN)
+        {
+
+
+            if (idNND == null || idCN ==null) return BadRequest();
+            else
+            {
+                var result = new ChucNangCuaNNDBUS().XoaCNcuaNND(idNND,idCN);
+                if (result != null) return Ok(result);
+                else return NotFound();
+
+            }
+
+
+        }
 
         [HttpPost]
         [Route("ChiTietCNCNND")]

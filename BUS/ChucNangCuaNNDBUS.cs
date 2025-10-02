@@ -139,6 +139,33 @@ namespace COM.BUS
             }
             return result;
         }
+        public BaseResultMOD XoaCNcuaNND(int idNND, int idCN)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                if (idNND == null || idNND <= 0)
+                {
+                    result.Status = 0;
+                    result.Message = "ID nhóm người dùng không hợp lệ";
+                }
+                else if(idCN == null || idCN <= 0)
+                {
+                    result.Status = 0;
+                    result.Message = "ID chức năng không hợp lệ";
+                }
+                else
+                {
+                    result = new ChucNangCuaNNDDAL().XoaChucNangCuaNND(idNND,idCN);
+                }
+            }
+            catch
+            {
+                result.Status = 0;
+                result.Message = Constant.API_Error_System;
+            }
+            return result;
+        }
 
         public ChucNangCuaNNDMOD2 ChiTCNCN(int id )
         {

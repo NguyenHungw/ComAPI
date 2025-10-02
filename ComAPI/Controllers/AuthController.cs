@@ -70,7 +70,7 @@ namespace ComAPI.Controllers
                
             //};
 
-            var (jwtToken, refreshToken) = _authService.GenerateJwtAndRefreshTokenFB(FacebookJWT.Email, FacebookJWT.userId, role, claimsFB);
+            var (jwtToken, refreshToken) = _authService.GenerateJwtAndRefreshTokenFB(FacebookJWT.Name,FacebookJWT.Email, FacebookJWT.userId, role, claimsFB);
 
             var chucNangClaims = claimsFB.Where(c => c.Type == "CN").Select(c => c.Value).ToList();
             var time = claimsFB.FirstOrDefault(t => t.Type == "ThoiHanDangNhap")?.Value;
