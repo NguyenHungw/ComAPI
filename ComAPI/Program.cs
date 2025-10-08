@@ -32,6 +32,12 @@ var googleSecret = secretDal.GetByProvider("Google");
 
 // Add services to the container.
 builder.Services.AddControllers();
+/*builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNameCaseInsensitive = true; //giúp ASP.NET chấp nhận cả chữ hoa/thường (UserID hoặc userID đều OK).
+    });*/
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var services = builder.Services;

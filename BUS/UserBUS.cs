@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using COM.MOD;
 using COM.DAL;
+using COM.DAL.SanPham;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 
 namespace COM.BUS
@@ -45,19 +47,48 @@ namespace COM.BUS
                 throw;
             }
         }
-       /* public BaseResultMOD DanhSachUserBUS(int page ,int size)
+        public BaseResultMOD DanhSachUserBUS(int page, int s)
         {
-            var Result = new BaseResultMOD();
+            var result = new BaseResultMOD();
             try
             {
-
-                else { return new UserDAL().RegisterDAL(item); }
+                if (page > 0) { result = new UserDAL().DanhSachUser(page, s); }
+                else
+                {
+                    result.Status = 0;
+                    result.Message = "lỗi page";
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine("Caught exception: " + ex.Message);
+                result.Status = -1;
+                result.Message = ULT.Constant.API_Error_System;
+                result.Data = null;
                 throw;
             }
-        }*/
+            return result;
+        }
+        public BaseResultMOD SuaUserBUS (UserUpdateMOD item)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                if (item.UserID < 0 || item.UserID == null)
+                {
+                    result.Status = 0;
+                    result.Message = "UserID không hợp lệ";
+                }
+                else
+                {
+                    result = new UserDAL().SuaUser(item);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return result;
+        }
     }
 }

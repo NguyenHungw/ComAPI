@@ -31,11 +31,25 @@ namespace COM.MOD
     //}
     public class UserMOD
     {
-        public int UserID { get; set; }
-        public string FullName { get; set; }
-        public string Email { get; set; }
-        public int isActive { get; set; }
-        public string TenNND { get; set; }
+        public int? UserID { get; set; }
+        public string? FullName { get; set; }
+        public string? Email { get; set; }
+        public int? isActive { get; set; }
+        public string? TenNND { get; set; }
+        public string? Phone { get; set; }
+        public string? Address { get; set; }
+        public DateTime? CreateAt { get; set; }
+    }
+    public class UserUpdateMOD
+    {
+        public int? UserID { get; set; }
+        public string? FullName { get; set; }
+        public string? Email { get; set; }
+        public string? Phone { get; set; }
+        public string? Address { get; set; }
+        public int? isActive { get; set; }
+        public int? IDNND { get; set; }
+       
     }
 }
 

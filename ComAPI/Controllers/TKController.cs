@@ -37,7 +37,26 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
             else return NotFound();
 
         }
-
+        [HttpGet]
+        [Route("DanhSachUser")]
+        [AllowAnonymous]
+        public IActionResult DanhSachUser(int page , int size)
+        {
+            if(page == 0|| size ==0) return BadRequest();
+            var Result = new UserBUS().DanhSachUserBUS(page, size);
+            if (Result != null) return Ok(Result);
+            else return NotFound();
+        }
+        [HttpPut]
+        [Route("SuaUser")]
+        //[AllowAnonymous]
+        public IActionResult UpdateUser ([FromBody] UserUpdateMOD item)
+        {
+            if(item.UserID == 0 || item.UserID ==null) return BadRequest();
+            var Result = new UserBUS().SuaUserBUS(item);
+            if (Result != null) return Ok(Result);
+            else return NotFound();
+        }
         
     }
 }
