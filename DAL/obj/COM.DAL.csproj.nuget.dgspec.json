@@ -89,6 +89,10 @@
               "target": "Package",
               "version": "[1.0.0, )"
             },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.9.25, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.9.0, )"
@@ -183,6 +187,10 @@
             "Opus": {
               "target": "Package",
               "version": "[1.0.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.9.25, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",
@@ -294,6 +302,10 @@
             "Opus": {
               "target": "Package",
               "version": "[1.0.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.9.25, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",

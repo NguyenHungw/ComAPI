@@ -31,8 +31,8 @@ namespace COM.Services
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_secretKey);
-            //var ThoiGianHetHan = DateTime.Now.AddMinutes(10);
-            var ThoiGianHetHan = DateTime.Now.AddSeconds(10);
+            var ThoiGianHetHan = DateTime.Now.AddMinutes(15);
+            //var ThoiGianHetHan = DateTime.Now.AddSeconds(10);
 
 
             var additionalClaims = new List<Claim>

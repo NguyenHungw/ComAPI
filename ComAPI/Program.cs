@@ -254,6 +254,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseStaticFiles();
+
+//dang ky chat hub
+app.UseCors("AllowAll");
+
 app.MapHub<ChatHub>("/chatHub");
 
 

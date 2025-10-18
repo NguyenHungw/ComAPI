@@ -354,3 +354,5 @@ D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\refint\ComAPI.dll
 D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\ComAPI.pdb
 D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\ComAPI.genruntimeconfig.cache
 D:\BackEnd\ComAPI\ComAPI\obj\Debug\net8.0\ref\ComAPI.dll
+D:\BackEnd\ComAPI\ComAPI\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+D:\BackEnd\ComAPI\ComAPI\bin\Debug\net8.0\StackExchange.Redis.dll
