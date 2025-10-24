@@ -68,6 +68,27 @@ namespace COM.BUS
             }
             return result;
         }
+        public BaseResultMOD ChiTietUserBUS(int userID)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                if (userID > 0) { result = new UserDAL().ChiTietUser(userID); }
+                else
+                {
+                    result.Status = 0;
+                    result.Message = "id không hợp lệ";
+                }
+            }
+            catch (Exception)
+            {
+                result.Status = -1;
+                result.Message = ULT.Constant.API_Error_System;
+                result.Data = null;
+                throw;
+            }
+            return result;
+        }
         public BaseResultMOD SuaUserBUS (UserUpdateMOD item)
         {
             var result = new BaseResultMOD();

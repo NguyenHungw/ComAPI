@@ -9,6 +9,7 @@ using COM.MOD;
 using COM.MOD.SanPham;
 using COM.MOD.Vnpay;
 using COM.Services.Vnpay;
+using COM.ULT;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -29,14 +30,15 @@ namespace COM.Services.Donhang
         {
             var orderID = DateTime.Now.Ticks.ToString();
 
-            //var orderId = Guid.NewGuid().ToString(); // <-- sinh OrderID tại đây
+            //var orderId = Guid.NewGuid().ToString(); // tạo orderID
 
             var donHang = new DonHangMOD
             {
                 OrderID = orderID,
                 UserID = item.UserID,
                 NgayMua = DateTime.Now,
-                Status = 0,  // 0: Chờ xử lý, 1: Đang giao hàng, 2: Đã giao hàng, 3: Đã hủy
+                TrangThaiThanhToan = (int)TrangThaiThanhToan.ChuaThanhToan,  // 0: Chờ xử lý, 1: Đang giao hàng, 2: Đã giao hàng, 3: Đã hủy
+                TrangThaiDonHang= (int)TrangThaiDonHang.ChoXuLy,
                 PhuongThucThanhToan = item.PhuongThucThanhToan
             };
 
@@ -79,7 +81,7 @@ namespace COM.Services.Donhang
                 if (chitietdonhang == null)
                     throw new Exception("Không thể ép kiểu sang List<ChiTietDonHangMOD>");
 
-                var amount = chitietdonhang.Sum(x => (x.ThanhTien * (1 - x.TrietKhau / 100m)) * x.SoLuong);
+                var amount = chitietdonhang.Sum(x => (x.DonGia * (1 - x.TrietKhau / 100m)) * x.SoLuong);
                 string orderId = donhang.OrderID;
                 string userID = donhang.UserID.ToString();
                 var orderInfo = $"Thanh toán đơn hàng #{orderId}";

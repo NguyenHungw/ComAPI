@@ -74,5 +74,33 @@ namespace COM.BUS
             }
                 return result;
         }
+        public BaseResultMOD getAllTinNhanBUS(int page, int size)
+        {
+            var result = new BaseResultMOD();
+            if (page > 0)
+            {
+                result.Status = 1;
+                result = _dal.getAllTinNhan(page, size);
+            }
+            else
+            {
+                result.Status = 0;
+            }
+            return result;
+        }
+        public BaseResultMOD getAllTinNhanRoomBUS(int page, int size,int RoomID)
+        {
+            var result = new BaseResultMOD();
+            if (page > 0)
+            {
+                result.Status = 1;
+                result = _dal.getAllTinNhanRoom(page, size,RoomID);
+            }
+            else
+            {
+                result.Status = 0;
+            }
+            return result;
+        }
     }
 }

@@ -58,4 +58,15 @@ namespace COM.MOD
         public DateTime SentAt { get; set;}
         public bool IsSeenByAdmin { get; set;}
     }
+    public class TinNhanRoomMOD
+    {
+        public int ID { get; set; }
+        public int RoomID { get; set;}
+        public string FullName { get; set; }
+        public string Message { get; set;}
+        public DateTime SentAt { get; set;}
+        public bool IsFromAdmin { get; set;}
+        public bool IsSeenByAdmin { get;set; }
+        public bool IsSeenByUser {  get; set; }
+    }
 }

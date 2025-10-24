@@ -284,6 +284,171 @@ namespace COM.DAL
             }
             return result;
         }
+        public BaseResultMOD getAllTinNhan(int page, int ProductPerPage)
+        {
+            //const int ProductPerPage = 10;
+            int startPage = ProductPerPage * (page - 1);
+            var result = new BaseResultMOD();
+            try
+            {
+                List<TinNhanChuaDocMOD> dssp = new List<TinNhanChuaDocMOD>();
+                int totalItems = 0;
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    //count
+                    SQLCon.Open();
+                    var cmdCount = new SqlCommand();
+                    cmdCount.CommandType = CommandType.Text;
+                    cmdCount.CommandText = @"WITH LastMessage AS (
+                                            SELECT 
+                                                cm.RoomID,
+                                                u.FullName,
+                                                cm.Message,
+                                                cm.SentAt,
+                                                cm.IsSeenByAdmin,
+                                                ROW_NUMBER() OVER (PARTITION BY cm.RoomID ORDER BY cm.SentAt DESC, cm.ID DESC) AS RowNum
+                                            FROM ChatMessages cm
+                                            INNER JOIN Users u ON cm.FromUserID = u.UserID
+                                        )
+                                        SELECT 
+                                            COUNT(*) OVER() AS TotalItem
+                                        FROM LastMessage
+                                        WHERE RowNum = 1
+                                        ORDER BY RoomID  ;";
+                    cmdCount.Connection = SQLCon;
+                    totalItems = (int)cmdCount.ExecuteScalar();
+
+                    SqlCommand cmd = new SqlCommand();
+
+
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = @"
+                                        WITH LastMessage AS (
+                                        SELECT 
+	                                    cm.ID,
+                                            cm.RoomID,
+                                            u.FullName,
+                                            cm.Message,
+                                            cm.SentAt,
+		                                    cm.IsSeenByAdmin,
+                                            ROW_NUMBER() OVER (PARTITION BY cm.RoomID ORDER BY cm.SentAt DESC, cm.ID DESC) AS RowNum
+                                        FROM ChatMessages cm
+                                        INNER JOIN Users u ON cm.FromUserID = u.UserID
+                                    )
+                                    SELECT ID,RoomID, FullName, Message, SentAt ,IsSeenByAdmin
+                                    FROM LastMessage
+                                    WHERE RowNum = 1
+                                    ORDER BY ID  
+                                    OFFSET @StartPage ROWS  
+                                    FETCH NEXT @ProductPerPage ROWS ONLY";
+                    cmd.Parameters.AddWithValue("@StartPage", startPage);
+                    cmd.Parameters.AddWithValue("@ProductPerPage", ProductPerPage);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        TinNhanChuaDocMOD item = new TinNhanChuaDocMOD();
+                        item.ID = reader.GetInt32(0);
+                        item.RoomID = reader.GetInt32(1);
+                        item.FullName = reader.GetString(2);
+                        item.Message = reader.GetString(3);
+                        item.SentAt = reader.GetDateTime(4);
+                        item.IsSeenByAdmin = reader.GetBoolean(5);
+                        dssp.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dssp;
+                    result.TotalRow = totalItems;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+            }
+            return result;
+        }
+        public BaseResultMOD getAllTinNhanRoom(int page, int ProductPerPage, int RoomID)
+        {
+            //const int ProductPerPage = 10;
+            int startPage = ProductPerPage * (page - 1);
+            var result = new BaseResultMOD();
+            try
+            {
+                List<TinNhanRoomMOD> dssp = new List<TinNhanRoomMOD>();
+                int totalItems = 0;
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    //count
+                    SQLCon.Open();
+                    var cmdCount = new SqlCommand();
+                    cmdCount.CommandType = CommandType.Text;
+                    cmdCount.CommandText = @"SELECT Distinct COUNT(*) OVER() AS TotalItem
+                                            FROM ChatMessages cm
+                                            INNER JOIN Users u on cm.FromUserID = u.UserID
+                                            WHERE cm.RoomID = @RoomID;";
+                    cmdCount.Parameters.AddWithValue("@RoomID", RoomID);
+                    cmdCount.Connection = SQLCon;
+                    totalItems = (int)cmdCount.ExecuteScalar();
+
+                    SqlCommand cmd = new SqlCommand();
+
+
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = @"
+                                       SELECT 
+                                        cm.ID,
+                                        cm.RoomID,
+                                        u.FullName,
+                                        cm.Message,
+                                        cm.SentAt,
+                                        cm.IsFromAdmin,
+                                        cm.IsSeenByAdmin,
+                                        cm.IsSeenByUser
+                                    FROM ChatMessages cm
+                                    INNER JOIN Users u ON cm.FromUserID = u.UserID
+                                    WHERE cm.RoomID = 5
+                                    ORDER BY cm.SentAt DESC, cm.ID DESC
+                                    OFFSET @StartPage ROWS  
+                                    FETCH NEXT @ProductPerPage ROWS ONLY";
+                    cmd.Parameters.AddWithValue("@RoomID", RoomID);
+                    cmd.Parameters.AddWithValue("@StartPage", startPage);
+                    cmd.Parameters.AddWithValue("@ProductPerPage", ProductPerPage);
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        TinNhanRoomMOD item = new TinNhanRoomMOD();
+                        item.ID = reader.GetInt32(0);
+                        item.RoomID = reader.GetInt32(1);
+                        item.FullName = reader.GetString(2);
+                        item.Message = reader.GetString(3);
+                        item.SentAt = reader.GetDateTime(4);
+                        item.IsFromAdmin = reader.GetBoolean(5);
+                        item.IsSeenByAdmin = reader.GetBoolean(6);
+                        item.IsSeenByUser = reader.GetBoolean(7);
+                        dssp.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dssp;
+                    result.TotalRow = totalItems;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+            }
+            return result;
+        }
 
         public List<ChatMOD> LayLichSuTinNhan(int currentUserId, bool isAdmin)
         {
@@ -315,7 +480,6 @@ namespace COM.DAL
                             ID = reader.GetInt32(0),
                             RoomID = reader.GetInt32(1),
                             FromUserID = reader.GetInt32(2),
-                           
                             Message = reader.GetString(3),
                             SentAt = reader.GetDateTime(4)
                         });

@@ -23,7 +23,7 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
 
     public class TKController : ControllerBase
     {
-      
+
         [HttpPost]
         [Route("Register")]
         [AllowAnonymous]
@@ -40,9 +40,9 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
         [HttpGet]
         [Route("DanhSachUser")]
         [AllowAnonymous]
-        public IActionResult DanhSachUser(int page , int size)
+        public IActionResult DanhSachUser(int page, int size)
         {
-            if(page == 0|| size ==0) return BadRequest();
+            if (page == 0 || size == 0) return BadRequest();
             var Result = new UserBUS().DanhSachUserBUS(page, size);
             if (Result != null) return Ok(Result);
             else return NotFound();
@@ -50,11 +50,19 @@ namespace COM.Controllers.PhanQuyenVaTaiKhoan
         [HttpPut]
         [Route("SuaUser")]
         //[AllowAnonymous]
-        public IActionResult UpdateUser ([FromBody] UserUpdateMOD item)
+        public IActionResult UpdateUser([FromBody] UserUpdateMOD item)
         {
-            if(item.UserID == 0 || item.UserID ==null) return BadRequest();
+            if (item.UserID == 0 || item.UserID == null) return BadRequest();
             var Result = new UserBUS().SuaUserBUS(item);
             if (Result != null) return Ok(Result);
+            else return NotFound();
+        }
+        [HttpGet("ChiTietUser")]
+        public IActionResult ChiTietUser(int id)
+        {
+            if(id == 0) return BadRequest();
+            var result = new UserBUS().ChiTietUserBUS(id);
+            if (result != null) return Ok(result);
             else return NotFound();
         }
         

@@ -123,6 +123,61 @@ namespace COM.DAL
             return result;
 
         }
+        public BaseResultMOD ChiTietUser(int idUser)
+        {
+            var result = new BaseResultMOD();
+            try
+            {
+                List<ChiTietUserMOD> dssp = new List<ChiTietUserMOD>();
+                int totalItems = 0;
+                using (SqlConnection SQLCon = new SqlConnection(SQLHelper.appConnectionStrings))
+                {
+                    SQLCon.Open();
+            
+          
+
+                    SqlCommand cmd = new SqlCommand();
+
+
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = @"select u.UserID, u.FullName ,u.Email, u.Phone, u.[Address],u.CreateAt, u.isActive
+                                        from Users u
+                                        where u.UserID = @idUser";
+                    cmd.Parameters.AddWithValue("@idUser", idUser);
+             
+                    cmd.Connection = SQLCon;
+                    cmd.ExecuteNonQuery();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        ChiTietUserMOD item = new ChiTietUserMOD();
+                        item.UserID = reader.GetInt32(0);
+                        item.FullName = reader.IsDBNull(1) ? null : reader.GetString(1);
+                        item.Email = reader.IsDBNull(2) ? null : reader.GetString(2);
+                        item.Phone = reader.IsDBNull(3) ? null: reader.GetString(3);
+                        item.Address = reader.IsDBNull(4) ? null : reader.GetString(4);
+                        item.CreateAt = reader.IsDBNull(5) ? null : reader.GetString(5);
+                        item.isActive = reader.IsDBNull(6) ? null : reader.GetInt32(6);
+                        dssp.Add(item);
+                    }
+                    reader.Close();
+                    result.Status = 1;
+                    result.Data = dssp;
+                    result.TotalRow = totalItems;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Status = -1;
+                result.Message = "Lỗi hệ thống" + ex;
+                throw;
+            }
+            return result;
+
+        }
+
+
         public BaseResultMOD SuaUser(UserUpdateMOD item)
         {
             var result = new BaseResultMOD();

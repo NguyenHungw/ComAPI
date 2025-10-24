@@ -25,6 +25,20 @@ namespace COM.ULT
         Inactive = 0,
        // Banned =2,
     }
+    public enum TrangThaiThanhToan
+    {
+        ChuaThanhToan = 0,
+        DaThanhToan = 1
+    }
+
+    public enum TrangThaiDonHang
+    {
+        ChoXuLy = 0,
+        DangVanChuyen = 1,
+        HoanTat = 2,
+        DaHuy = 3,
+        HoanTra =4,
+    }
 
 
 

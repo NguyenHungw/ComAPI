@@ -68,32 +68,6 @@ namespace ComAPI.Hubs
             
 
         }
-
-
-
-/*
-        public ChatHub(ILogger<ChatHub> logger)
-        {
-            _logger = logger;
-            _chatDAL = new ChatDAL();
-        }
-*/
-       /* public async Task SendMessage(int RoomID,int fromUserId, string message)
-        {
-            var chat = new ChatMOD
-            {
-                RoomID = RoomID,
-                FromUserID = fromUserId,
-                Message = message,
-                SentAt = DateTime.Now
-            };
-
-            //  Lưu vào database
-            _chatDAL.LuuTinNhan(chat);
-
-            // Gửi realtime cho tất cả client (hoặc có thể gửi riêng)
-            await Clients.All.SendAsync("ReceiveMessage", fromUserId, message, chat.SentAt);
-        }*/
     }
 
     }

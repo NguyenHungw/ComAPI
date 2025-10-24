@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using COM.BUS;
 using COM.BUS.SanPham;
 using COM.DAL.SanPham;
 using COM.MOD.SanPham;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using VNPAY.NET.Utilities;
+using System.Text.RegularExpressions;
 
 namespace ComAPI.Controllers
 {
@@ -53,7 +55,7 @@ namespace ComAPI.Controllers
             {
 
                 UserID = UserID,
-                PhuongThucThanhToan = "VNPAY", // Mặc định là VNPAY, có thể thay đổi thành MOMO, COD, PAYPAL
+                PhuongThucThanhToan = "VNPAY", // mặc định là VNPAY
                 ChiTiet = danhSachGioHang.Select(item => new ChiTietDonHangMOD
                 {
                     SanPhamID = item.SanPhamID,
@@ -139,8 +141,12 @@ namespace ComAPI.Controllers
                             new SanPhamDAL().TruSoLuongSanPham(result?.SanPhamID ?? 0, result?.SoLuong ?? 0);
                         }
                     }
-                    var firstChar = new GioHangDAL().XoaGioHang(response.OrderDescription[0]-'0');
-                    Console.WriteLine($"Đã xóa giỏ hàng với mã: {response.OrderDescription[0]}");
+                    int orderId = int.Parse(Regex.Match(response.OrderDescription, @"^\d+").Value);
+
+                    //var firstChar = new GioHangDAL().XoaGioHang(response.OrderDescription[0]-'0');
+
+                    var firstChar = new GioHangDAL().XoaGioHang(orderId);
+                    Console.WriteLine($"Đã xóa giỏ hàng với mã: {orderId}");
                     return Ok(new
                     {
                         message = "Thanh toán thành công",
@@ -169,8 +175,22 @@ namespace ComAPI.Controllers
                 });
             }
         }
-
-
+        [HttpGet("getDanhSachDH")]
+        public IActionResult DanhSachDH(int page,int size)
+        {
+            var Result = new DonHangBUS().DanhSachDH(page, size);
+            if (Result != null) return Ok(Result);
+            else return NotFound();
+        }
+        [HttpPut("TrangThaiDonHang")]
+        public IActionResult UpdateTrangThaiDH(string OrderID,int id)
+        {
+            var Result = new DonHangBUS().CapNhatTrangThaiDonHang1BUS(OrderID, id);
+            if (Result != null) return Ok(Result);
+            else return NotFound();
+        }
+  
+        
 
     }
 }

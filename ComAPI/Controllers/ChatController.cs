@@ -36,8 +36,8 @@ namespace ComAPI.Controllers
         }
 
         [HttpPost("sendGR")]
-        //[Authorize]
-        [AllowAnonymous]
+        [Authorize]
+        //[AllowAnonymous]
 
         public async Task<IActionResult> GuiTinNhanGR([FromBody] ChatMOD chat)
         {
@@ -55,11 +55,16 @@ namespace ComAPI.Controllers
                 chat.IsFromAdmin = false;
                 chat.IsSeenByAdmin = false;
             }
+
             new ChatDAL().LuuTinNhan(chat);
             await _hub.Clients.Group($"room_{chat.RoomID}")
                               .SendAsync("ReceiveMessage", chat);
-            await _hub.Clients.Group("admins")
-                       .SendAsync("NewMessageAlert", chat);
+            if (!isAdmin)
+            {
+                await _hub.Clients.Group("admins")
+                     .SendAsync("NewMessageAlert", chat);
+            }
+          
 
             // await _hub.Clients.All.SendAsync("ReceiveMessage", chat);
 
@@ -89,6 +94,18 @@ namespace ComAPI.Controllers
             await _hub.Clients.User(chat.Message.ToString()).SendAsync("ReceiveMessage", chat);
 
             return Ok(new { message = "Đã gửi và đẩy realtime!" });
+        }
+        [HttpGet("LichSuTinNhan")]
+        //[Authorize]
+        [AllowAnonymous]
+
+        public IActionResult LayLichSuRoom(int page,int size ,int RoomID)
+        {
+            //var currentUserId = int.Parse(User.FindFirstValue("ID"));
+            //var isAdmin = User.IsInRole("Admin");
+            var messages = new ChatBUS().getAllTinNhanRoomBUS(page, size, RoomID);
+
+            return Ok(messages);
         }
         [HttpGet("history")]
         //[Authorize]
@@ -137,6 +154,18 @@ namespace ComAPI.Controllers
             else
             {
                 var Result = new ChatBUS().TinNhanChuaDocBUS(page, size);
+                if (Result != null) return Ok(Result);
+                else return NotFound();
+            }
+        }
+        [HttpGet("GetAllTinNhan")]
+        [AllowAnonymous]
+        public IActionResult getAllChatMess(int page, int size)
+        {
+            if (page < 1) return BadRequest();
+            else
+            {
+                var Result = new ChatBUS().getAllTinNhanBUS(page, size);
                 if (Result != null) return Ok(Result);
                 else return NotFound();
             }

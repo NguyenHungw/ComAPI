@@ -15,11 +15,37 @@ namespace COM.MOD.SanPham
         public int? UserID { get; set; }
         public string? PhuongThucThanhToan { get; set; } // Mặc định là VNPAY, có thể thay đổi thành MOMO, COD, PAYPAL
         public DateTime? NgayMua { get; set; } = DateTime.Now;
-        public int? Status { get; set; } // 0: Chờ xử lý, 1: Đang giao hàng, 2: Đã giao hàng, 3: Đã hủy
+        public int? TrangThaiThanhToan { get; set; } // 0: Chờ xử lý, 1: Đang giao hàng, 2: Đã giao hàng, 3: Đã hủy
+        public int? TrangThaiDonHang { get; set; }
     }
+    public class ChiTietDonHangIMGMOD
+    {
+        public int? ID { get; set; }
+        public string? OrderID { get; set; }
+        public int? SanPhamID { get; set; } 
+        public string? FilePath {  get; set; }  
+        public string? TenSanPham {  get; set; }
+        public int? SoLuong {  get; set; }
+        public decimal? DonGia { get; set; }
+        public decimal? TrietKhau { get; set; }
+        public decimal? ThanhTien { get;set; }
+    }
+    public class DanhSachDonHangMOD
+    {
+        public int? ID { get; set; }
+        public string? OrderID { get; set; }
+        public int? UserID { get; set; }
+        public string? FullName {  get; set; }
+        public string? PhuongThucThanhToan { get; set; }
+        public DateTime? NgayMua { get; set; } 
+        public int? TrangThaiThanhToan { get; set; }
+        public int? TrangThaiDonHang { get; set; }
+
+    } 
+
     public class ChiTietDonHangMOD
     {
-        //public int? ID { get; set; }
+        public int? ID { get; set; }
         public string? OrderID { get; set; }
         public int? SanPhamID { get; set; }
         public int? SoLuong { get; set; }

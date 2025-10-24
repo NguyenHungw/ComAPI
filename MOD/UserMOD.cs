@@ -29,6 +29,16 @@ namespace COM.MOD
     //    [JsonIgnore]
     //    public string Password { get; set; }
     //}
+    public class ChiTietUserMOD
+    {
+        public int? UserID { get; set; }
+        public string? FullName { get; set; }
+        public string? Email { get; set; }
+        public string? Phone { get; set; }
+        public string? Address { get; set; }
+        public string? CreateAt { get; set; }
+        public int? isActive { get; set; }
+    }
     public class UserMOD
     {
         public int? UserID { get; set; }
